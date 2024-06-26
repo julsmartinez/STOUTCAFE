@@ -13,7 +13,7 @@
 
 .navbar-container {
     background-color: var(--black);
-    height: 88px;
+    height: 70px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -34,7 +34,7 @@ nav {
     font-family: var(--poppins);
     color: var(--white);
     font-weight: 500;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 #nav-a:hover{
@@ -54,15 +54,15 @@ nav {
 }
 
 .signin-btn{
-    height: 45px;
+    height: 35px;
     width: 120px;
     border-radius: 8px;
     font-family: var(--poppins);
     font-weight: 500;
-    font-size: 18px;
+    font-size: 13px;
     border-style: solid;
     color: var(--white);
-    border-width: 2px;
+    border-width: 1px;
     border-color: var(--white);
     background-color: #ffffff00;
 }
