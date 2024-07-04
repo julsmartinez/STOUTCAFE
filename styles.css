@@ -1,0 +1,488 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+
+}
+
+:root {
+    --darkyellow: #FAD02C;
+    --black: #000000;
+    --poppins: "Poppins";
+    --white: #ffffff;
+}
+
+body {
+    height: 100vh;
+}
+
+.bg-color {
+    background-color:azure;
+}
+
+/*------NAVBAR-------*/
+
+.logo {
+    height: 35px;
+    display: flex;
+    position: absolute;
+    top: 23px;
+    margin-left: 60px;
+}
+
+i{
+    color: var(--white);
+    margin-right: 50px;
+    font-size: 20px;
+}
+
+li {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-linkk, .action-btn{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-family: "Poppins";
+    font-weight: 580;
+}
+
+
+.nav-linkk:hover {
+    color:#FAD02C;
+    scale: 1.2;
+}
+
+
+header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}   
+
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    background-color: #00000090;
+    height: 13vh;
+    backdrop-filter: blur(15px) ;
+}
+
+.links {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    left: 50%;
+    right: 50%;
+}
+.navbar .links {
+    display: flex;
+    gap: 40px;
+}
+
+.navbar .toggle-btn {
+    cursor: pointer;
+    display: none;
+    overflow-x: hidden;
+}
+
+.action-btn {
+    background-color: var(--darkyellow);
+    padding: 0.3rem 1rem;
+    outline: none;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    margin-right: 70px;
+    
+}
+
+.action-btn-dd  {
+    background-color: var(--darkyellow);
+    padding: 0.3rem 1rem;
+    outline: none;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--white);
+    width: 2000px;
+}
+
+.action-btn:hover, .action-btn-dd:hover{
+    background-color: #fff;
+    color: #000000;
+}
+
+.cart-btn {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    top: 30px;
+
+}
+
+.cart-link {
+    position: absolute;
+    right: 145px;
+}
+
+#cart {
+    height: 10px;
+    color: white;
+}
+
+#cart:hover {
+    color: #FAD02C;
+}
+
+.dropdown_menu {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background-color: #00000099;
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open {
+    height: 300px;
+    overflow: hidden;
+}
+
+.dropdown_menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown_menu .action-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-container {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.445);  
+    display: flex;
+    position: relative;
+    top: 0;
+}
+
+.btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.ordernow-btn {
+    position: absolute;
+    bottom: 60px;
+    display: flex;
+    justify-content: center;
+    background:linear-gradient(to bottom, #ffec64 5%, #FAD02C 100%);
+	border-radius:42px;
+	border:1px solid #ffaa22;
+	display: inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:"Poppins";
+	font-size:15px;
+	font-weight:600;
+	padding:10px 31px;
+	text-decoration:none;
+}
+
+.ordernow-btn:hover {
+	background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+	background-color:#ffab23;
+}
+.ordernow-btn:active {
+	position:relative;
+	top:1px;
+}
+
+/*--------VIDEO-----------*/
+
+.video {
+    width: 300px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.overview-text1 {
+    font-family: "Playwrite Australia Tasmania";
+    font-size: 20px;
+    font-style: italic;
+}
+
+.overview-text {
+    font-family: "League Spartan";
+    line-height: 30px;
+}
+
+/*-------BACKGROUND-------*/
+
+
+.specialty-drinks-bg, .best-sellers-bg {
+    height: 30vh;
+    width: 100%;
+    background-color: var(--black);
+    position: relative;
+    top: 6vh;
+}
+
+.best-sellers-bg {
+    position: relative;
+    top: -4vh;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    padding-top: 5vh;
+}
+
+/*-------PRODUCTS------*/
+
+.bs-container {
+    position: relative;
+    top: -10vh;
+}
+
+.product-link {
+    text-decoration: none;
+}
+
+.row-cols-2 {
+    width: 1150px;
+    
+}
+
+.card {
+    width: 270px;
+    flex: 0 0 auto;
+    -webkit-box-shadow: 0px 0px 30px -4px rgba(0,0,0,0.50);
+    -moz-box-shadow: 0px 0px 30px -4px rgba(0,0,0,0.50);
+    box-shadow: 0px 0px 30px -4px rgba(0,0,0,0.50);
+    transition: transform 0.5s ease;
+}
+
+.card-body {
+    height: 200px;
+
+}
+
+.col {
+    position: relative;
+
+    top: -60px;
+    transition: transform 0.5s ease;
+    margin-bottom: 30px;
+}
+
+.col:hover {
+    transform: translateY(-15px);
+}
+
+
+.col:hover .img-container {
+    background-color: var(--darkyellow);
+}
+
+.col:hover .card-img-top {
+    transform: scale(1.1);
+}
+
+.img-container {
+    width: 270px;
+    height: 190px;
+    border-radius: 15px 15px 30px 30px;
+    visibility: visible;
+    transition: background-color 0.5s ease;
+    z-index: 1;
+}
+
+.card-img-top {
+    transition: transform 0.5s ease;
+}
+
+.start-price {
+    margin: 8px 0 5px 0;
+    font-size: 14px;
+}
+
+.card-text {
+    line-height: 15px;
+    font-size: 14px;
+}
+
+.price {
+    line-height: 10px;
+    margin-bottom: 12px;
+    color: var(--darkyellow);
+    text-shadow: 2px 2px 5px rgba(58, 58, 58, 0.2);
+}
+
+.all-menu-btn-cont {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    top: -16vh;
+}
+
+.all-menu-btn {
+    width: 1130px;
+    height: 30px;
+    border-radius: 8px;
+    font-family: var(--poppins);
+    font-weight:s 500;
+    border-style: none;
+    background-color: var(--black);    
+    font-size: 13px;
+    color: var(--white);
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.all-menu-btn:hover {
+    background-color: var(--darkyellow);
+}
+
+.back-to-top-btn {
+    position: relative;
+    display: flex;
+    float: right;
+    margin-right: 110px;
+    top: -13vh;
+}
+
+#backtotop {
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+    font-family: var(--poppins);
+    color: var(--darkgray);
+    position: relative;
+    font-size: small;
+}
+
+.footer-container {
+    position: relative;
+    
+}
+
+footer {
+    position: relative;
+    height: 140px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+background-color: var(--black);}
+
+.icons-container {
+    display: flex;
+    position: absolute; 
+    justify-content: center;
+    padding-left: 70px;
+    top: 30px;
+}
+
+.icons-container i {
+    color: var(--darkyellow);
+    font-size: 28px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.icons-link {
+    text-decoration: none;
+
+}
+
+i:hover {
+    transform: scale(1.2);
+}
+
+.footer-texts {
+    position: absolute;
+    flex-direction: row;
+    display: flex;
+    gap: 25px;
+    top: 75px;
+}
+
+.footer-texts p {
+    font-family: var(--poppins);
+    text-decoration: none;
+}
+
+.footer-texts a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 13px;
+}
+
+.footer-texts a:hover {
+    color: var(--darkyellow);
+}
+
+.divider {
+    height: 20px;
+    width: 1px;
+    background-color: lightgray;
+}
+
+
+
+@media (max-width: 992px) {
+    .navbar .links,
+    .navbar .action-btn {
+        display: none;
+    }
+
+    .navbar .toggle-btn {
+        display: block;
+    }
+
+    .dropdown_menu {
+        display: block;
+    }
+
+    .cart-btn {
+        display: none;
+    }
+}
+
+
+@media (max-width: 576px) {
+    .dropdown_menu {
+        left: 2rem;
+        width: unset;
+    }
+}

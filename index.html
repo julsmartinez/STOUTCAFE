@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STOUT CAFE</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Playwrite+AU+TAS:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/086a90f697.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-color">
+    
+    <header>
+        <div class="navbar">
+            <div ><a href="#"><img src="pics/logo.png" alt=""class="logo"></a></div>
+            <ul class="links">
+                <li><a href="#" class="nav-linkk">HOME</a></li>
+                <li><a href="#" class="nav-linkk">MENU</a></li>
+                <li><a href="#" class="nav-linkk">ABOUT</a></li>
+                <li><a href="#" class="nav-linkk">CONTACT</a></li>
+            </ul>
+            <div class="cart-btn">
+                <a href="" class="cart-link">
+                    <i class="fa-solid fa-cart-shopping" id="cart"></i>
+                </a>
+            </div>
+            <a href="#" class="action-btn">Login</a>
+            <div class="toggle-btn">
+                <i class="fa-solid fa-bars" ></i>
+            </div>
+        </div>
+
+        <div class="dropdown_menu closed">
+            <li><a href="#" class="nav-linkk">HOME</a></li>
+            <li><a href="#" class="nav-linkk">MENU</a></li>
+            <li><a href="#" class="nav-linkk">ABOUT</a></li>
+            <li><a href="#" class="nav-linkk">CONTACT</a></li>
+            <li><a href="#" class="nav-linkk">CART</a></li>
+            <li><a href="#" class="action-btn-dd">LOGIN</a></li>
+        </div>
+    </header>
+<!--CAROUSEL-->
+    <div class="carousel-container">
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="2000">
+                <img src="pics/1.png" class="d-block w-100" alt="...">
+                </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="pics/2.png" class="d-block w-100" alt="...">
+                </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="pics/3.png" class="d-block w-100" alt="...">
+                </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="pics/4.png" class="d-block w-100" alt="...">
+                </div>
+            <divs class="carousel-item" data-bs-interval="2000">
+                <img src="pics/5.png" class="d-block w-100" alt="...">
+            </divs>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+            
+            <div class="btn-container">
+                <a href="#" class="ordernow-btn">Start Order</a>
+            </div>
+        </div>   
+    </div>
+<!--VIDEO-->
+    <div class="container container-fluid pt-5 text-center">
+        <div class="row">
+            <div class="col-md-5">
+            <video src="pics/stout vid.mp4" class="video" controls autoplay muted loop></video>
+            </div>
+            <div class="text col-md-7 text-start pt-5">
+            <h4 class="overview-text1 pt-2">Welcome to</h4>
+            <h1 class="overview-text"><b>STOUT</b>CAFE</h1>
+            <p class="info">Indulge in a delightful blend of aromatic coffee, delicious pizza, juicy burgers, flavorful rice bowls, and more. Whether you're here for a quick bite or a leisurely meal, Stout Cafe promises a cozy ambiance and a menu that caters to all tastes. Join us for a unique dining experience where quality and flavor come together.</p>
+            </div>
+        </div>
+    </div>
+<!--BEST SELLERS-->
+<div class="specialty-drinks-bg">
+    <h4 class="title text-light ">Specialty Drinks</h4>
+</div>
+
+    <div class="sd-container d-flex justify-content-center align-items-center">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 row-cols-xl-4 row-cols-xxl-4 g-3 align-items-center "> 
+            <div class="col d-flex justify-content-center align-items-center">
+                <a href="#" class="product-link">
+                    <div class="card border-0 rounded-4">
+                        <div class="img-container">
+                            <img src="products/strawberry supreme.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body text-start ">
+                            <h5 class="card-title mt-3 px-2 fw-semibold">Strawberry Supreme</h5>
+                            <p class="start-price px-2">Price:</p>
+                            <h4 class="price fs-4 px-2">P180</h4>
+                            <p class="card-text px-2">Homemade strawberry puree with milk, topped ice cream.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col d-flex justify-content-center align-items-center">
+                <a href="" class="product-link">
+                    <div class="card border-0 rounded-4">
+                        <div class="img-container">
+                            <img src="products/blue soda.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body text-start ">
+                            <h5 class="card-title mt-3 px-2 fw-semibold">Blue Strawberry Soda</h5>
+                            <p class="start-price px-2">Price:</p>
+                            <h4 class="price fs-4 px-2">P125</h4>
+                            <p class="card-text px-2">Strawberry puree with curacao syrup</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col d-flex justify-content-center align-items-center">
+                <a href="#" class="product-link">
+                    <div class="card border-0 rounded-4">
+                        <div class="img-container">
+                            <img src="products/7.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body text-start ">
+                            <h5 class="card-title mt-3 px-2 fw-semibold">Tiramisu</h5>
+                            <p class="start-price px-2"> Price:</p>
+                            <h4 class="price fs-4 px-2">P165</h4>
+                            <p class="card-text px-2">Classic Stout Cold Brew and sweetened cold foam</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col d-flex justify-content-center align-items-center">
+                <a href="" class="product-link">
+                    <div class="card border-0 rounded-4">
+                        <div class="img-container">
+                            <img src="products/8.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body text-start ">
+                            <h5 class="card-title mt-3 px-2 fw-semibold">Butter Caramel Latte</h5>
+                            <p class="start-price px-2">Price:</p>
+                            <h4 class="price fs-4 px-2">P465</h4>
+                            <p class="card-text px-2">Hawaiian Pizzarap</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+        <div class="best-sellers-bg">
+            <h4 class="title text-light ">Best Sellers</h4>
+        </div>
+    
+            <div class="bs-container d-flex justify-content-center align-items-center">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 row-cols-xl-4 row-cols-xxl-4 g-3 align-items-center "> 
+                    <div class="col d-flex justify-content-center align-items-center">
+                        <a href="" class="product-link">
+                            <div class="card border-0 rounded-4">
+                                <div class="img-container">
+                                    <img src="products/kape (1).png" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body text-start ">
+                                    <h5 class="card-title mt-3 px-2 fw-semibold">Spanish Latte</h5>
+                                    <p class="start-price px-2"> Starts at:</p>
+                                    <h4 class="price fs-4 px-2">P165</h4>
+                                    <p class="card-text px-2">Espresso over sweet milk</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col d-flex justify-content-center align-items-center">
+                        <a href="" class="product-link">
+                            <div class="card border-0 rounded-4">
+                                <div class="img-container">
+                                    <img src="products/2.png" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body text-start ">
+                                    <h5 class="card-title mt-3 px-2 fw-semibold">Stout Beef Tapa</h5>
+                                    <p class="start-price px-2">Starts at:</p>
+                                    <h4 class="price fs-4 px-2">P320</h4>
+                                    <p class="card-text px-2">Traditional Filipino breakfast made with marinated beef sukiyaki. Served with garlic rice and fried egg.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col d-flex justify-content-center align-items-center">
+                        <a href="" class="product-link">
+                            <div class="card border-0 rounded-4">
+                                <div class="img-container">
+                                    <img src="products/3.png" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body text-start ">
+                                    <h5 class="card-title mt-3 px-2 fw-semibold">Strawberry Matcha</h5>
+                                    <p class="start-price px-2"> Price:</p>
+                                    <h4 class="price fs-4 px-2">P200</h4>
+                                    <p class="card-text px-2">Matcha latte with our homemade strawberry puree</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col d-flex justify-content-center align-items-center">
+                        <a href="" class="product-link">
+                            <div class="card border-0 rounded-4">
+                                <div class="img-container">
+                                    <img src="products/4.png" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body text-start ">
+                                    <h5 class="card-title mt-3 px-2 fw-semibold">Hawaiian Pizza</h5>
+                                    <p class="start-price px-2">Price:</p>
+                                    <h4 class="price fs-4 px-2">P465</h4>
+                                    <p class="card-text px-2">Hawaiian Pizzarap</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="all-menu-btn-cont">
+                <a href="#" class="all-menu-btn">View All Menu</a>
+            </div>
+
+            <div class="back-to-top-btn">
+                <button id="backtotop">Back to top</button>
+            </div>
+
+            <div class="footer-container">
+                <footer>
+                    <div class="icons-container">
+                        <a href="https://www.facebook.com/stoutcoffeeph" target="_blank" class="icons-link">
+                            <i class="fa-brands fa-square-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/stoutcafe/" target="_blank" class="icons-link">
+                            <i class="fa-brands fa-square-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@stoutcafe" target="_blank" class="icons-link">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="footer-texts">
+                        <a href="index.html">MENU</a>
+                        <div class="divider"></div>
+                        <a href="#">ABOUT US</a>
+                        <div class="divider"></div>
+                        <a href="#">TERMS AND CONDITIONS</a>
+                        <div class="divider"></div>
+                        <a href="#">FEEDBACK</a>
+                        <div class="divider"></div>
+                        <a href="#">CONTACT US</a>
+                        <div class="divider"></div>
+                        <a href="#">FAQ</a>
+                    </div>  
+                
+                </footer>
+            </div>
+
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>        </body>
+</html>
