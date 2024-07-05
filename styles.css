@@ -48,12 +48,13 @@ li {
     color: rgb(255, 255, 255);
     font-family: "Poppins";
     font-weight: 580;
-}
+    transition: transform 0.3s ease;
 
+}
 
 .nav-linkk:hover {
     color:#FAD02C;
-    scale: 1.2;
+    transform: scale(1.1);
 }
 
 
@@ -135,6 +136,7 @@ header {
     position: absolute;
     justify-content: center;
     top: 30px;
+    transition: transform 0.3s ease;
 
 }
 
@@ -150,6 +152,7 @@ header {
 
 #cart:hover {
     color: #FAD02C;
+    transform: scale(1.1);
 }
 
 .dropdown_menu {
@@ -202,8 +205,8 @@ header {
     bottom: 60px;
     display: flex;
     justify-content: center;
-    background:linear-gradient(to bottom, #ffec64 5%, #FAD02C 100%);
-	border-radius:42px;
+    background-color: var(--darkyellow);	
+    border-radius:42px;
 	border:1px solid #ffaa22;
 	display: inline-block;
 	cursor:pointer;
@@ -211,13 +214,14 @@ header {
 	font-family:"Poppins";
 	font-size:15px;
 	font-weight:600;
-	padding:10px 31px;
+	padding:10px 40px;
 	text-decoration:none;
 }
 
 .ordernow-btn:hover {
-	background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
-	background-color:#ffab23;
+	background-color: var(--white);
+    color: #000000;
+    border-style: none;
 }
 .ordernow-btn:active {
 	position:relative;
@@ -307,16 +311,31 @@ header {
     transform: translateY(-15px);
 }
 
-
 .col:hover .img-container {
     background-color: var(--darkyellow);
+}
+
+.col:hover .img-container-pink {
+    background-color: rgb(255, 86, 114);
+}
+
+.col:hover .img-container-blue {
+    background-color: rgb(59, 59, 255);
+}
+
+.col:hover .img-container-yellow {
+    background-color: var(--darkyellow);
+}
+
+.col:hover .img-container-coffee {
+    background-color:#64361c;
 }
 
 .col:hover .card-img-top {
     transform: scale(1.1);
 }
 
-.img-container {
+.img-container, .img-container-pink, .img-container-blue, .img-container-yellow, .img-container-coffee {
     width: 270px;
     height: 190px;
     border-radius: 15px 15px 30px 30px;
@@ -332,11 +351,14 @@ header {
 .start-price {
     margin: 8px 0 5px 0;
     font-size: 14px;
+    color: rgb(116, 116, 116);
+
 }
 
 .card-text {
     line-height: 15px;
     font-size: 14px;
+    color: rgb(116, 116, 116);
 }
 
 .price {
@@ -398,26 +420,28 @@ header {
 
 footer {
     position: relative;
-    height: 140px;
+    height: 160px;
     width: 100%;
     display: flex;
     justify-content: center;
-background-color: var(--black);}
+    align-items: center;
+    background-color: var(--black);
+}
 
 .icons-container {
     display: flex;
     position: absolute; 
     justify-content: center;
     padding-left: 70px;
-    top: 30px;
-}
+    margin-bottom: 30px;
+    }
 
 .icons-container i {
     color: var(--darkyellow);
     font-size: 28px;
     justify-content: center;
     align-items: center;
-    
+    transition: transform 0.3s ease;
 }
 
 .icons-link {
@@ -434,7 +458,8 @@ i:hover {
     flex-direction: row;
     display: flex;
     gap: 25px;
-    top: 75px;
+    margin-top: 50px;
+
 }
 
 .footer-texts p {
@@ -446,10 +471,14 @@ i:hover {
     text-decoration: none;
     color: var(--white);
     font-size: 13px;
+    transition: transform 0.3s ease;
+
 }
 
 .footer-texts a:hover {
     color: var(--darkyellow);
+    transform: translateY(-5px);
+
 }
 
 .divider {
