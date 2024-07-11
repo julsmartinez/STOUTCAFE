@@ -72,4 +72,8 @@ function scrollFunction(element){
             break;
     }
 }
+
+function addToCard(element){
+    
+}
   // Slick version 1.5.8s
