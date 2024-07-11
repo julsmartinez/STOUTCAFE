@@ -29,4 +29,48 @@ $(document).ready(function(){
     });
   });
   
+
+  // Scroll Function
+var scrollButtonCount = document.querySelectorAll(".nav-link").length;
+var temporaryElement;
+var scrollButtonElement;
+
+for(var i = 0; i < scrollButtonCount; i++){
+    document.querySelectorAll(".nav-link")[i].addEventListener("click", function(event){
+        event.preventDefault();
+        temporaryElement = this.getAttribute("class");
+        scrollButtonElement = temporaryElement.slice(9, temporaryElement.length);
+        scrollFunction(scrollButtonElement);
+        //return false;
+    });
+}
+function scrollFunction(element){
+    const divElement = document.querySelector("html");
+    switch(element){
+        case "coffee":
+            divElement.scrollTop = 100;
+            break;
+        case "non-coffeee":
+            divElement.scrollTop = 1075
+            break;
+        case "tea":
+            divElement.scrollTop = 2025
+            break;
+        case "pastries":
+            divElement.scrollTop = 2555
+            break;
+        case "apetizers":
+            divElement.scrollTop = 3075
+            break;
+        case "sandwiches":
+            divElement.scrollTop = 3600
+            break;
+        case "pasta":
+            divElement.scrollTop = 4545
+            break;
+        case "ricebowl":
+            divElement.scrollTop = 5160
+            break;
+    }
+}
   // Slick version 1.5.8s
