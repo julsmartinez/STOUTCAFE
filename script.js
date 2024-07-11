@@ -29,7 +29,8 @@ $(document).ready(function(){
     });
   });
   
-// Scroll Function
+
+  // Scroll Function
 var scrollButtonCount = document.querySelectorAll(".nav-link").length;
 var temporaryElement;
 var scrollButtonElement;
