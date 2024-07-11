@@ -144,8 +144,8 @@ header {
 .quantity{
     color: rgb(245, 237, 126);
     border-radius: 8px;
-    width: 20px;
-    height: 24px;
+    width: 17px;
+    height: 21px;
     background-color: red;
     font-size: 20px;
     position: absolute;
@@ -154,6 +154,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 15px;
 }
 
 #cart {
