@@ -94,11 +94,27 @@ for (var j = 0; j < homeProductsButtonsCount; j++){
         // Store price of product to array of price
         var priceOfProduct = this.querySelector("h4").innerHTML;
         homeProductPrices.push(priceOfProduct.slice(1, priceOfProduct.length));
+
+        var descriptionOfProduct = this.querySelector("p").innerHTML;
+        addToPopUpCard(imageSource, nameOfProduct, priceOfProduct, descriptionOfProduct);
     });
 }
 
-function addToPopUpCard(){
+// Add details to popup card 
+function addDetailsToPopupCard(image, productName, price, description){
+    let imageElement = $(".popup-img");
+    imageElement.attr("src", image);
     
+    let nameElement = $(".popup-title");
+    nameElement.text(productName);
+
+    let priceElement = $(".popup-price");
+    priceElement.text("₱" + price);
+
+    let descriptionElement = $(".popup-description");
+    descriptionElement.text(description);
+
+    console.log(imageElement + "\n" + nameElement + "\n" + priceElement + "\n" + descriptionElement); 
 }
   // Slick version 1.5.8s
 
