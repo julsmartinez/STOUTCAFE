@@ -21,13 +21,13 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-$(document).ready(function(){   
-    $('.carousel').slick({
-        slidesToShow: 3  ,
-        dots:true,
-        centerMode: true,
-    });
-});
+// $(document).ready(function(){   
+//     $('.carousel').slick({
+//         slidesToShow: 3  ,
+//         dots:true,
+//         centerMode: true,
+//     });
+// });
   
 
   // Scroll Function
@@ -85,23 +85,36 @@ for (var j = 0; j < homeProductsButtonsCount; j++){
         event.preventDefault();
         // Store source attribute value to array of images
         var imageSource = this.querySelector("img").getAttribute("src");
-        console.log(imageSource);
         homeProductImages.push(imageSource);
 
         // Store name of product to array of names
         var nameOfProduct = this.querySelector("h5").innerHTML;
-        console.log(nameOfProduct);
         homeProductNames.push(nameOfProduct);
 
         // Store price of product to array of price
         var priceOfProduct = this.querySelector("h4").innerHTML;
-        console.log(priceOfProduct.slice(1, priceOfProduct.length));
         homeProductPrices.push(priceOfProduct.slice(1, priceOfProduct.length));
+
+        var descriptionOfProduct = this.querySelector("p").innerHTML;
+        addToPopUpCard(imageSource, nameOfProduct, priceOfProduct, descriptionOfProduct);
     });
 }
 
-function addToCard(element){
+// Add details to popup card 
+function addDetailsToPopupCard(image, productName, price, description){
+    let imageElement = $(".popup-img");
+    imageElement.attr("src", image);
     
+    let nameElement = $(".popup-title");
+    nameElement.text(productName);
+
+    let priceElement = $(".popup-price");
+    priceElement.text("₱" + price);
+
+    let descriptionElement = $(".popup-description");
+    descriptionElement.text(description);
+
+    console.log(imageElement + "\n" + nameElement + "\n" + priceElement + "\n" + descriptionElement); 
 }
   // Slick version 1.5.8s
 
