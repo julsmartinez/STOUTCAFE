@@ -707,9 +707,6 @@ footer {
     align-items: center;
 }
 
-.grid-quantity, .grid-addtocart {
-}
-
 .popup-title, .popup-price, .popup-number, .popup-description, .variation, .radio-group, .extras, .checkbox-group, .popup-footer {
     margin: 10px 20px 10px 20px;
 }
@@ -871,9 +868,6 @@ footer {
     width: 120px; 
     display: flex;
     align-items: center;
-}
-
-.grid-quantity-new, .grid-addtocart-new {
 }
 
 .popup-title-new, .popup-price-new, .popup-number-new, .popup-description-new, .variation-new, .radio-group-new, .extras-new, .checkbox-group-new, .popup-footer-new {
