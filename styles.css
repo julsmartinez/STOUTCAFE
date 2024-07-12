@@ -173,7 +173,7 @@ header {
     right: 2rem;
     top: 60px;
     height: 0;
-    width: 300px;
+    width: 400px;
     background-color: #00000099;
     backdrop-filter: blur(15px);
     border-radius: 10px;
@@ -317,10 +317,19 @@ header {
 .card {
     width: 270px;
     flex: 0 0 auto;
-    -webkit-box-shadow: 0px 0px 30px -5px rgba(0, 0, 0, 0.70);
+    -webkit-box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.70);
     -moz-box-shadow: 0px 0px 30px -5px rgba(0,0,0,0.70);
-    box-shadow: 0px 0px 30px -5px rgba(0,0,0,0.70);
+    box-shadow: 0px 0px 20px -5px rgba(0,0,0,0.70);
     transition: transform 0.5s ease;
+    background: hsla(289, 100%, 97%, 1);
+
+background: radial-gradient(circle, hsla(289, 100%, 97%, 1) 48%, hsla(0, 0%, 91%, 1) 67%);
+
+background: -moz-radial-gradient(circle, hsla(289, 100%, 97%, 1) 48%, hsla(0, 0%, 91%, 1) 67%);
+
+background: -webkit-radial-gradient(circle, hsla(289, 100%, 97%, 1) 48%, hsla(0, 0%, 91%, 1) 67%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FCEEFF", endColorstr="#E9E9E9", GradientType=1 );
 }
 
 .card-body {
@@ -608,166 +617,150 @@ footer {
     margin-top: -2em;
 }
 
-/*--POPUP*/
-
-.popup-img {
-    position: relative;
-    overflow: hidden;
-    top: -70px;
-    background-color: var(--darkyellow);
-    border-radius: 0px 0px 60px 60px;
-    width: 400px; /* Ensures the image takes full width of its container */
-    height: auto;
-    min-height: 300px;
-}
-
-.variation {
-    padding-bottom: 5px;
-}
 
 
-.popup-price-number {
-    line-height: 3px;
-    padding-bottom: 5px;
-    
-}
-
-.popup-description {
-    font-size: 18px;
-    color: rgb(116, 116, 116);;
-}
-
-.modal-body {
-    position: relative;
-    top: -60px;
-}
-.modal-content {
-    max-width: 80%;
-}
-
-.modal-title {
-    position: relative;
-    top: -50px;
-}
-
-.x-button {
-    background-color: var(--darkyellow);
-    z-index: 9999;
-}
-
-/*--VARIATION--*/
-
-.checkbox-container {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 17px;
-    user-select: none;
-}
-
-.checkbox-container input {
+/*POPUP NA FINAL*/
+.fa-xmark {
+    color: gray;
     position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
+    font-size: 25px;
+    right: -30px;
+    top: 15px;
 }
 
-.checkmark {
-    position: absolute;
+.popup-container {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    position: fixed;
     top: 0;
     left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: #eee;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.checkbox-container:hover input ~ .checkmark {
-    background-color: #ccc;
-}
-
-.checkbox-container input:checked ~ .checkmark {
-    background-color: var(--darkyellow);
-}
-
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-.checkbox-container input:checked ~ .checkmark:after {
-    display: block;
-}
-
-.checkbox-container .checkmark:after {
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    transform: rotate(45deg);
-}
-
-.variation-price {
-    position: absolute;
-    top: 0;
-    left: 85%;
-    color: var(--darkyellow);
-}
-
-.suggestion-box {
     width: 100%;
-    height: 100px;
-    padding: 10px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    resize: none;
-    outline: none;
-    transition: border-color 0.3s;
-}
-
-.suggestion-box:focus {
-    border-color: #66afe9;
-}
-
-/*---QUANTITY----*/
-
-.addtocart {
-    width: 240px;
-    margin-right: 30px;
-}
-
-.quantity-container {
+    height: 100%;
+    border-color: #000000;
     display: flex;
-    position: absolute;
-    left: 20px;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+
+}
+.popup {
+    box-shadow: 0px 0px 30px -5px rgba(0,0,0,0.70);
+    border-style: none;
+    width: 400px;
+    height: 540px;
+    position: relative;
+    align-items: center;
+    border-radius: 20px;
+    background-color: var(--white);
 }
 
-.number {
-    background-color:lightgray;
-    width: 35px;
+.popup-img {
+    display: block;
     position: relative;
-    text-align: center;
-    align-content: center;
-    height: 35px;
+    top: -40px;
+    width: 400px;
+}
+
+.scrollable {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 400px;
+    height: 220px;
+}
+
+.popup-img-container {
+    background-color: var(--darkyellow);
+    height: 270px;
+    border-radius: 20px 20px 40px 40px;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+}
+
+.popup-footer {
+    display: flex;
+    align-items: center; 
+}
+
+.grid-quantity {
+    width: 120px; 
+    display: flex;
+    align-items: center;
+}
+
+.grid-quantity, .grid-addtocart {
+}
+
+.popup-title, .popup-price, .popup-number, .popup-description, .variation, .radio-group, .extras, .checkbox-group, .popup-footer {
+    margin: 10px 20px 10px 20px;
+}
+
+.popup-title {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.popup-price {
+    line-height: 10px;
+}
+
+.popup-number {
+    color: var(--darkyellow);
+    line-height: 20px;
+}
+
+.variation, .extras {
+    font-weight: 550;
+}
+
+.radio, .checkbox {
+    line-height: 20px;
+}
+
+.radio-option, .checkbox-option {
+    margin-right: 10px;
 }
 
 .minus, .plus {
-    width: 30px;
-    position: relative;
-    text-align: center;
-    align-content: center;
-    height: 35px;
+    width: 35px;
     border-style: none;
     background-color: var(--darkyellow);
+    font-size: 18px;
+    height: 31px;
+}
+
+.grid-quantity button {
+    margin: -4px;
+}
+
+.quantity-number {
+    display: inline-flex;
+    background-color: #e9e9e9;
+    font-size: 18px;
+    width: 40px;
+    border: solid var(--darkyellow) 2px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .minus {
@@ -778,175 +771,188 @@ footer {
     border-radius: 0px 10px 10px 0px;
 }
 
-/*-----POPUP PAGE-----*/
+.addtocart {
+    background-color: #000000;
+    color: var(--white);
+    border-style: none;
+    border-radius: 10px;
+    height: 30px;
+    width: 240px;
+    font-size: 15px;
+}
 
-.popup-img-2 {
-    position: relative;
-    overflow: hidden;
-    top: -70px;
+.addtocart:hover{
     background-color: var(--darkyellow);
-    border-radius: 0px 0px 60px 60px;
-    width: 400px; /* Ensures the image takes full width of its container */
-    height: auto;
-    min-height: 300px;
+    color: black;
 }
 
-.variation-2 {
-    padding-bottom: 5px;
-}
-
-
-.popup-price-number-2 {
-    line-height: 3px;
-    padding-bottom: 5px;
-    
-}
-
-.popup-description-2 {
-    font-size: 18px;
-    color: rgb(116, 116, 116);;
-}
-
-.modal-body-2 {
-    position: relative;
-    top: -60px;
-}
-.modal-content-2 {
-    max-width: 80%;
-}
-
-.modal-title-2 {
-    position: relative;
-    top: -50px;
-}
-
-.x-button-2 {
-    background-color: var(--darkyellow);
-    z-index: 9999;
-}
-
-/*--VARIATION--*/
-
-.checkbox-container-2 {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 17px;
-    user-select: none;
-}
-
-.checkbox-container-2 input {
+/*NEW POPUP NA FINAL */
+.fa-xmark-new {
+    color: gray;
     position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
+    font-size: 25px;
+    right: -30px;
+    top: 15px;
 }
 
-.checkmark-2 {
-    position: absolute;
+.popup-container-new {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    position: fixed;
     top: 0;
     left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: #eee;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.checkbox-container-2:hover input ~ .checkmark-2 {
-    background-color: #ccc;
-}
-
-.checkbox-container-2 input:checked ~ .checkmark-2 {
-    background-color: var(--darkyellow);
-}
-
-.checkmark-2:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-.checkbox-container-2 input:checked ~ .checkmark-2:after {
-    display: block;
-}
-
-.checkbox-container-2 .checkmark-2:after {
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    transform: rotate(45deg);
-}
-
-.variation-price-2 {
-    position: absolute;
-    top: 0;
-    left: 85%;
-    color: var(--darkyellow);
-}
-
-.suggestion-box-2 {
     width: 100%;
-    height: 100px;
-    padding: 10px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    resize: none;
-    outline: none;
-    transition: border-color 0.3s;
-}
-
-.suggestion-box-2:focus {
-    border-color: #66afe9;
-}
-
-/*---QUANTITY----*/
-
-.addtocart-2 {
-    width: 240px;
-    margin-right: 30px;
-}
-
-.quantity-container-2 {
+    height: 100%;
+    border-color: #000000;
     display: flex;
-    position: absolute;
-    left: 20px;
+    justify-content: center;
+    align-items: center;
 }
 
-.number-2 {
-    background-color:lightgray;
+.popup-new {
+    box-shadow: 0px 0px 30px -5px rgba(0,0,0,0.70);
+    border-style: none;
+    width: 400px;
+    height: 540px;
+    position: relative;
+    align-items: center;
+    border-radius: 20px;
+    background-color: var(--white);
+}
+
+.popup-img-new {
+    display: block;
+    position: relative;
+    top: -40px;
+    width: 400px;
+}
+
+.scrollable-new {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 400px;
+    height: 220px;
+}
+
+.popup-img-container-new {
+    background-color: var(--darkyellow);
+    height: 270px;
+    border-radius: 20px 20px 40px 40px;
+}
+
+.radio-group-new {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.radio-group-new label {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-group-new {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox-group-new label {
+    display: flex;
+    align-items: center;
+}
+
+.popup-footer-new {
+    display: flex;
+    align-items: center; 
+}
+
+.grid-quantity-new {
+    width: 120px; 
+    display: flex;
+    align-items: center;
+}
+
+.grid-quantity-new, .grid-addtocart-new {
+}
+
+.popup-title-new, .popup-price-new, .popup-number-new, .popup-description-new, .variation-new, .radio-group-new, .extras-new, .checkbox-group-new, .popup-footer-new {
+    margin: 10px 20px 10px 20px;
+}
+
+.popup-title-new {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.popup-price-new {
+    line-height: 10px;
+}
+
+.popup-number-new {
+    color: var(--darkyellow);
+    line-height: 20px;
+}
+
+
+.variation-new, .extras-new {
+    font-weight: 550;
+}
+
+.radio-new, .checkbox-new {
+    line-height: 20px;
+}
+
+.radio-option-new, .checkbox-option-new {
+    margin-right: 10px;
+}
+
+.minus-new, .plus-new {
     width: 35px;
-    position: relative;
-    text-align: center;
-    align-content: center;
-    height: 35px;
-}
-
-.minus-2, .plus-2 {
-    width: 30px;
-    position: relative;
-    text-align: center;
-    align-content: center;
-    height: 35px;
     border-style: none;
     background-color: var(--darkyellow);
+    font-size: 18px;
+    height: 31px;
 }
 
-.minus-2 {
+.grid-quantity-new button {
+    margin: -4px;
+}
+
+.quantity-number-new {
+    display: inline-flex;
+    background-color: #e9e9e9;
+    font-size: 18px;
+    width: 40px;
+    border: solid var(--darkyellow) 2px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.minus-new {
     border-radius: 10px 0px 0px 10px;
 }
 
-.plus-2 {
+.plus-new {
     border-radius: 0px 10px 10px 0px;
 }
+
+.addtocart-new {
+    background-color: #000000;
+    color: var(--white);
+    border-style: none;
+    border-radius: 10px;
+    height: 30px;
+    width: 240px;
+    font-size: 15px;
+}
+
+.addtocart-new:hover{
+    background-color: var(--darkyellow);
+    color: black;
+}
+
 @media (max-width: 992px) {
     .navbar .links,
     .navbar .action-btn {

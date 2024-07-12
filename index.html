@@ -19,7 +19,7 @@
             <ul class="links">
                 <li><a href="index.html" class="nav-linkk">HOME</a></li>
                 <li><a href="menu.html" class="nav-linkk">MENU</a></li>
-                <li><a href="#" class="nav-linkk">ABOUT</a></li>
+                <li><a href="about.html" class="nav-linkk">ABOUT</a></li>
                 <li><a href="#" class="nav-linkk">CONTACT</a></li>
             </ul>
             <div class="cart-btn">
@@ -30,14 +30,14 @@
             </div>
             <a href="#" class="action-btn">Login</a>
             <div class="toggle-btn">
-                <i class="fa-solid fa-bars" ></i>
+                <i class="fa-solid fa-bars" ></i> 
             </div>
         </div>
 
         <div class="dropdown_menu closed">
             <li><a href="index.html" class="nav-linkk">HOME</a></li>
             <li><a href="menu.html" class="nav-linkk">MENU</a></li>
-            <li><a href="#" class="nav-linkk">ABOUT</a></li>
+            <li><a href="about.html" class="nav-linkk">ABOUT</a></li>
             <li><a href="#" class="nav-linkk">CONTACT</a></li>
             <li><a href="#" class="nav-linkk">CART</a></li>
             <li><a href="#" class="action-btn-dd">LOGIN</a></li>
@@ -238,71 +238,59 @@
                 <button id="backtotop">Back to top</button>
             </div>
 
-            <!--POP UP-->
+                <!--POPUP NA FINAL-->
 
-            <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-    Launch static backdrop modal
-  </button>
-  
-  <!-- Modal Popup -->
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable d-flex justify-content-center align-items-center">
-        <div class="modal-content rounded-5">
-            <div class="x-button">
-                <button type="button" class="btn-close p-4 " data-bs-dismiss="modal" aria-label="Close"></button>
-
+    <div class="popup-container">
+        <i class="fa-solid fa-xmark"></i>
+        <div class="popup">
+            <div class="popup-img-container">
+                <img src="products/latte.png" alt="" class="popup-img">
             </div>
-        <img class="popup-img" src="products/latte.png" alt="">
-            <h3 class="modal-title px-4 popup-product" id="staticBackdropLabel">Latte</h3>
-        <div class="modal-body px-4">
+            <div class="scrollable">
+                <h3 class="popup-title">Product Name</h3>
             <p class="popup-price">Price:</p>
-            <h4 class="popup-price-number">P125</h4>
-            <p class="popup-description">Espresso over sweet milk</p>
+            <h4 class="popup-number">P???</h4>
+            <p class="popup-description">Description</p>
             <hr>
-
-            <div class="add-ons">
-                <h5 class="variation">Variation (Select 1)</h5>
-                <form>
-                    <label class="checkbox-container">Hot (8oz)
-                        <input type="checkbox" name="option1">
-                        <span class="checkmark"></span>
-                        <h5 class="variation-price">P125</h5>
-                    </label>
-                    <label class="checkbox-container">Hot (10oz)
-                        <input type="checkbox" name="option2">
-                        <span class="checkmark"></span>
-                        <h5 class="variation-price">P135</h5>
-                    </label>
-                    <label class="checkbox-container">Iced (16oz)
-                        <input type="checkbox" name="option3">
-                        <span class="checkmark"></span>
-                        <h5 class="variation-price">P145</h5>
-                    </label>
-                    <hr>
-                    <h5>Special Instructions</h5>
-                    <textarea id="suggestions" name="suggestions" class="suggestion-box" placeholder="Enter your special instructions here..."></textarea>
-                </form>
+            <h6 class="variation">Variation (Select 1)</h6>
+            <div class="radio-group">
+                <label class="radio">
+                    <input class="radio-option" type="radio" name="option" value="1">
+                    Hot (8oz)
+                </label>
+                <label class="radio">
+                    <input class="radio-option" type="radio" name="option" value="2">
+                    Hot (10oz)
+                </label>
+                <label class="radio">
+                    <input class="radio-option" type="radio" name="option" value="3">
+                    Hot (16oz)
+                </label>
+            </div>
+            <hr>
+            <h6 class="extras">Extras </h6>
+            <div class="checkbox-group">
+                <label class="checkbox">
+                    <input class="checkbox-option" type="checkbox" name="option" value="1">
+                    Shot of Espresso
+                </label>
             </div>
         </div>
-            
-        <div class="modal-footer  align-items-center">
-
-                <div class="quantity-container">
-                    <button class="minus">
-                        +
-                    </button>
-                    <span class="number">0</span>
-                    <button class="plus">
-                        -
-                    </button>
-                </div>
-                
-                <button type="button" class="btn btn-primary addtocart">Add to Cart</button>
+        <div class="popup-footer">
+            <div class="grid-quantity">
+                <button class="minus">-</button>
+                <span class="quantity-number">0</span>
+                <button class="plus">+</button>
             </div>
+            <div class="grid-addtocart">
+                <button class="addtocart">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+        </div>
     </div>
-    </div>
-</div>
+
 
             <div class="footer-container">
                 <footer>
