@@ -780,26 +780,173 @@ footer {
 
 /*-----POPUP PAGE-----*/
 
-.popup-image {
-
+.popup-img-2 {
+    position: relative;
+    overflow: hidden;
+    top: -70px;
+    background-color: var(--darkyellow);
+    border-radius: 0px 0px 60px 60px;
+    width: 400px; /* Ensures the image takes full width of its container */
+    height: auto;
+    min-height: 300px;
 }
 
-.popup-title {
-
+.variation-2 {
+    padding-bottom: 5px;
 }
 
-.popup-price-2 {
-
-}
 
 .popup-price-number-2 {
-
+    line-height: 3px;
+    padding-bottom: 5px;
+    
 }
 
-.popup-descrition-2 {
-
+.popup-description-2 {
+    font-size: 18px;
+    color: rgb(116, 116, 116);;
 }
 
+.modal-body-2 {
+    position: relative;
+    top: -60px;
+}
+.modal-content-2 {
+    max-width: 80%;
+}
+
+.modal-title-2 {
+    position: relative;
+    top: -50px;
+}
+
+.x-button-2 {
+    background-color: var(--darkyellow);
+    z-index: 9999;
+}
+
+/*--VARIATION--*/
+
+.checkbox-container-2 {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 17px;
+    user-select: none;
+}
+
+.checkbox-container-2 input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.checkbox-container-2:hover input ~ .checkmark-2 {
+    background-color: #ccc;
+}
+
+.checkbox-container-2 input:checked ~ .checkmark-2 {
+    background-color: var(--darkyellow);
+}
+
+.checkmark-2:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container-2 input:checked ~ .checkmark-2:after {
+    display: block;
+}
+
+.checkbox-container-2 .checkmark-2:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+.variation-price-2 {
+    position: absolute;
+    top: 0;
+    left: 85%;
+    color: var(--darkyellow);
+}
+
+.suggestion-box-2 {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    resize: none;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.suggestion-box-2:focus {
+    border-color: #66afe9;
+}
+
+/*---QUANTITY----*/
+
+.addtocart-2 {
+    width: 240px;
+    margin-right: 30px;
+}
+
+.quantity-container-2 {
+    display: flex;
+    position: absolute;
+    left: 20px;
+}
+
+.number-2 {
+    background-color:lightgray;
+    width: 35px;
+    position: relative;
+    text-align: center;
+    align-content: center;
+    height: 35px;
+}
+
+.minus-2, .plus-2 {
+    width: 30px;
+    position: relative;
+    text-align: center;
+    align-content: center;
+    height: 35px;
+    border-style: none;
+    background-color: var(--darkyellow);
+}
+
+.minus-2 {
+    border-radius: 10px 0px 0px 10px;
+}
+
+.plus-2 {
+    border-radius: 0px 10px 10px 0px;
+}
 @media (max-width: 992px) {
     .navbar .links,
     .navbar .action-btn {
