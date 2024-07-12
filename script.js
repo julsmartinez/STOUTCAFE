@@ -101,6 +101,6 @@ for (var j = 0; j < homeProductsButtonsCount; j++){
 }
 
 function addToCard(element){
-
+    
 }
   // Slick version 1.5.8s
