@@ -76,51 +76,117 @@ function scrollFunction(element){
 
 // Add to cart function
 var homeProductsButtonsCount = document.querySelectorAll(".product-link").length;
-var homeProductImages = [];
-var homeProductNames = [];
-var homeProductPrices = [];
-var quantity;
+var quantity = 1;
+var imageSource;
+var nameOfProduct;
+var tempPriceOfProduct;
+var priceOfProduct;
+var descriptionOfProduct;
 for (var j = 0; j < homeProductsButtonsCount; j++){
     document.querySelectorAll(".product-link")[j].addEventListener("click", function(event){
         event.preventDefault();
         // Store source attribute value to array of images
-        var imageSource = this.querySelector("img").getAttribute("src");
-        homeProductImages.push(imageSource);
+        imageSource = this.querySelector("img").getAttribute("src");
 
         // Store name of product to array of names
-        var nameOfProduct = this.querySelector("h5").innerHTML;
-        homeProductNames.push(nameOfProduct);
+        nameOfProduct = this.querySelector("h5").innerHTML;
 
         // Store price of product to array of price
-        var priceOfProduct = this.querySelector("h4").innerHTML;
-        homeProductPrices.push(priceOfProduct.slice(1, priceOfProduct.length));
+        tempPriceOfProduct = this.querySelector("h4").innerHTML;
+        priceOfProduct = tempPriceOfProduct.slice(1, tempPriceOfProduct.length);
 
-        var descriptionOfProduct = this.querySelector("p").innerHTML;
-        addToPopUpCard(imageSource, nameOfProduct, priceOfProduct, descriptionOfProduct);
+        descriptionOfProduct = this.querySelector("p.card-text").innerHTML;
+
+        addDetailsToPopupCard(imageSource, nameOfProduct, priceOfProduct, descriptionOfProduct);
     });
 }
 
+// override button click on drinks
+$(".coffee-container").on("click", function(){
+    $(".extras").css("visibility", "visible");
+    $(".checkbox-group").css("visibility", "visible");
+    $(".variation").css("visibility", "visible");
+    $(".radio-group").css("visibility", "visible");
+    $('.scrollable').css("overflow-y", "scroll");
+});
+
+$(".non-coffee-container").on("click", function(){
+    $(".variation").css("visibility", "visible");
+    $(".radio-group").css("visibility", "visible");
+    $('.scrollable').css("overflow-y", "scroll");
+});
+
+$(".tea-container").on("click", function(){
+    $(".variation").css("visibility", "visible");
+    $(".radio-group").css("visibility", "visible");
+    $('.scrollable').css("overflow-y", "scroll");
+});
+
 // Add details to popup card 
 function addDetailsToPopupCard(image, productName, price, description){
-    let imageElement = $(".popup-img");
+    let imageElement = $(".popup-img-container > img");
     imageElement.attr("src", image);
     
     let nameElement = $(".popup-title");
     nameElement.text(productName);
 
-    let priceElement = $(".popup-price");
+    let priceElement = $(".popup-number");
     priceElement.text("₱" + price);
 
     let descriptionElement = $(".popup-description");
     descriptionElement.text(description);
-
-    console.log(imageElement + "\n" + nameElement + "\n" + priceElement + "\n" + descriptionElement); 
+    $(".extras").css("visibility", "hidden");
+    $(".checkbox-group").css("visibility", "hidden");
+    $(".variation").css("visibility", "hidden");
+    $(".radio-group").css("visibility", "hidden");
+    $('.popup-container').css('visibility', 'visible');
+    $('.scrollable').animate({scrollTop: 0},10);
+    $('.scrollable').css("overflow-y", "hidden");
+    $('body').css("overflow", "hidden");
 }
 
-// Adding Price, Quantity
+// Close button to popup card
+$("i.fa-xmark").on("click", function(){
+    // close/hide the popup container
+    $('.popup-container').css('visibility', 'hidden');
+    $('body').css("overflow", "visible");
+    $(".variation").css("visibility", "hidden");
+    $(".radio-group").css("visibility", "hidden");
+    $(".extras").css("visibility", "hidden");
+    $(".checkbox-group").css("visibility", "hidden");
+    $('.scrollable').css("overflow", "hidden");
+});
+
+// Adding Price, Quantity, Variation value, Extras
+$(".plus").on("click", function(){
+    quantity++;
+    $(".quantity-number").text(quantity);
+});
+$(".minus").on("click", function(){
+    quantity--;
+    $(".quantity-number").text(quantity);
+});
+
+// Taking values of radio button and checkbox checked
+$(".radio-option").on("click",function(){
+    var selectedVariation = $("input:checked").attr("value");
+    alert(selectedVariation);
+});
+
+$(".checkbox-option").on("click", function(){
+    var checkedEspresso = $(".checkbox-option").attr("value");
+    alert(checkedEspresso);
+});
+
+// Add To cart button function
+$(".addtocart").on("click", function(){
+    var totalPriceOfProduct = priceOfProduct * quantity;
+    alert(totalPriceOfProduct);
+    // next create element for add to cart page
+})
 // Login function
 // Signup function
-  // Slick version 1.5.8s
+// Slick version 1.5.8s
 
 
   
