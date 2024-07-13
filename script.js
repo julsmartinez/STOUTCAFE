@@ -116,6 +116,10 @@ function addDetailsToPopupCard(image, productName, price, description){
 
     console.log(imageElement + "\n" + nameElement + "\n" + priceElement + "\n" + descriptionElement); 
 }
+
+// Adding Price, Quantity
+// Login function
+// Signup function
   // Slick version 1.5.8s
 
 
