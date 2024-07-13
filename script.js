@@ -170,18 +170,15 @@ $(".minus").on("click", function(){
 // Taking values of radio button and checkbox checked
 $(".radio-option").on("click",function(){
     var selectedVariation = $("input:checked").attr("value");
-    alert(selectedVariation);
 });
 
 $(".checkbox-option").on("click", function(){
     var checkedEspresso = $(".checkbox-option").attr("value");
-    alert(checkedEspresso);
 });
 
 // Add To cart button function
 $(".addtocart").on("click", function(){
     var totalPriceOfProduct = priceOfProduct * quantity;
-    alert(totalPriceOfProduct);
     // next create element for add to cart page
 })
 // Login function

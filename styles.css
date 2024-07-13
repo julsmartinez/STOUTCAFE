@@ -558,7 +558,7 @@ footer {
     position: sticky;
     top: 0;
     background-color: var(--darkyellow);
-    z-index: 99999;
+    z-index: 99;
     justify-content: center;
     align-items: center;
 
@@ -623,10 +623,10 @@ footer {
 .fa-xmark {
     color: rgb(44, 44, 44);
     position: absolute;
-    font-size: 25px;
-    right: 830px;
-    top: 270px;
-    z-index: 201;
+    margin: 15px;
+    right: 10px;
+    z-index: 1000;
+    cursor: pointer;
 }
 
 .popup-container {
@@ -689,7 +689,7 @@ footer {
 
 .checkbox-group {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: 10px;
 }
 
