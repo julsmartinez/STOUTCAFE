@@ -554,7 +554,7 @@ footer {
 .categories-cont {
     margin-bottom: 4em;
     padding-top: 0.3em;
-    height: 3em;
+    height: 3.3em;
     position: sticky;
     top: 0;
     background-color: var(--darkyellow);
@@ -586,6 +586,10 @@ footer {
 .categories-icon {
     margin-right: 10px; 
     transition: color 0.3s ease, opacity 0.3s ease;}
+
+.nav-link:active {
+    color: var(--white);
+}
 
 .nav-link:hover .categories-icon {
     color: var(--white); 
@@ -648,8 +652,8 @@ footer {
 .popup {
     box-shadow: 0px 0px 30px -5px rgba(0,0,0,0.70);
     border-style: none;
-    width: 400px;
-    height: 540px;
+    width: 500px;
+    height: 700px;
     position: relative;
     align-items: center;
     border-radius: 20px;
@@ -660,19 +664,19 @@ footer {
     display: block;
     position: relative;
     top: -40px;
-    width: 400px;
+    width: 500px;
 }
 
 .scrollable {
     overflow-y: scroll;
     overflow-x: hidden;
-    width: 400px;
-    height: 220px;
+    width: 500px;
+    height: 300px;
 }
 
 .popup-img-container {
     background-color: var(--darkyellow);
-    height: 270px;
+    height: 340px;
     border-radius: 20px 20px 40px 40px;
 }
 
@@ -681,6 +685,8 @@ footer {
     flex-direction: column;
     gap: 10px;
 }
+
+.radio-option
 
 .radio-group label {
     display: flex;
@@ -727,17 +733,27 @@ footer {
     line-height: 20px;
 }
 
+.popup-description {
+    font-size: 18px;
+}
 
 .variation, .extras {
     font-weight: 550;
+    font-size: 18px;
 }
 
 .radio, .checkbox {
     line-height: 20px;
+    font-size: 18px;
+    cursor: pointer;
 }
 
 .radio-option, .checkbox-option {
     margin-right: 10px;
+}
+
+.radio-option {
+    cursor: pointer;
 }
 
 .minus, .plus {
