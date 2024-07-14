@@ -332,6 +332,21 @@ $(".addtocart").on("click", function(){
         alert("Please select a size of drinks first!");
     }
 })
+
 // Login function
+var usernames = ["user@gmail.com"];
+var passwords = ["lucky123"];
+var newUsername;
+var newPassword;
+$(".login").on("click", function(){
+    let usernameInput = $("#username").text;
+    let passwordInput = $("#password").text;
+
+    for(var i = 0; i < usernames.length; i++){
+        if(usernameInput === usernames[i] && passwordInput === passwords[i]){
+            
+        }
+    }
+});
 // Signup function
 // Slick version 1.5.8s
