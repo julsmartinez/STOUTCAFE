@@ -859,7 +859,10 @@ footer {
     background-color: var(--darkyellow);
     color: black;
 }
-
+.addtocart:active{
+    background-color: #000000;
+    color: var(--white);
+}
 /*-----CART PAGE------*/
 
 .cartpage {
@@ -870,7 +873,7 @@ footer {
     background-color: #00000044;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    display: flex;
+    display: none;
     flex-wrap: wrap ;
     justify-content: center;
     gap: 15px;
@@ -915,6 +918,7 @@ footer {
 .items {
     overflow: scroll;
     overflow-x: hidden;
+    position: relative;
     padding-left: 20px;
     height: 650px;
 }
@@ -974,7 +978,7 @@ footer {
 .fa-trash {
     color: gray;
     position: absolute;
-    right: -310px;
+    left: 400px;
     cursor: pointer;
     font-size: 23px;
     top: -5px;
@@ -989,9 +993,8 @@ footer {
 }
 
 .cart-quantity {
-    position: relative;
-    right: -155px;
-    top: 10px;
+    position: absolute;
+    left: 500px;
 }
 
 .cart-minus, .cart-plus {
@@ -1006,7 +1009,6 @@ footer {
 
 .cart-quantity-number {
     padding: 0px 10px;
-
 }
 
 /*----INFORMATION----*/
