@@ -77,7 +77,6 @@ function scrollFunction(element){
 // Add to cart function
 var homeProductsButtonsCount = document.querySelectorAll(".product-link").length;
 var quantity = 1;
-var drinks = 0;
 var imageSource;
 var nameOfProduct;
 var tempPriceOfProduct;
@@ -203,7 +202,6 @@ $(".rice").on("click", function(){
 
 // Add details to popup card 
 function addDetailsToPopupCard(image, productName, price, description){
-    drinks = 0;
     let imageElement = $(".popup-img-container > img");
     imageElement.attr("src", image);
     
@@ -250,6 +248,10 @@ function addDetailsToPopupCard(image, productName, price, description){
 
 // Close button to popup card
 $("i.fa-xmark").on("click", function(){
+    hidePreviewProductElements();
+});
+
+function hidePreviewProductElements(){
     // close/hide the popup container
     $(".radio-group").css("display", "none");
     $(".checkbox-group").css("display", "none");
@@ -258,7 +260,7 @@ $("i.fa-xmark").on("click", function(){
     $(".extras").css("display", "none");
 
     $('.popup-container').css('visibility', 'hidden');
-    
+
     $(".espressoDrinks").css("visibility", "hidden");
     $(".allPasta").css("visibility", "hidden");
     $(".riceBowls").css("visibility", "hidden");
@@ -267,8 +269,7 @@ $("i.fa-xmark").on("click", function(){
     $(".size").css("visibility", "hidden");
     $('.scrollable').css("overflow", "hidden");
     $('body').css("overflow", "visible");
-});
-
+}
 // Adding Price, Quantity, Variation value, Extras
 $(".plus").on("click", function(){
     quantity++;
@@ -311,43 +312,178 @@ $(".checkbox-option").on("change", function(){
     const item = $(this).val();
 
     if ($(this).prop('checked')) {
-        selectedExtras.push(item); // Add item if checked
+        selectedExtras.push(" " + item); // Add item if checked
     } else {
         removeItem(selectedExtras, item); // Remove item if unchecked
     }
 });
-
+// Cart icon click
+$(".cart-link").on("click", function(){
+    $(".cartpage").css("display", "flex");
+    $("body").css("overflow", "hidden");
+});
+// Back button inside cart page
+$(".back").on("click", function(){
+    $(".cartpage").css("display", "none");
+    $('body').css("overflow", "visible");
+});
 // Add To cart button function
+var totalPriceOfProduct = 0;
+var quantityInCart = 0;
 $(".addtocart").on("click", function(){
     if(check === true && quantity !== 0){
-        var totalPriceOfProduct = priceOfProduct * quantity;
+            totalPriceOfProduct = priceOfProduct * quantity;
             // next create element for add to cart page
             if(selectedVariation === undefined || selectedExtras === undefined){
                 selectedVariation = "";
                 selectedExtras = ""
             }
-            alert(imageSource + "\nName:" + nameOfProduct + "\nPrice: " + totalPriceOfProduct + "\nDescription: " + descriptionOfProduct + "\nSelected Variation: " + selectedVariation + "\nSelected Extras: " + selectedExtras);
+
+            quantityInCart += quantity;
+            $(".quantity").text(quantityInCart.toString());
+            addItemToCart(quantity);
+            alert("Successfully added to the cart!");
+
+            // Hide all elements in preview product
+            hidePreviewProductElements();
+            
     }
     else{
-        alert("Please select a size of drinks first!");
-    }
-})
-
-// Login function
-var usernames = ["user@gmail.com"];
-var passwords = ["lucky123"];
-var newUsername;
-var newPassword;
-$(".login").on("click", function(){
-    let usernameInput = $("#username").text;
-    let passwordInput = $("#password").text;
-
-    for(var i = 0; i < usernames.length; i++){
-        if(usernameInput === usernames[i] && passwordInput === passwords[i]){
-            
-        }
+        alert("Please select a variation first!");
     }
 });
+
+//adding item from popup preview product
+function addItemToCart(quantityValue){
+    if(selectedVariation !== "8oz" && selectedVariation !== "solo" && selectedVariation !== ""){
+        totalPriceOfProduct += 30;
+    }
+    if(selectedExtras !== ""){
+        totalPriceOfProduct += 45;
+    }
+    // cart-items-container
+    const newDiv1 = document.createElement("div");
+    newDiv1.classList.add("cart-items-container");
+    $(".items").last().append(newDiv1);
+
+    // cart-items-container
+    const newDiv2 = document.createElement("div");
+    newDiv2.classList.add("cart-img-container" );
+    $(".cart-items-container").last().append(newDiv2);
+    // Image
+    const newImage1 = document.createElement("img");
+    newImage1.classList.add("cart-img");
+    newImage1.setAttribute("src", imageSource);
+    $(".cart-img-container").last().append(newImage1);
+
+    // text-container
+    const newDiv3 = document.createElement("div");
+    newDiv3.classList.add("text-container");
+    $(".cart-items-container").last().append(newDiv3);
+    // i tag (trash icon)
+    const newItag1 = document.createElement("i");
+    newItag1.classList.add("fa-solid");
+    newItag1.classList.add("fa-trash");
+    $(".text-container").last().append(newItag1);
+    // Product name (h5)
+    const newHeader5 = document.createElement("h5");
+    newHeader5.classList.add("cart-items-title");
+    newHeader5.innerText = nameOfProduct;
+    $(".text-container").last().append(newHeader5);
+    // Price
+    const newParagraph1 = document.createElement("p");
+    newParagraph1.classList.add("cart-items-price");
+    newParagraph1.innerText = "Price: " + totalPriceOfProduct.toString();
+    $(".text-container").last().append(newParagraph1);
+    // Size
+    const newParagraph2 = document.createElement("p");
+    newParagraph2.classList.add("cart-items-size");
+    newParagraph2.innerText = "Variation: " + selectedVariation;
+    $(".text-container").last().append(newParagraph2);
+    // Extras
+    const newParagraph3 = document.createElement("p");
+    newParagraph3.classList.add("cart-items-extras");
+    newParagraph3.innerText = "Extras: " + selectedExtras;
+    $(".text-container").last().append(newParagraph3);
+
+    // Cart quantity
+    const newDiv4 = document.createElement("div");
+    newDiv4.classList.add("cart-quantity");
+    $(".cart-items-container").last().append(newDiv4);
+    // Minus button
+    const newButton1 = document.createElement("button");
+    newButton1.classList.add("cart-minus");
+    $(newButton1).text("-");
+    $(".cart-quantity").last().append(newButton1);
+    // Span quantity
+    const newSpan1 = document.createElement("span");
+    newSpan1.classList.add("cart-quantity-number");
+    newSpan1.setAttribute("data-quantity", quantityValue.toString());
+    $(newSpan1).text(quantityValue.toString());
+    $(".cart-quantity").last().append(newSpan1);
+    
+    // Add button
+    const newButton2 = document.createElement("button");
+    newButton2.classList.add("cart-plus");
+    $(newButton2).text("+");
+    $(".cart-quantity").last().append(newButton2);
+
+}
+// Delete an order
+$(document).on("click", ".fa-trash", function() {
+    let quantityElement = $(this).closest(".cart-items-container").find(".cart-quantity-number");
+    let deletedQuantity = parseInt(quantityElement.attr("data-quantity"));
+    quantityInCart -= deletedQuantity;
+    $(".quantity").text(quantityInCart.toString());
+    $(this).closest(".cart-items-container").remove();
+    
+});
+// Quantity buttons
+$(document).on("click", ".cart-minus", function() {
+    let quantityElement = $(this).siblings(".cart-quantity-number");
+    let currentQuantity = parseInt(quantityElement.text());
+
+    if (currentQuantity > 1) {
+        currentQuantity--;
+        quantityElement.text(currentQuantity);
+
+        let priceElement = $(this).closest(".cart-items-container").find(".cart-items-price");
+        let unitPrice = totalPriceOfProduct;
+
+        let newTotalPrice = unitPrice * currentQuantity;
+        priceElement.text("Price: " + newTotalPrice.toFixed(2));
+    }
+});
+
+$(document).on("click", ".cart-plus", function() {
+    let quantityElement = $(this).siblings(".cart-quantity-number");
+    let currentQuantity = parseInt(quantityElement.text());
+
+    currentQuantity++;
+    quantityElement.text(currentQuantity);
+
+    let priceElement = $(this).closest(".cart-items-container").find(".cart-items-price");
+    let unitPrice = totalPriceOfProduct;
+
+    let newTotalPrice = unitPrice * currentQuantity;
+    priceElement.text("Price: " + newTotalPrice.toFixed(2));
+});
+
+// Login function
+// var usernames = ["user@gmail.com"];
+// var passwords = ["lucky123"];
+// var newUsername;
+// var newPassword;
+// $(".login").on("click", function(){
+//     let usernameInput = $("#username").text;
+//     let passwordInput = $("#password").text;
+
+//     for(var i = 0; i < usernames.length; i++){
+//         if(usernameInput === usernames[i] && passwordInput === passwords[i]){
+            
+//         }
+//     }
+// });
 // Signup function
 // Slick version 1.5.8s
 
