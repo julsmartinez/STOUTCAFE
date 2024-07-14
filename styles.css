@@ -875,6 +875,7 @@ footer {
     justify-content: center;
     gap: 15px;
     z-index: 10;
+    overflow: scroll;
 }
 
 .mycart {
@@ -935,6 +936,7 @@ footer {
     font-weight: 600;
     position: relative;
     top: -15px;
+    color: black;
 
 }
 
@@ -959,6 +961,7 @@ footer {
 
 .cart-items-title {
     margin-bottom: 20px;
+    color: black;
 }
 
 .cart-items-price {
@@ -1017,15 +1020,131 @@ footer {
     width: 500px;
     border-radius: 20px;
     box-shadow: 0px 0px 20px -5px rgba(0,0,0,0.70);
+    position: relative;
+    padding: 20px 20px;
+}
+
+.delivery-address  {
+    display: flex;
+    padding: 20px;
+}
+
+.map {
+    height: 100px;
+}
+
+.info {
+    justify-content: flex-start;
+}
+
+.delivery-title {
+    margin: 10px 0px 0px 20px;
+    font-weight: 550;
+    line-height: 15px;
+    color: black;
 
 }
 
-.delivery-address {
-    background-color: #dbdbdb;
-    height: 100px;
+.name, .phone-number, .complete-address {
+    margin: 10px 0px 0px 20px;
+    font-weight: 500;
+    line-height: 12px;
+    text-align: left;
+}
+
+.edit {
     width: 460px;
-    margin: 20px 20px;
-    border-radius: 15px;
+    background-color: #ffffff70;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 5px;
+}
+
+
+
+/*----DIALOG----*/
+
+dialog {
+    height: 500px;
+    width: 400px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 30px -5px rgba(0,0,0,0.70);
+
+}
+
+.dialog {
+    position: absolute;
+    top: 22%;
+    left: 14.5%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+    padding: 20px;
+}
+
+.save {
+    position: fixed;
+    bottom: -460px;
+    right: -340px;
+    padding: 7px 30px;
+    border-radius: 10px;
+    font-weight: 500px;
+    background-color: var(--darkyellow);
+    border: solid 2px #8a8a8a;
+}
+
+.close {
+    position: fixed;
+    bottom: -460px;
+    right: -225px;
+    padding: 7px 30px;
+    border-radius: 10px;
+    font-weight: 500px;
+    background-color: #ebebeb;
+    border: solid 2px #8a8a8a;
+
+}
+
+.fullname, .contact-number, .dialog-address-1, .dialog-address-2, .dialog-address-3, .dialog-address-4{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 8px;
+    border-radius: 10px;
+}
+
+.contact-number {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.special-instructions, .payment-method{
+    margin-top: 15px;
+    line-height: 10px;
+}
+
+.instruction-box {
+    height: 150px;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    margin-bottom: 8px;
+    border-radius: 10px;
+
+}
+
+#textbox {
+    height: 100px;
+    width: 100%;
+    border: none;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    padding: 10px;
+    resize: none;
 }
 
 @media (max-width: 992px) {
