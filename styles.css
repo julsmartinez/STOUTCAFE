@@ -46,8 +46,8 @@ li {
     font-family: "Poppins";
     font-weight: 580;
     transition: transform 0.3s ease;
-
 }
+
 
 .nav-linkk:hover {
     color:#FAD02C;
@@ -60,7 +60,6 @@ header {
     top: 0;
     z-index: 1000;
     width: 100%;
-    
 }   
 
 .navbar {
@@ -142,19 +141,19 @@ header {
 }
 
 .quantity{
-    color: rgb(245, 237, 126);
-    border-radius: 8px;
-    width: 17px;
-    height: 21px;
+    color: rgb(255, 255, 255);
+    border-radius: 50px;
+    width: 20px;
+    height: 20px;
     background-color: red;
-    font-size: 20px;
+    font-size: 15px;
     position: absolute;
     right: 179px;
-    top: -30px;
+    top: -27px;
     display: flex;
     justify-content: center;
+    text-align: center;
     align-items: center;
-    font-size: 15px;
 }
 
 #cart {
@@ -353,27 +352,86 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FCEEFF", en
     background-color: var(--darkyellow);
 }
 
-.col:hover .img-container-pink {
-    background-color: rgb(255, 86, 114);
+.col:hover .americano {
+    background-color: rgb(155, 139, 115);
 }
 
-.col:hover .img-container-blue {
-    background-color: rgb(59, 59, 255);
+.col:hover .tiramisu {
+    background-color: rgb(85, 76, 64);
 }
 
-.col:hover .img-container-yellow {
-    background-color: var(--darkyellow);
+.col:hover .latte    {
+    background-color: rgb(192, 185, 119);
 }
 
-.col:hover .img-container-coffee {
-    background-color:#64361c;
+.col:hover .matchalatte {
+    background-color: rgb(192, 185, 119);
+}
+
+.col:hover .capuccino {
+    background-color: rgb(226, 217, 137);
+}
+
+.col:hover .butterscotch {
+    background-color: rgb(241, 215, 68);
+}
+
+.col:hover .mochtab {
+    background-color: rgb(129, 111, 61);
+}
+
+.col:hover .whitemocha {
+    background-color: rgb(247, 233, 194);
+}
+
+.col:hover .tableya {
+    background-color: rgb(223, 210, 177);
+}
+
+.col:hover .horchata {
+    background-color: rgb(250, 227, 169);
+}
+
+.col:hover .dalgona {
+    background-color: rgb(221, 196, 51);
+}
+
+.col:hover .strawberrysup {
+    background-color: rgb(255, 124, 196);
+}
+
+.col:hover .lemon {
+    background-color: rgb(255, 243, 131);
+}
+
+.col:hover .strawberrylemonade {
+    background-color: rgb(255, 83, 83);
+}
+
+.col:hover .hibiscus {
+    background-color: rgb(255, 83, 83);
+}
+.col:hover .cake {
+    background-color: rgb(252, 135, 135);
+}
+
+.col:hover .strawberrymatcha {
+    background-color: rgb(140, 206, 33);
+}
+
+.col:hover .matchatab {
+    background-color: rgb(185, 204, 19);
+}
+
+.col:hover .passionfruit {
+    background-color: rgb(209, 212, 35);
 }
 
 .col:hover .card-img-top {
     transform: scale(1.1);
 }
 
-.img-container, .img-container-pink, .img-container-blue, .img-container-yellow, .img-container-coffee {
+.img-container {
     width: 270px;
     height: 190px;
     border-radius: 15px 15px 30px 30px;
@@ -403,7 +461,6 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FCEEFF", en
     line-height: 10px;
     margin-bottom: 12px;
     color: var(--darkyellow);
-    text-shadow: 2px 2px 5px rgba(58, 58, 58, 0.2);
 }
 
 .all-menu-btn-cont {
@@ -558,7 +615,7 @@ footer {
     position: sticky;
     top: 0;
     background-color: var(--darkyellow);
-    z-index: 99;
+    z-index: 2;
     justify-content: center;
     align-items: center;
 
@@ -629,8 +686,9 @@ footer {
     position: absolute;
     margin: 15px;
     right: 10px;
-    z-index: 1000;
+    z-index: 3;
     cursor: pointer;
+    font-size: 28px;
 }
 
 .popup-container {
@@ -646,7 +704,7 @@ footer {
     justify-content: center;
     align-items: center;
     visibility: hidden;
-    z-index: 200;
+    z-index: 6;
 }
 
 .popup {
@@ -685,8 +743,6 @@ footer {
     flex-direction: column;
     gap: 10px;
 }
-
-.radio-option
 
 .radio-group label {
     display: flex;
@@ -800,6 +856,174 @@ footer {
 .addtocart:hover{
     background-color: var(--darkyellow);
     color: black;
+}
+
+/*-----CART PAGE------*/
+
+.cartpage {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    background-color: #00000044;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap ;
+    justify-content: center;
+    gap: 15px;
+    z-index: 10;
+}
+
+.mycart {
+    background-color: #ebebeb;
+    height: 750px;
+    width: 650px;
+    position: relative;
+    right: 0;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px -5px rgba(0,0,0,0.70);
+    overflow: hidden;
+}
+
+.text-container {
+    position: relative;
+    top: 10px;
+    margin-left: 10px;
+}
+
+.fa-chevron-left {
+    color: gray;
+
+}
+
+.backbutton {
+    margin: 20px 20px 0px 30px;
+    display: flex;
+    cursor: pointer;
+}
+
+.backbutton p {
+    position: relative;
+    left: -40px;
+    top: -2.5px;
+    cursor: pointer;
+}
+
+.items {
+    overflow: scroll;
+    overflow-x: hidden;
+    padding-left: 20px;
+    height: 650px;
+}
+
+.cart-items-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+    background-color: #ffffff;
+    padding: 0px 15px 15px 15px;
+    border-radius: 15px;
+    
+}
+
+.mycart-title {
+    text-align: center;
+    font-weight: 600;
+    position: relative;
+    top: -15px;
+
+}
+
+.cart-img-container {
+    height: 130px;
+    width: 130px;
+    overflow: hidden;
+    border: none;
+    border-radius: 10px;
+    margin-top: 15px;
+    align-items: center;
+    background-color: var(--darkyellow);
+}
+
+.cart-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    top: -10px;
+}
+
+.cart-items-title {
+    margin-bottom: 20px;
+}
+
+.cart-items-price {
+    font-size: large;
+    font-weight: 500;
+}
+
+.cart-items-title, .cart-items-price, .cart-items-size, .cart-items-extras {
+    margin-left: 20px;
+    line-height: 8px;
+}
+
+.fa-trash {
+    color: gray;
+    position: absolute;
+    right: -310px;
+    cursor: pointer;
+    font-size: 23px;
+    top: -5px;
+}
+
+.fa-trash:hover {
+    color: rgb(204, 4, 4);
+}
+
+.line {
+    margin: 20px;
+}
+
+.cart-quantity {
+    position: relative;
+    right: -155px;
+    top: 10px;
+}
+
+.cart-minus, .cart-plus {
+    height: 30px;
+    width: 35px;
+    font-size: 20px;
+    border-style: none;
+    background-color: var(--darkyellow);
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+.cart-quantity-number {
+    padding: 0px 10px;
+
+}
+
+/*----INFORMATION----*/
+
+.information {
+    background-color: var(--darkyellow);
+    height: 750px;
+    width: 500px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px -5px rgba(0,0,0,0.70);
+
+}
+
+.delivery-address {
+    background-color: #dbdbdb;
+    height: 100px;
+    width: 460px;
+    margin: 20px 20px;
+    border-radius: 15px;
 }
 
 @media (max-width: 992px) {
