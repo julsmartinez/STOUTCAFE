@@ -92,16 +92,58 @@ for (var j = 0; j < homeProductsButtonsCount; j++){
         nameOfProduct = this.querySelector("h5").innerHTML;
 
         // Store price of product to array of price
-        var priceOfProduct = this.querySelector("h4").innerHTML;
-        console.log(priceOfProduct.slice(1, priceOfProduct.length));
-        homeProductPrices.push(priceOfProduct.slice(1, priceOfProduct.length));
+        tempPriceOfProduct = this.querySelector("h4").innerHTML;
+        priceOfProduct = tempPriceOfProduct.slice(1, tempPriceOfProduct.length);
+
+        descriptionOfProduct = this.querySelector("p.card-text").innerHTML;
+
+        addDetailsToPopupCard(imageSource, nameOfProduct, priceOfProduct, descriptionOfProduct);
     });
 }
 
-function addToCard(element){
+// override button click on drinks
+$(".coffee-container").on("click", function(){
+    $(".extras").css("visibility", "visible");
+    $(".checkbox-group").css("visibility", "visible");
+    $(".variation").css("visibility", "visible");
+    $(".radio-group").css("visibility", "visible");
+    $('.scrollable').css("overflow-y", "scroll");
+});
 
+$(".non-coffee-container").on("click", function(){
+    $(".variation").css("visibility", "visible");
+    $(".radio-group").css("visibility", "visible");
+    $('.scrollable').css("overflow-y", "scroll");
+});
+
+$(".tea-container").on("click", function(){
+    $(".variation").css("visibility", "visible");
+    $(".radio-group").css("visibility", "visible");
+    $('.scrollable').css("overflow-y", "scroll");
+});
+
+// Add details to popup card 
+function addDetailsToPopupCard(image, productName, price, description){
+    let imageElement = $(".popup-img-container > img");
+    imageElement.attr("src", image);
+    
+    let nameElement = $(".popup-title");
+    nameElement.text(productName);
+
+    let priceElement = $(".popup-number");
+    priceElement.text("₱" + price);
+
+    let descriptionElement = $(".popup-description");
+    descriptionElement.text(description);
+    $(".extras").css("visibility", "hidden");
+    $(".checkbox-group").css("visibility", "hidden");
+    $(".variation").css("visibility", "hidden");
+    $(".radio-group").css("visibility", "hidden");
+    $('.popup-container').css('visibility', 'visible');
+    $('.scrollable').animate({scrollTop: 0},10);
+    $('.scrollable').css("overflow-y", "hidden");
+    $('body').css("overflow", "hidden");
 }
-<<<<<<< HEAD
 
 // Close button to popup card
 $("i.fa-xmark").on("click", function(){
@@ -128,24 +170,20 @@ $(".minus").on("click", function(){
 // Taking values of radio button and checkbox checked
 $(".radio-option").on("click",function(){
     var selectedVariation = $("input:checked").attr("value");
+    alert(selectedVariation);
 });
 
 $(".checkbox-option").on("click", function(){
     var checkedEspresso = $(".checkbox-option").attr("value");
+    alert(checkedEspresso);
 });
 
 // Add To cart button function
 $(".addtocart").on("click", function(){
     var totalPriceOfProduct = priceOfProduct * quantity;
+    alert(totalPriceOfProduct);
     // next create element for add to cart page
 })
-
 // Login function
 // Signup function
 // Slick version 1.5.8s
-
-
-  
-=======
-  // Slick version 1.5.8s
->>>>>>> c0295e56fa159161e164baa1569b21824a7963ed
