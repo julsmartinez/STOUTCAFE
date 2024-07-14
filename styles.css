@@ -596,13 +596,13 @@ footer {
     opacity: 1;
 }
 
-.espresso {
+/* .espresso {
     display: flex;
     position: relative;
     justify-content: center;
     margin-top: 30px;
     margin-bottom: 80px;
-}
+} */
 
 .espresso, .non-coffee h3 {
     font-weight: 600;
@@ -706,9 +706,12 @@ footer {
 
 .popup-footer {
     display: flex;
-    align-items: center; 
+    align-items: center;
+    gap: 10px;
 }
-
+.grid-addtocart{
+    width: 100%;
+}
 .grid-quantity {
     width: 120px; 
     display: flex;
@@ -793,10 +796,9 @@ footer {
     border-style: none;
     border-radius: 10px;
     height: 30px;
-    width: 240px;
+    width: 100%;
     font-size: 15px;
 }
-
 .addtocart:hover{
     background-color: var(--darkyellow);
     color: black;

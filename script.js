@@ -77,6 +77,7 @@ function scrollFunction(element){
 // Add to cart function
 var homeProductsButtonsCount = document.querySelectorAll(".product-link").length;
 var quantity = 1;
+var drinks = 0;
 var imageSource;
 var nameOfProduct;
 var tempPriceOfProduct;
@@ -93,7 +94,8 @@ for (var j = 0; j < homeProductsButtonsCount; j++){
 
         // Store price of product to array of price
         tempPriceOfProduct = this.querySelector("h4").innerHTML;
-        priceOfProduct = tempPriceOfProduct.slice(1, tempPriceOfProduct.length);
+
+        priceOfProduct = parseInt(tempPriceOfProduct.slice(1, tempPriceOfProduct.length));
 
         descriptionOfProduct = this.querySelector("p.card-text").innerHTML;
 
@@ -102,28 +104,106 @@ for (var j = 0; j < homeProductsButtonsCount; j++){
 }
 
 // override button click on drinks
+var selectedVariation;
 $(".coffee-container").on("click", function(){
-    $(".extras").css("visibility", "visible");
-    $(".checkbox-group").css("visibility", "visible");
-    $(".variation").css("visibility", "visible");
-    $(".radio-group").css("visibility", "visible");
+    $(".sandwichSmores").css("display", "none");
+    $(".nachos").css("display", "none");
+    $(".riceBowls").css("display", "none");
+    $(".allPasta").css("display", "none");
+
+    
+    $(".espressoDrinks").css("display", "block");
+    $(".espressoDrinks").css("visibility", "visible");
+    $(".variation").css("display", "block");
+    $(".extras").css("display", "block");
+    $(".size").css("visibility", "visible");
+    $(".radio-group").css("display", "flex");
+    $(".checkbox-group").css("display", "flex");
     $('.scrollable').css("overflow-y", "scroll");
+    $(".drinks").eq(0).prop('checked', true);
+    selectedVariation = $(".drinks").eq(0).prop('checked', true).val();
 });
 
 $(".non-coffee-container").on("click", function(){
-    $(".variation").css("visibility", "visible");
-    $(".radio-group").css("visibility", "visible");
-    $('.scrollable').css("overflow-y", "scroll");
+    $(".sandwichSmores").css("display", "none");
+    $(".nachos").css("display", "none");
+
+    $(".variation").css("display", "block");
+    $(".size").css("visibility", "visible");
+    $(".radio-group").css("display", "flex");
+    $('.scrollable').css("overflow-y", "hidden");
+    $(".drinks").eq(0).prop('checked', true);
+    selectedVariation = $(".drinks").eq(0).prop('checked', true).val();
 });
 
 $(".tea-container").on("click", function(){
-    $(".variation").css("visibility", "visible");
-    $(".radio-group").css("visibility", "visible");
+    $(".sandwichSmores").css("display", "none");
+    $(".nachos").css("display", "none");
+
+    $(".variation").css("display", "block");
+    $(".size").css("visibility", "visible");
+    $(".radio-group").css("display", "flex");
+    $('.scrollable').css("overflow-y", "hidden");
+    $(".drinks").eq(0).prop('checked', true);
+    selectedVariation = $(".drinks").eq(0).prop('checked', true).val();
+});
+
+$(".pastry").on("click", function(){
+    $(".size").css("display", "none");
+    $(".sandwichSmores").css("display", "none");
+    $(".nachos").css("display", "none");
+    $('.scrollable').css("overflow-y", "hidden");
+});
+
+$(".appetizer").on("click", function(){
+    $(".size").css("display", "none");
+    $(".sandwichSmores").css("display", "none");
+
+    $(".variation").css("display", "block");
+    $(".nachos").css("display", "block");
+    $(".nachos").css("visibility", "visible");
+    $(".radio-group").css("display", "flex");
+    $('.scrollable').css("overflow-y", "hidden");
+
+    $(".snacks").eq(0).prop('checked', true);
+    selectedVariation = $(".snacks").eq(0).prop('checked', true).val();
+});
+
+$(".sandwich").on("click", function(){
+    $(".size").css("display", "none");
+    $(".nachos").css("display", "none");
+
+    $(".variation").css("display", "block");
+    $(".sandwichSmores").css("visibility", "visible");
+    $(".sandwichSmores").css("display", "block");
+    $(".radio-group").css("display", "flex");
+    $('.scrollable').css("overflow-y", "hidden");
+});
+
+$(".pasta").on("click", function(){
+    $(".espressoDrinks").css("display", "none");
+    $(".riceBowls").css("display", "none");
+
+    $(".extras").css("display", "block");
+    $(".allPasta").css("visibility", "visible");
+    $(".checkbox-group").css("display", "flex");
     $('.scrollable').css("overflow-y", "scroll");
 });
 
+$(".rice").on("click", function(){
+    $(".espressoDrinks").css("display", "none");
+    $(".allPasta").css("display", "none");
+
+    $(".extras").css("display", "block");
+    $(".riceBowls").css("visibility", "visible");
+    $(".checkbox-group").css("display", "flex");
+    $('.scrollable').css("overflow-y", "scroll");
+});
+
+
 // Add details to popup card 
 function addDetailsToPopupCard(image, productName, price, description){
+    drinks = 0;
     let imageElement = $(".popup-img-container > img");
     imageElement.attr("src", image);
     
@@ -135,26 +215,58 @@ function addDetailsToPopupCard(image, productName, price, description){
 
     let descriptionElement = $(".popup-description");
     descriptionElement.text(description);
-    $(".extras").css("visibility", "hidden");
-    $(".checkbox-group").css("visibility", "hidden");
-    $(".variation").css("visibility", "hidden");
-    $(".radio-group").css("visibility", "hidden");
-    $('.popup-container').css('visibility', 'visible');
-    $('.scrollable').animate({scrollTop: 0},10);
-    $('.scrollable').css("overflow-y", "hidden");
-    $('body').css("overflow", "hidden");
+    // radio and checkbox button container to set default display to none
+    $(".radio-group").css("display", "none");
+    $(".checkbox-group").css("display", "none");
+
+    // radio and checkbox button to set default display to block
+    $(".expressoDrinks").css("display", "block");
+    $(".allPasta").css("display", "block");
+    $(".riceBowls").css("display", "block");
+    $(".size").css("display", "block");
+    $(".nachos").css("display", "block");
+    $("sandwichSmores").css("display", "block");
+    
+    // header of radio and checboxes button to set default to none
+    $(".variation").css("display", "none");
+    $(".extras").css("display", "none");
+    // set check box and radio button to uncheck
+    $(".radio-option").prop('checked', false);
+    $(".checkbox-option").prop('checked', false);
+
+    // container of all elements on popup options set visibility to visible, and subelements to hidden
+    $(".popup-container").css("visibility", "visible");
+    $(".espressoDrinks").css("visibility", "hidden");
+    $(".allPasta").css("visibility", "hidden");
+    $(".riceBowls").css("visibility", "hidden");
+    $(".nachos").css("visibility", "hidden");
+    $(".sandwichSmores").css("visibility", "hidden");
+    $(".size").css("visibility", "hidden");
+    $(".scrollable").animate({scrollTop: 0},10);
+    $("body").css("overflow", "hidden");
+    quantity = 1;
+    $(".quantity-number").text(quantity);
 }
 
 // Close button to popup card
 $("i.fa-xmark").on("click", function(){
     // close/hide the popup container
+    $(".radio-group").css("display", "none");
+    $(".checkbox-group").css("display", "none");
+
+    $(".variation").css("display", "none");
+    $(".extras").css("display", "none");
+
     $('.popup-container').css('visibility', 'hidden');
-    $('body').css("overflow", "visible");
-    $(".variation").css("visibility", "hidden");
-    $(".radio-group").css("visibility", "hidden");
-    $(".extras").css("visibility", "hidden");
-    $(".checkbox-group").css("visibility", "hidden");
+    
+    $(".espressoDrinks").css("visibility", "hidden");
+    $(".allPasta").css("visibility", "hidden");
+    $(".riceBowls").css("visibility", "hidden");
+    $(".nachos").css("visibility", "hidden");
+    $(".sandwichSmores").css("visibility", "hidden");
+    $(".size").css("visibility", "hidden");
     $('.scrollable').css("overflow", "hidden");
+    $('body').css("overflow", "visible");
 });
 
 // Adding Price, Quantity, Variation value, Extras
@@ -168,21 +280,57 @@ $(".minus").on("click", function(){
 });
 
 // Taking values of radio button and checkbox checked
-$(".radio-option").on("click",function(){
-    var selectedVariation = $("input:checked").attr("value");
-    alert(selectedVariation);
+var check = true;
+
+var selectedExtras = [];
+// Function to remove item from array
+function removeItem(array, item) {
+    const index = array.indexOf(item);
+    if (index > -1) {
+        array.splice(index, 1); // Remove the item
+    }
+}
+
+// Function to update the selected option
+function updateSelectedOption(newOption) {
+    if (selectedVariation !== null) {
+        // Remove the previous selected option from the array
+        selectedVariation = null;
+    }
+
+    // Add the new selected option to the array
+    selectedVariation = newOption;
+}
+// Radio button and checkbox button change checked value listener
+$(".radio-option").on("change",function(){
+    const newOption = $(this).val();
+    updateSelectedOption(newOption);
 });
 
-$(".checkbox-option").on("click", function(){
-    var checkedEspresso = $(".checkbox-option").attr("value");
-    alert(checkedEspresso);
+$(".checkbox-option").on("change", function(){
+    const item = $(this).val();
+
+    if ($(this).prop('checked')) {
+        selectedExtras.push(item); // Add item if checked
+    } else {
+        removeItem(selectedExtras, item); // Remove item if unchecked
+    }
 });
 
 // Add To cart button function
 $(".addtocart").on("click", function(){
-    var totalPriceOfProduct = priceOfProduct * quantity;
-    alert(totalPriceOfProduct);
-    // next create element for add to cart page
+    if(check === true && quantity !== 0){
+        var totalPriceOfProduct = priceOfProduct * quantity;
+            // next create element for add to cart page
+            if(selectedVariation === undefined || selectedExtras === undefined){
+                selectedVariation = "";
+                selectedExtras = ""
+            }
+            alert(imageSource + "\nName:" + nameOfProduct + "\nPrice: " + totalPriceOfProduct + "\nDescription: " + descriptionOfProduct + "\nSelected Variation: " + selectedVariation + "\nSelected Extras: " + selectedExtras);
+    }
+    else{
+        alert("Please select a size of drinks first!");
+    }
 })
 // Login function
 // Signup function
