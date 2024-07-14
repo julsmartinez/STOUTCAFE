@@ -21,13 +21,13 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-$(document).ready(function(){   
-    $('.carousel').slick({
-        slidesToShow: 3  ,
-        dots:true,
-        centerMode: true,
-    });
-});
+// $(document).ready(function(){   
+//     $('.carousel').slick({
+//         slidesToShow: 3  ,
+//         dots:true,
+//         centerMode: true,
+//     });
+// });
   
 
   // Scroll Function
@@ -76,22 +76,20 @@ function scrollFunction(element){
 
 // Add to cart function
 var homeProductsButtonsCount = document.querySelectorAll(".product-link").length;
-var homeProductImages = [];
-var homeProductNames = [];
-var homeProductPrices = [];
-var quantity;
+var quantity = 1;
+var imageSource;
+var nameOfProduct;
+var tempPriceOfProduct;
+var priceOfProduct;
+var descriptionOfProduct;
 for (var j = 0; j < homeProductsButtonsCount; j++){
     document.querySelectorAll(".product-link")[j].addEventListener("click", function(event){
         event.preventDefault();
         // Store source attribute value to array of images
-        var imageSource = this.querySelector("img").getAttribute("src");
-        console.log(imageSource);
-        homeProductImages.push(imageSource);
+        imageSource = this.querySelector("img").getAttribute("src");
 
         // Store name of product to array of names
-        var nameOfProduct = this.querySelector("h5").innerHTML;
-        console.log(nameOfProduct);
-        homeProductNames.push(nameOfProduct);
+        nameOfProduct = this.querySelector("h5").innerHTML;
 
         // Store price of product to array of price
         var priceOfProduct = this.querySelector("h4").innerHTML;
@@ -101,5 +99,6 @@ for (var j = 0; j < homeProductsButtonsCount; j++){
 }
 
 function addToCard(element){
+
 }
   // Slick version 1.5.8s

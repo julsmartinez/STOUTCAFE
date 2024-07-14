@@ -173,7 +173,7 @@ header {
     right: 2rem;
     top: 60px;
     height: 0;
-    width: 300px;
+    width: 400px;
     background-color: #00000099;
     backdrop-filter: blur(15px);
     border-radius: 10px;
@@ -302,6 +302,8 @@ header {
 
 .product-link {
     text-decoration: none;
+    border-style: none;
+    border-radius: 30px;
 }
 
 .row-cols-2 {
@@ -315,10 +317,19 @@ header {
 .card {
     width: 270px;
     flex: 0 0 auto;
-    -webkit-box-shadow: 0px 0px 30px -5px rgba(0, 0, 0, 0.70);
+    -webkit-box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.70);
     -moz-box-shadow: 0px 0px 30px -5px rgba(0,0,0,0.70);
-    box-shadow: 0px 0px 30px -5px rgba(0,0,0,0.70);
+    box-shadow: 0px 0px 20px -5px rgba(0,0,0,0.70);
     transition: transform 0.5s ease;
+    background: hsla(289, 100%, 97%, 1);
+
+background: radial-gradient(circle, hsla(289, 100%, 97%, 1) 48%, hsla(0, 0%, 91%, 1) 67%);
+
+background: -moz-radial-gradient(circle, hsla(289, 100%, 97%, 1) 48%, hsla(0, 0%, 91%, 1) 67%);
+
+background: -webkit-radial-gradient(circle, hsla(289, 100%, 97%, 1) 48%, hsla(0, 0%, 91%, 1) 67%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FCEEFF", endColorstr="#E9E9E9", GradientType=1 );
 }
 
 .card-body {
@@ -543,11 +554,11 @@ footer {
 .categories-cont {
     margin-bottom: 4em;
     padding-top: 0.3em;
-    height: 3em;
+    height: 3.3em;
     position: sticky;
     top: 0;
     background-color: var(--darkyellow);
-    z-index: 99999;
+    z-index: 99;
     justify-content: center;
     align-items: center;
 
@@ -575,6 +586,10 @@ footer {
 .categories-icon {
     margin-right: 10px; 
     transition: color 0.3s ease, opacity 0.3s ease;}
+
+.nav-link:active {
+    color: var(--white);
+}
 
 .nav-link:hover .categories-icon {
     color: var(--white); 
@@ -606,6 +621,186 @@ footer {
     margin-top: -2em;
 }
 
+
+
+/*NEW POPUP NA FINAL */
+.fa-xmark {
+    color: rgb(44, 44, 44);
+    position: absolute;
+    margin: 15px;
+    right: 10px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.popup-container {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    z-index: 200;
+}
+
+.popup {
+    box-shadow: 0px 0px 30px -5px rgba(0,0,0,0.70);
+    border-style: none;
+    width: 500px;
+    height: 700px;
+    position: relative;
+    align-items: center;
+    border-radius: 20px;
+    background-color: var(--white);
+}
+
+.popup-img {
+    display: block;
+    position: relative;
+    top: -40px;
+    width: 500px;
+}
+
+.scrollable {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 500px;
+    height: 300px;
+}
+
+.popup-img-container {
+    background-color: var(--darkyellow);
+    height: 340px;
+    border-radius: 20px 20px 40px 40px;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.radio-option
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+}
+
+.popup-footer {
+    display: flex;
+    align-items: center; 
+}
+
+.grid-quantity {
+    width: 120px; 
+    display: flex;
+    align-items: center;
+}
+
+.popup-title, .popup-price, .popup-number, .popup-description, .variation, .radio-group, .extras, .checkbox-group, .popup-footer {
+    margin: 10px 20px 10px 20px;
+}
+
+.popup-title {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.popup-price {
+    line-height: 10px;
+}
+
+.popup-number {
+    color: var(--darkyellow);
+    line-height: 20px;
+}
+
+.popup-description {
+    font-size: 18px;
+}
+
+.variation, .extras {
+    font-weight: 550;
+    font-size: 18px;
+}
+
+.radio, .checkbox {
+    line-height: 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.radio-option, .checkbox-option {
+    margin-right: 10px;
+}
+
+.radio-option {
+    cursor: pointer;
+}
+
+.minus, .plus {
+    width: 35px;
+    border-style: none;
+    background-color: var(--darkyellow);
+    font-size: 18px;
+    height: 31px;
+}
+
+.grid-quantity button {
+    margin: -4px;
+}
+
+.quantity-number {
+    display: inline-flex;
+    background-color: #e9e9e9;
+    font-size: 18px;
+    width: 40px;
+    border: solid var(--darkyellow) 2px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.minus {
+    border-radius: 10px 0px 0px 10px;
+}
+
+.plus {
+    border-radius: 0px 10px 10px 0px;
+}
+
+.addtocart {
+    background-color: #000000;
+    color: var(--white);
+    border-style: none;
+    border-radius: 10px;
+    height: 30px;
+    width: 240px;
+    font-size: 15px;
+}
+
+.addtocart:hover{
+    background-color: var(--darkyellow);
+    color: black;
+}
 
 @media (max-width: 992px) {
     .navbar .links,
