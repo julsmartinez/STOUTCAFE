@@ -922,9 +922,39 @@
         </div>
     </div>
     <div class="information">
-        <div class="delivery-address">
+        <button onclick="showDialog()" class="edit">
+            <div class="delivery-address">
+                <img class="map" src="products/map-location-svgrepo-com.png" alt="">
+                <div class="info">
+                    <h5 class="delivery-title">Delivery Address</h5>
+                    <p class="name">Name:</p>
+                    <p class="phone-number">Phone Number:</p>
+                    <p class="complete-address">Address:</p>
+                </div>
+            </div>
+        </button>
 
+        <p class="special-instructions"> Special Instructions</p>
+        <textarea name="textbox" id="textbox" placeholder="Enter your special instructions here..."></textarea>
+
+        <p class="payment-method">Payment Method</p>
+        
+        <div class="dialog">
+            <dialog id="myDialog">
+                <p class="contact">Contact</p>
+                <input class="fullname" type="text" placeholder="Full Name" required>
+                <input class="contact-number" type="text" placeholder="Contact Number" required>
+                <p class="address">Address</p>
+                <input class="dialog-address-1" type="text" placeholder="Street Name, Building, House No." required>
+                <input class="dialog-address-2" type="text" placeholder="Barangay" required>
+                <input class="dialog-address-3" type="text" placeholder="City" required>
+                <input class="dialog-address-4" type="text" placeholder="Province" required>
+                <button onclick="closeDialog()" class="close">Close</button>
+                <button onclick="closeDialog()" class="save">Save</button>
+            </dialog>
         </div>
+
+        
     </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

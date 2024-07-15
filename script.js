@@ -469,6 +469,35 @@ $(document).on("click", ".cart-plus", function() {
     priceElement.text("Price: " + newTotalPrice.toFixed(2));
 });
 
+// Customer Information (Name, Address, Contact Number, Special Instruction)
+const dialog = document.getElementById("myDialog"); 
+    // show fill up customer info dialog
+function showDialog() { 
+  dialog.show(); 
+} 
+
+function closeDialog() { 
+  dialog.close(); 
+} 
+
+    // save customer info 
+$(".save").on("click", function(){
+    saveCustomerInfo();
+});
+function saveCustomerInfo(){
+    let customerName = $(".fullname").text;
+    let contactNumber = $(".contact-number").text;
+    let customerAddress1 = $(".dialog-address-1").text + ", ";
+    let customerAddress2 = $(".dialog-address-2").text + ", "; 
+    let customerAddress3 = $(".dialog-address-3").text + ", ";
+    let customerAddress4 = $(".dialog-address-4").text;
+    let completeAddress = customerAddress1 + customerAddress2 + customerAddress3 + customerAddress4;
+
+    console.log(customerName + "\n" + contactNumber + "\n" + completeAddress);
+    // $(".name").text("Name: " + customerName);
+    // $(".phone-number").text("Phone Number: " + contactNumber);
+    // $(".complete-address").text("Address: " + customerAddress);
+}
 // Login function
 // var usernames = ["user@gmail.com"];
 // var passwords = ["lucky123"];
@@ -488,12 +517,3 @@ $(document).on("click", ".cart-plus", function() {
 // Slick version 1.5.8s
 
 
-const dialog = document.getElementById("myDialog"); 
-
-function showDialog() { 
-  dialog.show(); 
-} 
-
-function closeDialog() { 
-  dialog.close(); 
-} 
