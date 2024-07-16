@@ -485,18 +485,22 @@ $(".save").on("click", function(){
     saveCustomerInfo();
 });
 function saveCustomerInfo(){
-    let customerName = $(".fullname").text;
-    let contactNumber = $(".contact-number").text;
-    let customerAddress1 = $(".dialog-address-1").text + ", ";
-    let customerAddress2 = $(".dialog-address-2").text + ", "; 
-    let customerAddress3 = $(".dialog-address-3").text + ", ";
-    let customerAddress4 = $(".dialog-address-4").text;
+    let customerName = $(".fullname").val();
+    let contactNumber = $(".contact-number").val();
+    let customerAddress1 = $(".dialog-address-1").val() + ", ";
+    let customerAddress2 = $(".dialog-address-2").val() + ", "; 
+    let customerAddress3 = $(".dialog-address-3").val() + ", ";
+    let customerAddress4 = $(".dialog-address-4").val();
     let completeAddress = customerAddress1 + customerAddress2 + customerAddress3 + customerAddress4;
 
-    console.log(customerName + "\n" + contactNumber + "\n" + completeAddress);
-    // $(".name").text("Name: " + customerName);
-    // $(".phone-number").text("Phone Number: " + contactNumber);
-    // $(".complete-address").text("Address: " + customerAddress);
+    $(".name").text("Name: " + customerName);
+    $(".phone-number").text("Phone Number: " + contactNumber);
+    $(".complete-address").text("Address: " + customerAddress);
+}
+
+function specialInstruction(){
+    let instruction = $("#textbox").val();
+    
 }
 // Login function
 // var usernames = ["user@gmail.com"];
