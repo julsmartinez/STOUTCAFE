@@ -244,6 +244,10 @@ function addDetailsToPopupCard(image, productName, price, description){
     $("body").css("overflow", "hidden");
     quantity = 1;
     $(".quantity-number").text(quantity);
+
+    while (selectedExtras.length > 0){
+        selectedExtras.pop();
+    }
 }
 
 // Close button to popup card
@@ -451,7 +455,7 @@ $(document).on("click", ".cart-minus", function() {
         let unitPrice = totalPriceOfProduct;
 
         let newTotalPrice = unitPrice * currentQuantity;
-        priceElement.text("Price: " + newTotalPrice.toFixed(2));
+        priceElement.text("Price: " + newTotalPrice);
     }
 });
 
@@ -466,18 +470,18 @@ $(document).on("click", ".cart-plus", function() {
     let unitPrice = totalPriceOfProduct;
 
     let newTotalPrice = unitPrice * currentQuantity;
-    priceElement.text("Price: " + newTotalPrice.toFixed(2));
+    priceElement.text("Price: " + newTotalPrice);
 });
 
 // Customer Information (Name, Address, Contact Number, Special Instruction)
 const dialog = document.getElementById("myDialog"); 
     // show fill up customer info dialog
 function showDialog() { 
-  dialog.show(); 
+    dialog.show();
 } 
 
 function closeDialog() { 
-  dialog.close(); 
+    dialog.close();
 } 
 
     // save customer info 
@@ -495,13 +499,14 @@ function saveCustomerInfo(){
 
     $(".name").text("Name: " + customerName);
     $(".phone-number").text("Phone Number: " + contactNumber);
-    $(".complete-address").text("Address: " + customerAddress);
+    $(".complete-address").text("Address: " + completeAddress);
 }
 
 function specialInstruction(){
-    let instruction = $("#textbox").val();
-    
+    let customerInstruction = $("#textbox").val();
+    alert(customerInstruction);
 }
+
 // Login function
 // var usernames = ["user@gmail.com"];
 // var passwords = ["lucky123"];
