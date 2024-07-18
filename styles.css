@@ -816,26 +816,21 @@ footer {
 }
 
 .minus, .plus {
+    height: 35px;
     width: 35px;
+    font-size: 20px;
     border-style: none;
     background-color: var(--darkyellow);
-    font-size: 18px;
-    height: 31px;
+    font-weight: 600;
+    border-radius: 5px 5px 5px 5px;
 }
 
 .grid-quantity button {
-    margin: -4px;
 }
 
 .quantity-number {
-    display: inline-flex;
-    background-color: #e9e9e9;
-    font-size: 18px;
-    width: 40px;
-    border: solid var(--darkyellow) 2px;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    padding: 0px 20px;
+    display: block;
 }
 
 .minus {
@@ -851,7 +846,7 @@ footer {
     color: var(--white);
     border-style: none;
     border-radius: 10px;
-    height: 30px;
+    height: 35px;
     width: 100%;
     font-size: 15px;
 }
@@ -1030,7 +1025,7 @@ footer {
 }
 
 .delivery-address  {
-    display: flex;
+    display:flex;
     padding: 20px;
 }
 
@@ -1084,8 +1079,9 @@ dialog {
     top: 22%;
     left: 14.5%;
     transform: translate(-50%, -50%);
-    z-index: 20;
+    z-index: 2001;
     padding: 20px;
+
 }
 
 .save {
@@ -1150,6 +1146,54 @@ dialog {
     padding: 10px;
     resize: none;
 }
+
+/*----PAYMENT METHOD----*/
+
+.payment-radio {
+    display: inline-flex;
+    margin-right: 20px;
+}
+
+.payment-radio input[type="radio"] {
+    display: none;
+}
+
+.payment-radio label {
+    display: inline-flex;
+    width: 135px;
+    height: auto;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    overflow: hidden;
+    transition: border 0.2s ease, background-color 0.2s ease;
+    z-index: 2000;
+}
+
+.payment-radio input[type="radio"]:checked + img {
+    border: 2px solid #000; 
+    background-color: #ffffff;
+}
+
+.radio-group-payment {
+    display: flex;
+    justify-content: space-between;
+}
+
+.payment-img {
+    width: 130px;
+    height: 80px;
+    background-color: #ffffff70;
+    border-radius: 10px;
+    transition: background-color 0.2s ease;
+
+}
+
+.payment-img:hover {
+    background-color: #ffffff;
+    border: solid #000000 2px;
+}
+
 
 @media (max-width: 992px) {
     .navbar .links,
