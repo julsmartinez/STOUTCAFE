@@ -20,6 +20,13 @@ body {
 .bg-color {
     background-color:azure;
 }
+
+/*------LOGIN-------*/
+
+
+
+
+
 /*------NAVBAR-------*/
 
 .logo {
@@ -58,8 +65,9 @@ li {
 header {
     display: flex;
     top: 0;
-    z-index: 1000;
+    z-index: 5;
     width: 100%;
+    position: sticky;
 }   
 
 .navbar {
