@@ -506,23 +506,48 @@ function specialInstruction(){
     let customerInstruction = $("#textbox").val();
     alert(customerInstruction);
 }
-
+// Payment Method and Place Order
+// $(".paymentMethod").on("click", function(){
+//      let paymentMethod = $("this").val();
+//      updateSelectedOption(paymentMethod);
+// });
+// $(".placeOrder").on("click", function(){});
 // Login function
 // var usernames = ["user@gmail.com"];
 // var passwords = ["lucky123"];
-// var newUsername;
-// var newPassword;
+
 // $(".login").on("click", function(){
-//     let usernameInput = $("#username").text;
-//     let passwordInput = $("#password").text;
+//     let userExist = false;
+//     let usernameInput = $("#username").val();
+//     let passwordInput = $("#password").val();
 
 //     for(var i = 0; i < usernames.length; i++){
 //         if(usernameInput === usernames[i] && passwordInput === passwords[i]){
-            
+//             userExist = true;  
+//         }
+//         else{
+//             userExist = false;
 //         }
 //     }
 // });
+
 // Signup function
+// var newUsername;
+// var newPassword;
+// $(".signup").on("click", function(){
+//      let userExist = false;
+//      let newUsernameInput = $("#newUsername").val();
+//      let newPasswordInput = $("#newPassword").val();
+//      for(var i = 0; i < usernames.length; i++){
+//          if(newUsernameInput === usernames[i]){
+//              userExist = true;
+//              break;
+//          }
+//          else{
+//              userExist = false;
+//          }
+//      }
+// });
 // Slick version 1.5.8s
 
 
