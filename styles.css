@@ -472,7 +472,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FCEEFF", en
 
 .all-menu-btn {
     width: 1130px;
-    height: 30px;
+    height: 40px;
     border-radius: 8px;
     font-family: var(--poppins);
     font-weight:s 500;
@@ -825,9 +825,6 @@ footer {
     border-radius: 5px 5px 5px 5px;
 }
 
-.grid-quantity button {
-}
-
 .quantity-number {
     padding: 0px 20px;
     display: block;
@@ -1056,7 +1053,7 @@ footer {
     background-color: #ffffff70;
     border-radius: 10px;
     border: none;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 
@@ -1123,8 +1120,10 @@ dialog {
 }
 
 .special-instructions, .payment-method{
-    margin-top: 15px;
+    margin-top: 8px;
     line-height: 10px;
+    font-weight: 450;
+
 }
 
 .instruction-box {
@@ -1141,11 +1140,12 @@ dialog {
     height: 100px;
     width: 100%;
     border: none;
-    margin-bottom: 8px;
     border-radius: 10px;
     padding: 10px;
     resize: none;
 }
+
+
 
 /*----PAYMENT METHOD----*/
 
@@ -1191,9 +1191,73 @@ dialog {
 
 .payment-img:hover {
     background-color: #ffffff;
-    border: solid #000000 2px;
 }
 
+.payment-summary p {
+    line-height: 10px;
+    font-weight: 450;
+}
+
+.payment-summary h5 {
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.payment-summary {
+    margin-bottom: 5px;
+}
+
+.code {
+    display: flex;
+    gap:15px;
+}
+
+#textbox-voucher {
+    height: 45px;
+    width: 70%;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    resize: none;
+}
+
+.voucher-code {
+    font-weight: 450;
+    margin-bottom: 8px;
+    margin-top: 2px;
+}
+
+.apply {
+    width: 25%;
+    border-radius: 10px;
+    font-weight: 450;
+    border: solid 2px;
+}
+
+.apply:hover {
+    background-color: #ffffff70;
+}
+
+.totalpayment h2 {
+    line-height: 15px;
+    font-weight: 600;
+}
+
+.total {
+    display: inline-flex;
+    gap:30px;
+}
+
+.checkout {
+    width: 275px;
+    border-radius: 10px;
+    font-weight: 450;
+    border: solid 2px;
+}
+
+.checkout:hover {
+    background-color: #ffffff70;
+}
 
 @media (max-width: 992px) {
     .navbar .links,
