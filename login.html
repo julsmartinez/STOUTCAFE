@@ -17,7 +17,7 @@
 
     
     <div class="login-container">
-        <div action="" class="login-form">
+        <div class="login-form">
             <p class="welcome"> Welcome to</p>
             <img class="login-logo" src="pics/logo.png" alt="">
             <h4 class="login">Login</h4>
@@ -40,13 +40,12 @@
                     <input type="checkbox">
                     Remember me
                 </label>
-                <a href="forgotpass.html" id = "login-forgot-password">Forgot Password</a>
+                <a href="#" id = "login-forgot-password">Forgot Password</a>
             </div>
-
-            <button type="button" class = "loginButton">Login</button>
+            <button id="loginButton">Login</button>
 
             <div class="sign-up">
-                <p>Don't have an account? <a href="">SignUp</a></p>
+                <p>Don't have an account? <a href="#" id = "sign-up-form">SignUp</a></p>
             </div>
         </div>
     </div>
@@ -96,7 +95,7 @@
             <button class="register-btn" type="submit">Register</button>
 
             <div class="login">
-                <p>Already have an account? <a href="">Login</a></p>
+                <p>Already have an account? <a href="#" class = "return-to-login-signupform">Login</a></p>
             </div>
         </div>
     </div>
@@ -104,24 +103,28 @@
 
 <!-- FORGOT PASSWORD -->
 
-    <div class="forgotpass-container">
+    <form action="https://formsubmit.co/angeloprincipio18@gmail.com" method="POST" class="forgotpass-container">
         <div action="" class="forgotpass-form">
             <h4 class="forgotpass">Forgot your Password?</h4>
             <p>Please enter your email</p>
 
         <div class="txt-email">
             <span class="icon"><ion-icon name="mail"></ion-icon></span>
-            <input type="email"required>
+            <input type="email" name="email" id = "userEmail" required>
+            <input type="hidden" name="_subject" value="Code">
+            <input type="hidden" name="message" id ="emailCode" value="">
+            <input type="hidden" name="_template" value="box">
+            <input type="hidden" name="_captcha" value="false">
             <label>Email</label>
         </div>
         
         <button class="send-btn" type="submit">Send Code</button>
 
         <div class="login">
-            <p>Return to  <a href="">Login</a></p>
+            <p>Return to  <a href = "#" class = "return-to-login-forgotpassform">Login</a></p>
         </div>
         </div>
-    </div>
+    </form>
 
 <!--EMAIL CONFIRMATION-->
     <div class="confirmation-container">
@@ -130,17 +133,17 @@
             <p>Please enter the code in the email sent to your email</p>
 
             <div class="box-container">
-                <input type="number" class="box" name="" id="1"></input>
-                <input type="number" class="box" name="" id="2"></input>
-                <input type="number" class="box" name="" id="3"></input>
-                <input type="number" class="box" name="" id="4"></input>
-                <input type="number" class="box" name="" id="5"></input>
-                <input type="number" class="box" name="" id="6"></input>
+                <input type="text" maxlength="1" class="box" name="" id="emailcode-1">
+                <input type="text" maxlength="1" class="box" name="" id="emailcode-2">
+                <input type="text" maxlength="1" class="box" name="" id="emailcode-3">
+                <input type="text" maxlength="1" class="box" name="" id="emailcode-4">
+                <input type="text" maxlength="1" class="box" name="" id="emailcode-5">
+                <input type="text" maxlength="1" class="box" name="" id="emailcode-6">
             </div>
 
             <button class="submit-btn" type="submit">Submit</button>
             
-                <p>Change  <a href="">email</a></p>
+                <p>Change  <a href="" class = "return-to-forgotpasswordform">email</a></p>
             
 
         </div>
@@ -157,13 +160,13 @@
 
             <div class="textbox">
                 <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                <input type="password"  required>
+                <input type="password"  id = "differentPassword" required>
                 <label>Enter new password</label>
             </div>
             
             <div class="textbox">
                 <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                <input type="password"  required>
+                <input type="password"  id = "confirmPassword"  required>
                 <label>Confirm new password</label>
             </div>
 

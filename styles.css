@@ -145,7 +145,8 @@ header {
 
 .cart-link {
     position: absolute;
-    right: 145px;
+    right: 195px;
+    width: 20px;
 }
 
 .quantity{
