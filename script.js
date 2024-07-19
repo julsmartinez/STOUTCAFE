@@ -82,6 +82,11 @@ var nameOfProduct;
 var tempPriceOfProduct;
 var priceOfProduct;
 var descriptionOfProduct;
+var loginUserExist = false;
+var applyVoucherCode = ["ABC123", "STO4CAFE", "F0CAFE1"];
+// Login credentials storages
+// var usernames = ["user@gmail.com"];
+// var passwords = ["lucky123"];
 for (var j = 0; j < homeProductsButtonsCount; j++){
     document.querySelectorAll(".product-link")[j].addEventListener("click", function(event){
         event.preventDefault();
@@ -98,6 +103,11 @@ for (var j = 0; j < homeProductsButtonsCount; j++){
 
         descriptionOfProduct = this.querySelector("p.card-text").innerHTML;
 
+        // if(loginUserExist === false){
+                // If there is no login yet, the form will appear to be logged in
+                // $(".login").css("display", "flex");
+        // }
+        //else{}
         addDetailsToPopupCard(imageSource, nameOfProduct, priceOfProduct, descriptionOfProduct);
     });
 }
@@ -280,8 +290,12 @@ $(".plus").on("click", function(){
     $(".quantity-number").text(quantity);
 });
 $(".minus").on("click", function(){
-    quantity--;
+
+    if (quantity > 1) {
+        quantity--;
     $(".quantity-number").text(quantity);
+    }
+    
 });
 
 // Taking values of radio button and checkbox checked
@@ -322,21 +336,32 @@ $(".checkbox-option").on("change", function(){
     }
 });
 // Cart icon click
+var customerInfoExist = false;
 $(".cart-link").on("click", function(){
     $(".cartpage").css("display", "flex");
+    $(".subtotal").text("Subtotal: P" + (totalPriceOfProductInCartPage - 49));
+    $("#check-out-price").text("P" + (totalPriceOfProductInCartPage));
+    let checkOutPrice = $("#check-out-price").text();
+    if(checkOutPrice === "P49"){
+        $("#check-out-price").text("P0");
+    }else{
+        $("#check-out-price").text("P" + (totalPriceOfProductInCartPage));
+    }
     $("body").css("overflow", "hidden");
 });
 // Back button inside cart page
-$(".back").on("click", function(){
+$(".backbutton").on("click", function(){
     $(".cartpage").css("display", "none");
     $('body').css("overflow", "visible");
 });
 // Add To cart button function
 var totalPriceOfProduct = 0;
+var totalPriceOfProductInCartPage = 49;
 var quantityInCart = 0;
 $(".addtocart").on("click", function(){
     if(check === true && quantity !== 0){
             totalPriceOfProduct = priceOfProduct * quantity;
+            totalPriceOfProductInCartPage += totalPriceOfProduct;
             // next create element for add to cart page
             if(selectedVariation === undefined || selectedExtras === undefined){
                 selectedVariation = "";
@@ -361,10 +386,13 @@ $(".addtocart").on("click", function(){
 function addItemToCart(quantityValue){
     if(selectedVariation !== "8oz" && selectedVariation !== "solo" && selectedVariation !== ""){
         totalPriceOfProduct += 30;
+        totalPriceOfProductInCartPage += 30;
     }
-    if(selectedExtras !== ""){
+    if(selectedExtras.length > 0){
         totalPriceOfProduct += 45;
+        totalPriceOfProductInCartPage += 45;
     }
+    
     // cart-items-container
     const newDiv1 = document.createElement("div");
     newDiv1.classList.add("cart-items-container");
@@ -431,12 +459,22 @@ function addItemToCart(quantityValue){
     newButton2.classList.add("cart-plus");
     $(newButton2).text("+");
     $(".cart-quantity").last().append(newButton2);
-
+   
 }
 // Delete an order
 $(document).on("click", ".fa-trash", function() {
     let quantityElement = $(this).closest(".cart-items-container").find(".cart-quantity-number");
     let deletedQuantity = parseInt(quantityElement.attr("data-quantity"));
+    let priceElement = $(this).closest(".cart-items-container").find(".cart-items-price");
+    let deletedPriceString = priceElement.text();
+    
+    let stringPrice = deletedPriceString.slice(7);
+    let deletedPrice = parseInt(stringPrice);
+    
+    alert(deletedPrice);
+    totalPriceOfProductInCartPage -= deletedPrice;
+    $(".subtotal").text("Subtotal: P" + (totalPriceOfProductInCartPage - 49));
+    $("#check-out-price").text("P" + (totalPriceOfProductInCartPage));
     quantityInCart -= deletedQuantity;
     $(".quantity").text(quantityInCart.toString());
     $(this).closest(".cart-items-container").remove();
@@ -455,6 +493,9 @@ $(document).on("click", ".cart-minus", function() {
         let unitPrice = totalPriceOfProduct;
 
         let newTotalPrice = unitPrice * currentQuantity;
+        totalPriceOfProductInCartPage -= unitPrice;
+        $(".subtotal").text("Subtotal: P" + (totalPriceOfProductInCartPage - 49));
+        $("#check-out-price").text("P" + (totalPriceOfProductInCartPage));
         priceElement.text("Price: " + newTotalPrice);
     }
 });
@@ -470,6 +511,9 @@ $(document).on("click", ".cart-plus", function() {
     let unitPrice = totalPriceOfProduct;
 
     let newTotalPrice = unitPrice * currentQuantity;
+    totalPriceOfProductInCartPage += unitPrice;
+    $(".subtotal").text("Subtotal: P" + (totalPriceOfProductInCartPage - 49));
+    $("#check-out-price").text("P" + (totalPriceOfProductInCartPage));
     priceElement.text("Price: " + newTotalPrice);
 });
 
@@ -488,6 +532,9 @@ function closeDialog() {
 $(".save").on("click", function(){
     saveCustomerInfo();
 });
+
+
+
 function saveCustomerInfo(){
     let customerName = $(".fullname").val();
     let contactNumber = $(".contact-number").val();
@@ -497,36 +544,78 @@ function saveCustomerInfo(){
     let customerAddress4 = $(".dialog-address-4").val();
     let completeAddress = customerAddress1 + customerAddress2 + customerAddress3 + customerAddress4;
 
+    if(customerName === "" || contactNumber === "" || customerAddress1 === "" || customerAddress2 === "" || customerAddress3 === "" || customerAddress4 === ""){
+        alert("Missing information is not allowed, Please fill up the form");
+        dialog.show();
+        return customerInfoExist = false;
+    }
     $(".name").text("Name: " + customerName);
     $(".phone-number").text("Phone Number: " + contactNumber);
     $(".complete-address").text("Address: " + completeAddress);
+    
+    alert("successfully save the customer address!");
+    return customerInfoExist = true;
 }
 
-function specialInstruction(){
-    let customerInstruction = $("#textbox").val();
-    alert(customerInstruction);
-}
 // Payment Method and Place Order
-// $(".paymentMethod").on("click", function(){
-//      let paymentMethod = $("this").val();
-//      updateSelectedOption(paymentMethod);
-// });
-// $(".placeOrder").on("click", function(){});
-// Login function
-// var usernames = ["user@gmail.com"];
-// var passwords = ["lucky123"];
+var selectedPaymentMethod = "Payment Method: ";  
+$(".payment").on("click", function(){
+    const paymentMethod = $(this).attr("id");
+    storePaymentMethod(paymentMethod);
+});
 
+function storePaymentMethod(selectedPayment){
+    if(selectedPayment === "radio1"){
+        selectedPaymentMethod = "Cash";
+    }
+    else if(selectedPayment === "radio2"){
+        selectedPaymentMethod = "Card";
+    }
+    else if(selectedPayment === "radio3"){
+        selectedPaymentMethod = "G-Cash";
+    }
+    $(".payment-method-2").text("Payment Method: " + selectedPaymentMethod);
+}
+
+$(".apply").on("click", function(){
+    let inputVoucherCode = $("#textbox-voucher").val();
+    for(var i = 0; i < applyVoucherCode.length; i++){
+        if(inputVoucherCode === applyVoucherCode[i]){
+            alert("Successfully applied the voucher discount");
+            totalPriceOfProduct -= 25;
+            applyVoucherCode.pop(inputVoucherCode);
+        }
+    }
+});
+$(".checkout").on("click", function(){
+    let checkOutPriceInt = totalPriceOfProductInCartPage;
+    
+    if(checkOutPriceInt === 49){
+        alert("Please add a product first!");
+    }
+    else if(selectedPaymentMethod === "Payment Method: "){
+        alert("Please select a payment method first!");
+    }
+    else if(customerInfoExist === false){
+        alert("Please fill up the delivery address first!");
+    }
+    else{
+        alert("Your order will be sent to your address in just 30-45 minutes!");
+
+    }
+});
+
+// Login function
 // $(".login").on("click", function(){
-//     let userExist = false;
 //     let usernameInput = $("#username").val();
 //     let passwordInput = $("#password").val();
 
 //     for(var i = 0; i < usernames.length; i++){
 //         if(usernameInput === usernames[i] && passwordInput === passwords[i]){
-//             userExist = true;  
+//             loginUserExist = true;
 //         }
 //         else{
-//             userExist = false;
+//             loginUserExist = false;
 //         }
 //     }
 // });
@@ -543,9 +632,20 @@ function specialInstruction(){
 //              userExist = true;
 //              break;
 //          }
+//          else if (newUsernameInput.includes("@gmail.com")){
+//              alert("The username needs to be a gmail account having '@gmail.com'");
+//              return userExist = false;s;
+//          }
 //          else{
 //              userExist = false;
 //          }
+//      }
+//      if(userExist){
+//          alert("This gmail is already used! Please select another gmail");
+//      }
+//      else{
+//          usernames.push(newUsernameInput);
+//          passwords.push(newPasswordInput);
 //      }
 // });
 // Slick version 1.5.8s

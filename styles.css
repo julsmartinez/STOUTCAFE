@@ -1163,7 +1163,7 @@ dialog {
 }
 
 .payment-radio input[type="radio"] {
-    display: none;
+    display: inline-flex;
 }
 
 .payment-radio label {
