@@ -83,6 +83,7 @@ var tempPriceOfProduct;
 var priceOfProduct;
 var descriptionOfProduct;
 var loginUserExist = false;
+var applyVoucherCode = ["ABC123", "STO4CAFE", "F0CAFE1"];
 // Login credentials storages
 // var usernames = ["user@gmail.com"];
 // var passwords = ["lucky123"];
@@ -575,6 +576,17 @@ function storePaymentMethod(selectedPayment){
     }
     $(".payment-method-2").text("Payment Method: " + selectedPaymentMethod);
 }
+
+$(".apply").on("click", function(){
+    let inputVoucherCode = $("#textbox-voucher").val();
+    for(var i = 0; i < applyVoucherCode.length; i++){
+        if(inputVoucherCode === applyVoucherCode[i]){
+            alert("Successfully applied the voucher discount");
+            totalPriceOfProduct -= 25;
+            applyVoucherCode.pop(inputVoucherCode);
+        }
+    }
+});
 $(".checkout").on("click", function(){
     let checkOutPriceInt = totalPriceOfProductInCartPage;
     
