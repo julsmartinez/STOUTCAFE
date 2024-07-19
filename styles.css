@@ -63,7 +63,7 @@ li {
 
 
 header {
-    display: flex;
+    display: block;
     top: 0;
     z-index: 5;
     width: 100%;
@@ -366,27 +366,32 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FCEEFF", en
 }
 
 .col:hover .tiramisu {
-    background-color: rgb(85, 76, 64);
+    background-color: #D2B48C;
 }
 
 .col:hover .latte    {
-    background-color: rgb(192, 185, 119);
+    background-color: #d6af79;
 }
+
+.col:hover .spanish    {
+    background-color: #d6af79;
+}
+
 
 .col:hover .matchalatte {
     background-color: rgb(192, 185, 119);
 }
 
 .col:hover .capuccino {
-    background-color: rgb(226, 217, 137);
+    background-color: #C3A583;
 }
 
 .col:hover .butterscotch {
-    background-color: rgb(241, 215, 68);
+    background-color: #ffc039;
 }
 
 .col:hover .mochtab {
-    background-color: rgb(129, 111, 61);
+    background-color: #4E342E;
 }
 
 .col:hover .whitemocha {
@@ -394,7 +399,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FCEEFF", en
 }
 
 .col:hover .tableya {
-    background-color: rgb(223, 210, 177);
+    background-color: #3B2F2F ;
 }
 
 .col:hover .horchata {
@@ -402,23 +407,23 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FCEEFF", en
 }
 
 .col:hover .dalgona {
-    background-color: rgb(221, 196, 51);
+    background-color: #ceac3b;
 }
 
 .col:hover .strawberrysup {
-    background-color: rgb(255, 124, 196);
+    background-color: rgb(255, 52, 120);
 }
 
 .col:hover .lemon {
-    background-color: rgb(255, 243, 131);
+    background-color: #ffef3f;
 }
 
 .col:hover .strawberrylemonade {
-    background-color: rgb(255, 83, 83);
+    background-color: #FF6F61;
 }
 
 .col:hover .hibiscus {
-    background-color: rgb(255, 83, 83);
+    background-color: #ff6363;
 }
 .col:hover .cake {
     background-color: rgb(252, 135, 135);
@@ -433,12 +438,74 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FCEEFF", en
 }
 
 .col:hover .passionfruit {
-    background-color: rgb(209, 212, 35);
+    background-color: #ffe344;
 }
+
+.col:hover .smores {
+    background-color: #ddad34; 
+}
+
+.col:hover .soda {
+    background-color: #73B9FF; 
+}
+
+.col:hover .tapa {
+    background-color: #8B4513;
+}
+
+.col:hover .smatcha {
+    background-color: #A2C523;
+}
+
+.col:hover .cookies {
+    background-color:#D2B48C ;
+}
+
+.col:hover .brownies {
+    background-color:#966542 ;
+}
+
+.col:hover .shakshouka {
+    background-color:#B22222 ;
+}
+
+.col:hover .ceasar {
+    background-color:#a7ff50 ;
+}
+
+.col:hover .shrimp {
+    background-color:#9dfc32  ;
+}
+
+.col:hover .fries {
+    background-color:#9dfc32  ;
+}
+
+.col:hover .cheese {
+    background-color:#FFA500   ;
+}
+
+.col:hover .ham {
+    background-color:#FFC0CB   ;
+}
+
+.col:hover .croffle {
+    background-color:#DEB887   ;
+}
+
+.col:hover .cookiesncream {
+    background-color:#8B4513   ;
+}
+
+.col:hover .pasta {
+    background-color:#F5DEB3   ;
+}
+
 
 .col:hover .card-img-top {
     transform: scale(1.1);
 }
+
 
 .img-container {
     width: 270px;
@@ -634,6 +701,7 @@ footer {
     gap: 40px;
     justify-content: center;
     align-items: center;
+    position: sticky;
 }
 
 .nav .nav-link {
@@ -1164,7 +1232,7 @@ dialog {
 }
 
 .payment-radio input[type="radio"] {
-    display: inline-flex;
+    display: none;
 }
 
 .payment-radio label {
