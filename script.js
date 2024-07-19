@@ -84,12 +84,16 @@ var priceOfProduct;
 var descriptionOfProduct;
 var loginUserExist = false;
 var applyVoucherCode = ["ABC123", "STO4CAFE", "F0CAFE1"];
-// Login credentials storages
-// var usernames = ["user@gmail.com"];
-// var passwords = ["lucky123"];
+
 for (var j = 0; j < homeProductsButtonsCount; j++){
     document.querySelectorAll(".product-link")[j].addEventListener("click", function(event){
         event.preventDefault();
+        if(loginUserExist === false){
+            // If there is no login yet, the form will appear to be logged in
+            alert("Please login first!");
+            window.location.replace("./login.html");
+            return;
+        }
         // Store source attribute value to array of images
         imageSource = this.querySelector("img").getAttribute("src");
 
@@ -103,11 +107,6 @@ for (var j = 0; j < homeProductsButtonsCount; j++){
 
         descriptionOfProduct = this.querySelector("p.card-text").innerHTML;
 
-        // if(loginUserExist === false){
-                // If there is no login yet, the form will appear to be logged in
-                // $(".login").css("display", "flex");
-        // }
-        //else{}
         addDetailsToPopupCard(imageSource, nameOfProduct, priceOfProduct, descriptionOfProduct);
     });
 }
@@ -589,7 +588,12 @@ $(".apply").on("click", function(){
 });
 $(".checkout").on("click", function(){
     let checkOutPriceInt = totalPriceOfProductInCartPage;
-    
+    if(loginUserExist === false){
+        // If there is no login yet, the form will appear to be logged in
+        alert("Please login first!");
+        window.location.replace("./login.html");
+        return;
+    }
     if(checkOutPriceInt === 49){
         alert("Please add a product first!");
     }
@@ -601,53 +605,21 @@ $(".checkout").on("click", function(){
     }
     else{
         alert("Your order will be sent to your address in just 30-45 minutes!");
-
     }
 });
 
-// Login function
-// $(".login").on("click", function(){
-//     let usernameInput = $("#username").val();
-//     let passwordInput = $("#password").val();
-
-//     for(var i = 0; i < usernames.length; i++){
-//         if(usernameInput === usernames[i] && passwordInput === passwords[i]){
-//             loginUserExist = true;
-//         }
-//         else{
-//             loginUserExist = false;
-//         }
-//     }
-// });
-
-// Signup function
-// var newUsername;
-// var newPassword;
-// $(".signup").on("click", function(){
-//      let userExist = false;
-//      let newUsernameInput = $("#newUsername").val();
-//      let newPasswordInput = $("#newPassword").val();
-//      for(var i = 0; i < usernames.length; i++){
-//          if(newUsernameInput === usernames[i]){
-//              userExist = true;
-//              break;
-//          }
-//          else if (newUsernameInput.includes("@gmail.com")){
-//              alert("The username needs to be a gmail account having '@gmail.com'");
-//              return userExist = false;s;
-//          }
-//          else{
-//              userExist = false;
-//          }
-//      }
-//      if(userExist){
-//          alert("This gmail is already used! Please select another gmail");
-//      }
-//      else{
-//          usernames.push(newUsernameInput);
-//          passwords.push(newPasswordInput);
-//      }
-// });
+$("#login-form-button").on("click", function(){
+    window.location.replace("./login.html");
+});
+//======== Login function ========//
+// Login credentials storages
+var usernames = ["user@gmail.com", "juandelacruz@gmail.com"];
+var passwords = ["lucky123", "juan23"];
+$(".loginButton").on("click", function(event){
+    event.preventDefault();
+    alert("Hello");
+});
+//
 // Slick version 1.5.8s
 
 

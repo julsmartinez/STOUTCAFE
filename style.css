@@ -125,7 +125,7 @@ form button {
 .signin-container {
     height: 100vh;
     width: 100%;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
@@ -203,7 +203,7 @@ form button {
 .forgotpass-container {
     height: 100vh;
     width: 100%;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
@@ -281,7 +281,7 @@ form button {
 .confirmation-container {
     height: 100vh;
     width: 100%;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
@@ -346,7 +346,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .reset-container {
     height: 100vh;
     width: 100%;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
