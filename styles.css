@@ -1335,6 +1335,124 @@ dialog {
     background-color: #ffffff70;
 }
 
+/*-----ABOUT -------*/
+
+.aboutus {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.aboutus-pic {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+.aboutus-title {
+    font-size: 4em;
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    text-align: center;
+}
+
+.aboutus-info {
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
+    color: white;
+    position: absolute;
+    top: 63%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+
+.mission-container, .vision-container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 150px;
+}
+
+.vision-container {
+    margin-top: 80px;
+
+}
+
+.mission-title, .vision-title {
+    font-weight: 600;
+}
+
+.mission, .vision {
+    display: block;
+    position: relative;
+    width: 600px;
+    margin-top: 45px;
+}
+
+.mission-pic, .vision-pic {
+    height: 400px;
+    position: relative;
+    border-radius: 20px;
+
+}
+
+.mission-text, .vision-text {
+    position: relative;
+    font-size: 20px;
+}
+
+.bottom-pic {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+    height: auto;
+
+}
+
+.bottom-pic img {
+    width: 1200px;
+    border-radius: 20px;
+    height: auto;
+}
+
+.bottom-pic button {
+    position: absolute;
+    padding: 8px 50px;
+    background-color: #FFA50090;
+    border: #00000073 solid 2px;
+    border-radius: 10px;
+    margin-top: 160px;
+}
+
+
+/*---CONTACT US PAGE*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 992px) {
     .navbar .links,
     .navbar .action-btn {
