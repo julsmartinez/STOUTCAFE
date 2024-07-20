@@ -363,13 +363,13 @@ var totalPriceOfProduct = 0;
 var totalPriceOfProductInCartPage = 49;
 var quantityInCart = 0;
 $(".addtocart").on("click", function(){
+    if(localStorage.getItem("isLoggedIn") === "false"){
+        // If there is no login yet, the form will appear to be logged in
+        alert("Please login first!");
+        window.location.replace("./login.html");
+        return;
+    }
     if(check === true && quantity !== 0){
-        if(localStorage.getItem("isLoggedIn") === false){
-            // If there is no login yet, the form will appear to be logged in
-            alert("Please login first!");
-            window.location.replace("./login.html");
-            return;
-        }
         totalPriceOfProduct = priceOfProduct * quantity;
         totalPriceOfProductInCartPage += totalPriceOfProduct;
         // next create element for add to cart page
@@ -393,6 +393,15 @@ $(".addtocart").on("click", function(){
 });
 
 //adding item from popup preview product
+function resetPaymentRadioButton(){
+    let radioOption1 = $("#radio1");
+    let radioOption2 = $("#radio2");
+    let radioOption3 = $("#radio3");
+
+    radioOption1.checked = false;
+    radioOption2.checked = false;
+    radioOption3.checked = false;
+}
 function addItemToCart(quantityValue){
     if(selectedVariation !== "8oz" && selectedVariation !== "solo" && selectedVariation !== ""){
         totalPriceOfProduct += 30;
@@ -469,7 +478,49 @@ function addItemToCart(quantityValue){
     newButton2.classList.add("cart-plus");
     $(newButton2).text("+");
     $(".cart-quantity").last().append(newButton2);
+
+    resetPaymentRadioButton();
    
+}
+
+// Remove items in cart
+function removeItemToCart(){
+    // cart-items-container
+    $(".cart-items-container").remove();
+
+    // cart-items-container
+    $(".cart-img-container" ).remove();
+    // Image
+    $(".cart-img").remove();
+
+    // text-container
+    $(".text-container").remove();
+    // i tag (trash icon)
+    $(".fa-trash");
+    // Product name (h5)
+    $(".cart-items-title").remove();
+    // Price
+    $(".cart-items-price").remove();
+    // Size
+    $(".cart-items-size").remove();
+    // Extras
+    $(".cart-items-extras").remove();
+
+    // Cart quantity
+    $(".cart-quantity").remove();
+    // Minus button
+    $(".cart-minus").remove();
+    // Span quantity
+    $(".cart-quantity-number").remove();
+    // Add button
+    $(".cart-plus").remove();
+
+    totalPriceOfProductInCartPage = 49;
+    quantityInCart = 0;
+
+    $(".quantity").text(quantityInCart.toString());
+    $(".subtotal").text("Subtotal: P" + (totalPriceOfProductInCartPage - 49));
+    $("#check-out-price").text("P" + (totalPriceOfProductInCartPage - 49));
 }
 // Delete an order
 $(document).on("click", ".fa-trash", function() {
@@ -488,7 +539,6 @@ $(document).on("click", ".fa-trash", function() {
     quantityInCart -= deletedQuantity;
     $(".quantity").text(quantityInCart.toString());
     $(this).closest(".cart-items-container").remove();
-    
 });
 // Quantity buttons
 $(document).on("click", ".cart-minus", function() {
@@ -561,7 +611,16 @@ function saveCustomerInfo(){
     }
     $(".name").text("Name: " + customerName);
     $(".phone-number").text("Phone Number: " + contactNumber);
-    $(".complete-address").text("Address: " + completeAddress);
+    if(completeAddress.length > 30){
+        let tempAddress;
+        for(var i = 0; i < 30; i++){
+            tempAddress += ceompleteAddress[i];
+        }
+        $(".complete-address").text("Address: " + tempAddress);
+    }
+    else{
+        $(".complete-address").text("Address: " + completeAddress);
+    }
     
     alert("successfully save the customer address!");
     return customerInfoExist = true;
@@ -601,7 +660,7 @@ $(".apply").on("click", function(){
 });
 $(".checkout").on("click", function(){
     let checkOutPriceInt = totalPriceOfProductInCartPage;
-    if(localStorage.getItem("isLoggedIn") === false){
+    if(localStorage.getItem("isLoggedIn") === "false"){
         // If there is no login yet, the form will appear to be logged in
         alert("Please login first!");
         window.location.replace("./login.html");
@@ -617,7 +676,8 @@ $(".checkout").on("click", function(){
         alert("Please fill up the delivery address first!");
     }
     else{
-        alert("Your order will be sent to your address in just 30-45 minutes!");
+        alert("Your order will be sent to your address in just 30-45 minutes!\nPlease prepare the exact amount!");
+        removeItemToCart();
     }
 });
 
@@ -628,6 +688,8 @@ $("#login-form-button").on("click", function(){
 // Login credentials storages
 var usernames = ["user@gmail.com", "juandelacruz@gmail.com", "angeloprincipio18@gmail.com"];
 var passwords = ["lucky123", "juan23", "pogiko123"];
+var firstNames = ["Romano", "Juan", "Angelo"];
+var lastNames = ["Ramos", "Dela Cruz", "Principio"];
 
 $("#loginButton").on("click", function(){
     loginValidation();
@@ -681,6 +743,8 @@ function loginValidation(){
         else{
             localStorage.setItem("buttonHidden", "false");
             alert("Invalid email or password!");
+            $("#login-email").text = "";
+            $("#login-password").text = "";
         }
     }
 }
@@ -820,5 +884,39 @@ $(".save-btn").on("click", function(){
             $(".login-container").css("display", "flex");
         }
     }
+});
+
+// Sign up
+$(".register-btn").on("click", function(){
+    let firstName = $("#first-name").val();
+    let lastName = $("#last-name").val();
+    let newEmail = $("#new-email").val();
+    let newPassword = $("#new-password").val();
+    let newConfirmPassword = $("#new-confirm-password").val();
+
+    if(firstName === "" || lastName === "" || newEmail === "" || newPassword === "" || newConfirmPassword === ""){
+        alert("Please fill up the form!");
+    }
+    else{
+        if(newPassword !== newConfirmPassword){
+            alert("New password and Confirm password did not matched!");
+        }
+        else if(!(newEmail.includes("@gmail.com"))){
+            alert("'@gmail.com' is require for your email account!");
+        }
+        else{
+            firstNames.push(firstName);
+            lastNames.push(lastName);
+            usernames.push(newEmail);
+            passwords.push(newConfirmPassword);
+            $("#first-name").text("");
+            $("#last-name").text("");
+            $("#new-email").text("");
+            $("#new-password").text("");
+            $("#new-confirm-password").text("");
+            alert("You successfully added an account!");
+        }
+    }
+    
 });
 // Slick version 1.5.8s
