@@ -75,7 +75,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    text-align: center;
     background-color: #000000;
     height: 13vh;
     backdrop-filter: blur(15px) ;
@@ -108,10 +107,10 @@ header {
     outline: none;
     border-radius: 50px;
     cursor: pointer;
-    width: 100px;
     display: flex;
     justify-content: center;
     margin-right: 70px;
+    padding: 8px 40px;
     
 }
 
@@ -143,11 +142,80 @@ header {
 
 }
 
+.fa-cart-shopping {
+    font-size: 25px;
+}
+
+.cart-link-home {
+    position: absolute;
+    right: 335px;
+    width: 20px;
+    
+}
+
+
 .cart-link {
     position: absolute;
-    right: 195px;
+    right: 230px;
     width: 20px;
 }
+
+.fa-circle-user {
+    font-size: 38px;
+}
+
+.user:hover .fa-circle-user,
+.user:hover .user-fullname,
+.user:hover .user-email {
+    color: var(--darkyellow);
+}
+
+.user {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    position: relative;
+    right: 48px;
+    cursor: pointer;
+}
+
+.user-fullname {
+    color: var(--white);
+    margin-top: 9px;
+}
+
+.user-email {
+    line-height: 5px;
+    color: white;
+    text-align: start;
+}
+
+.user-info {
+    display: block;
+    right: -50px;
+    position: relative;
+    left: -40px;
+
+}
+
+
+
+.quantity-home{
+    color: rgb(255, 255, 255);
+    border-radius: 50px;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    font-size: 15px;
+    position: absolute;
+    right: 310px;
+    top: -27px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
 
 .quantity{
     color: rgb(255, 255, 255);
@@ -157,13 +225,15 @@ header {
     background-color: red;
     font-size: 15px;
     position: absolute;
-    right: 179px;
+    right: 205px;
     top: -27px;
     display: flex;
     justify-content: center;
     text-align: center;
     align-items: center;
 }
+
+
 
 #cart {
     height: 10px;
@@ -570,7 +640,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FCEEFF", en
     position: relative;
     display: flex;
     float: right;
-    margin-right: 110px;
+    margin-right: 90px;
     top: -9.375rem;
 }
 
@@ -582,6 +652,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FCEEFF", en
     color: var(--darkgray);
     position: relative;
     font-size: small;
+
 }
 
 .footer-container {
@@ -704,6 +775,10 @@ footer {
     position: sticky;
 }
 
+.links li {
+    font-size: 20px;
+}
+
 .nav .nav-link {
     color: #000000;
     font-weight: 500;
@@ -755,15 +830,32 @@ footer {
     margin-top: -2em;
 }
 
+.fa-xmark {
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 30px;
+    right: -5px;
+    cursor: pointer;
+    font-size: 28px;
+}
+
+.fa-chevron-up {
+    color: black;
+    font-size: 30px;
+    background-color: var(--darkyellow);
+    padding: 15px;
+    border-radius: 50%;
+}
 
 
 /*NEW POPUP NA FINAL */
-.fa-xmark {
+#fa-xmark-popup {
     color: rgb(44, 44, 44);
     position: absolute;
     margin: 15px;
     right: 10px;
-    z-index: 3;
+    top: 8px;
+    z-index: 10;
     cursor: pointer;
     font-size: 28px;
 }
@@ -1435,17 +1527,118 @@ dialog {
 }
 
 
+
+
 /*---CONTACT US PAGE*/
 
+/*---HOME---
+.hovevid-container {
+    position: relative;
+    display: block;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-vid {
+    width: 100%;
+}
+
+.bottom-container {
+    position: absolute;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+
+.vid-text {
+    line-height: 75px;
+    width: 100%;
+    font-size: 4em;
+    font-weight: 750;
+    color: white;
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.homevid-text {
+    color: white;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    text-align: center;
+    font-size: 17px;
+}
 
 
+*/
+
+.homevid-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.home-vid {
+    width: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.content-overlay {
+    position: absolute;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 1000px;
+}
+
+.vid-text {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    display: flex;
+
+}
+
+.homevid-text {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    display: flex;
+
+}
+
+.home-order {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #f8b400;
+    border: none;
+    color: white;
+    display: flex;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.home-order:hover {
+    background-color: #d89b00;
+}
 
 
+/*----FAQs----*/
 
-
-
-
-
+.faqs-title {
+    position: relative;
+    
+}
 
 
 
@@ -1470,6 +1663,14 @@ dialog {
 
     .cart-btn {
         display: none;
+    }
+
+    .cart-btn-home {
+        display: none;
+    }
+
+    .user {
+        display:none;
     }
 }
 

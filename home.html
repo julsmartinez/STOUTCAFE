@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <link rel="stylesheet" href="styleS.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Playwrite+AU+TAS:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/086a90f697.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+            <div ><a href="#"><img src="pics/logo.png" alt=""class="logo"></a></div>
+            <ul class="links">
+                <li><a href="home.html" class="nav-linkk">HOME</a></li>
+                <li><a href="menu.html" class="nav-linkk">MENU</a></li>
+                <li><a href="about.html" class="nav-linkk">ABOUT</a></li>
+                <li><a href="#" class="nav-linkk">CONTACT</a></li>
+            </ul>
+            <div class="cart-btn">
+                <a type="button" class="cart-link-home">
+                    <i class="fa-solid fa-cart-shopping" id="cart"></i>
+                </a>
+                <span class = "quantity-home">0</span>
+            </div>
+            <div class="dropdown">
+                <button class="btn border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div class="user">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <div class="user-info">
+                            <h5 class="user-fullname">FName LName</h5>
+                            <p class="user-email">email</p>
+                        </div>
+                    </div>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Sign Out</a></li>
+                </ul>
+              </div>
+            
+
+            <div class="toggle-btn">
+                <i class="fa-solid fa-bars" ></i> 
+            </div>
+        </div>
+
+        <div class="dropdown_menu closed">
+            <li><a href="index.html" class="nav-linkk">HOME</a></li>
+            <li><a href="menu.html" class="nav-linkk">MENU</a></li>
+            <li><a href="about.html" class="nav-linkk">ABOUT</a></li>
+            <li><a href="#" class="nav-linkk">CONTACT</a></li>
+            <li><a href="#" class="nav-linkk">CART</a></li>
+            <li><a href="#" class="action-btn-dd">SIGN OUT</a></li>
+        </div>
+    </header>
+
+    <div class="homevid-container">
+        <video autoplay muted loop class="home-vid" src="pics/homevid.mp4"></video>
+        <div class="content-overlay">
+            <h1 class="vid-text">Fresh Brews & Delicious Bites,<br> All at Stout Cafe</h1>
+            <p class="homevid-text">Indulge in a delightful blend of aromatic coffee, delicious pizza, juicy burgers, flavorful rice bowls, and more. Whether you're here for a quick bite or a leisurely meal, Stout Cafe promises a cozy ambiance and a menu that caters to all tastes. Join us for a unique dining experience where quality and flavor come together.</p>
+            <button class="home-order">Order Now</button>
+        </div>
+    </div>
+
+    <!--SPECIALTY DRINKS-->
+
+<div class="specialty-drinks-bg">
+    <h4 class="title text-light ">Specialty Drinks</h4>
+</div>
+
+    <div class="sd-container d-flex justify-content-center align-items-center">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 row-cols-xl-4 row-cols-xxl-4 g-4 align-items-center "> 
+            <div class="col d-flex justify-content-center align-items-center">
+                <button type="button" class="product-link non-coffee-container">
+                    <div class="card border-0 rounded-4">
+                        <div class="img-container strawberrysup">
+                            <img src="products/strawberry supreme.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body text-start ">
+                            <h5 class="card-title mt-3 px-2 fw-semibold">Strawberry Supreme</h5>
+                            <p class="start-price px-2">Price:</p>
+                            <h4 class="price fs-4 px-2">P180</h4>
+                            <p class="card-text px-2">Homemade strawberry puree with milk, topped ice cream.</p>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col d-flex justify-content-center align-items-center">
+                <button tpye="button" class="product-link non-coffee-container">
+                    <div class="card border-0 rounded-4">
+                        <div class="img-container soda">
+                            <img src="products/blue strawbeyy soda.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body text-start ">
+                            <h5 class="card-title mt-3 px-2 fw-semibold">Blue Strawberry Soda</h5>
+                            <p class="start-price px-2">Price:</p>
+                            <h4 class="price fs-4 px-2">P125</h4>
+                            <p class="card-text px-2">Strawberry puree with curacao syrup</p>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col d-flex justify-content-center align-items-center">
+                <button type="button" class="product-link coffee-container">
+                    <div class="card border-0 rounded-4">
+                        <div class="img-container tiramisu">
+                            <img src="products/tiramasu.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body text-start ">
+                            <h5 class="card-title mt-3 px-2 fw-semibold">Tiramisu</h5>
+                            <p class="start-price px-2"> Price:</p>
+                            <h4 class="price fs-4 px-2">P165</h4>
+                            <p class="card-text px-2">Classic Stout Cold Brew and sweetened cold foam</p>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col d-flex justify-content-center align-items-center">
+                <button type="button" class="product-link coffee-container">
+                    <div class="card border-0 rounded-4">
+                        <div class="img-container butterscotch">
+                            <img src="products/beutterscotch.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body text-start ">
+                            <h5 class="card-title mt-3 px-2 fw-semibold">Butter Caramel Latte</h5>
+                            <p class="start-price px-2">Price:</p>
+                            <h4 class="price fs-4 px-2">P465</h4>
+                            <p class="card-text px-2">Espresso and milk over our homemade caramel syrup</p>
+                        </div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+<!--BEST SELLERS-->
+
+        <div class="best-sellers-bg">
+            <h4 class="title text-light ">Best Sellers</h4>
+        </div>
+    
+            <div class="bs-container d-flex justify-content-center align-items-center">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 row-cols-xl-4 row-cols-xxl-4 g-4 align-items-center "> 
+                    <div class="col d-flex justify-content-center align-items-center">
+                        <button type="button" class="product-link coffee-container">
+                            <div class="card border-0 rounded-4">
+                                <div class="img-container spanish">
+                                    <img src="products/spanish latte.png" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body text-start ">
+                                    <h5 class="card-title mt-3 px-2 fw-semibold">Spanish Latte</h5>
+                                    <p class="start-price px-2"> Price:</p>
+                                    <h4 class="price fs-4 px-2">P165</h4>
+                                    <p class="card-text px-2">Espresso over sweet milk</p>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="col d-flex justify-content-center align-items-center">
+                        <button type="button" class="product-link">
+                            <div class="card border-0 rounded-4">
+                                <div class="img-container tapa">
+                                    <img src="products/stout beef tapa.png" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body text-start ">
+                                    <h5 class="card-title mt-3 px-2 fw-semibold">Stout Beef Tapa</h5>
+                                    <p class="start-price px-2">Price:</p>
+                                    <h4 class="price fs-4 px-2">P320</h4>
+                                    <p class="card-text px-2">Traditional Filipino breakfast made with marinated beef sukiyaki. Served with garlic rice and fried egg.</p>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="col d-flex justify-content-center align-items-center">
+                        <button type="button" class="product-link non-coffee-container">
+                            <div class="card border-0 rounded-4">
+                                <div class="img-container smatcha">
+                                    <img src="products/strawberry matcha.png" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body text-start ">
+                                    <h5 class="card-title mt-3 px-2 fw-semibold">Strawberry Matcha</h5>
+                                    <p class="start-price px-2"> Price:</p>
+                                    <h4 class="price fs-4 px-2">P200</h4>
+                                    <p class="card-text px-2">Matcha latte with our homemade strawberry puree</p>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="col d-flex justify-content-center align-items-center">
+                        <button type="button" class="product-link">
+                            <div class="card border-0 rounded-4">
+                                <div class="img-container smores">
+                                    <img src="products/smores.png" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body text-start ">
+                                    <h5 class="card-title mt-3 px-2 fw-semibold">Smores Coroffle</h5>
+                                    <p class="start-price px-2">Price:</p>
+                                    <h4 class="price fs-4 px-2">P165</h4>
+                                    <p class="card-text px-2">Croissant waffle topped with Caramel or Chocolate, mallows and grahams</p>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="all-menu-btn-cont">
+                <button type="button" class="all-menu-btn">View All Menu</button>
+            </div>
+
+            <div class="back-to-top-btn">
+                <button id="backtotop"><i class="fa-solid fa-chevron-up"></i></button>
+            </div>
+
+                <!--POPUP NA FINAL-->
+
+    <div class="popup-container">
+        <div class="popup">
+            <i class="fa-solid fa-xmark" id="fa-xmark-popup"></i>
+            <div class="popup-img-container">
+                <img src="products/latte.png" alt="" class="popup-img">
+            </div>
+            <div class="scrollable">
+                <h3 class="popup-title">Product Name</h3>
+            <p class="popup-price">Price:</p>
+            <h4 class="popup-number"></h4>
+            <p class="popup-description">Description</p>
+            <hr>
+            <h6 class="variation">Variation (Select 1)</h6>
+            <div class="radio-group">
+                <label class="radio size">
+                    <input class="radio-option drinks" type="radio" name="option-size" value="8oz"> 8oz
+                </label>
+                <label class="radio size">
+                    <input class="radio-option drinks" type="radio" name="option-size" value="10oz"> 10oz
+                </label>
+                <label class="radio size">
+                    <input class="radio-option drinks" type="radio" name="option-size" value="16oz"> 16oz
+                </label>
+                <label class="radio nachos">
+                    <input class="radio-option snacks" type="radio" name="option-size" value="Solo"> Solo
+                </label>
+                <label class="radio nachos">
+                    <input class="radio-option snacks" type="radio" name="option-size" value="For Sharing"> For Sharing
+                </label>
+                <label class="radio sandwichSmores">
+                    <input class="radio-option" type="radio" name="option-size" value="Chocolate Smores"> Chocolate Smores
+                </label>
+                <label class="radio sandwichSmores">
+                    <input class="radio-option" type="radio" name="option-size" value="Caramel Smores"> Caramel Smores
+                </label>
+            </div>
+            <hr>
+            <h6 class="extras">Extras </h6>
+            <div class="checkbox-group">
+                <label class="checkbox espressoDrinks">
+                    <input class="checkbox-option" type="checkbox" name="option" value="Shot of Espresso">
+                    Shot of Espresso
+                </label>
+                <label class="checkbox allPasta">
+                    <input class="checkbox-option" type="checkbox" name="option-customize" value="Potato Chips & Dip"> Potato Chips & Dip
+                </label>
+                <label class="checkbox allPasta">
+                    <input class="checkbox-option" type="checkbox" name="option-customize" value="Potato Chips"> Potato Chips
+                </label>
+                <label class="checkbox allPasta">
+                    <input class="checkbox-option" type="checkbox" name="option-customize" value="Baguette Bites"> Baguette Bites
+                </label>
+                <label class="checkbox allPasta">
+                    <input class="checkbox-option" type="checkbox" name="option-customize" value="Sun Dried Tomatoes"> Sun Dried Tomatoes
+                </label>
+                <label class="checkbox riceBowls">
+                    <input class="checkbox-option" type="checkbox" name="option-customize" value="Egg"> Egg
+                </label>
+                <label class="checkbox riceBowls">
+                    <input class="checkbox-option" type="checkbox" name="option-customize" value="Coleslaw"> Coleslaw
+                </label>
+                <label class="checkbox riceBowls">
+                    <input class="checkbox-option" type="checkbox" name="option-customize" value="Plain Rice"> Plain Rice
+                </label>
+                <label class="checkbox riceBowls">
+                    <input class="checkbox-option" type="checkbox" name="option-customize" value="Mexican Java Rice"> Mexican Java Rice
+                </label>
+                <label class="checkbox riceBowls">
+                    <input class="checkbox-option" type="checkbox" name="option-customize" value="Garlic Rice"> Garlic Rice
+                </label>
+            </div>
+        </div>
+
+
+        <div class="popup-footer">
+            <div class="grid-quantity">
+                <button class="minus">-</button>
+                <span class="quantity-number">1</span>
+                <button class="plus">+</button>
+            </div>
+            <div class="grid-addtocart">
+                <button class="addtocart">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+<!--CART PAGE-->
+
+    <div class="cartpage">
+        <div class="mycart">
+            <div class="backbutton">
+                <i class="fa-solid fa-chevron-left"></i>
+                <p class="back">Back</p>
+            </div>
+            <h4 class="mycart-title">My Cart</h4>
+
+            <div class="items">
+                <!--Start adding here-->
+                <!-- <div class="cart-items-container"> 
+                    <div class="cart-img-container">
+                        <img class="cart-img" src="products/latte.png" alt="">
+                    </div>
+                    <div class="text-container">
+                        <i class="fa-solid fa-trash"></i>
+                        <h5 class="cart-items-title">Product Name</h5>
+                        <p class="cart-items-price">Price: P</p>
+                        <p class="cart-items-size">Size: </p>
+                        <p class="cart-items-extras">Extras:</p>
+                    </div>
+
+                    <div class="cart-quantity">
+                        <button class="cart-minus">-</button>
+                        <span class="cart-quantity-number">0</span>
+                        <button class="cart-plus">+</button>
+                    </div>
+                </div>     -->
+            </div>
+        </div>
+        <div class="information">
+            <button onclick="showDialog()" class="edit">
+                <div class="delivery-address">
+                    <img class="map" src="products/map-location-svgrepo-com.png" alt="">
+                    <div class="info">
+                        <h5 class="delivery-title">Delivery Address</h5>
+                        <p class="name">Name:</p>
+                        <p class="phone-number">Phone Number:</p>
+                        <p class="complete-address">Address:</p>
+                    </div>
+                </div>
+            </button>
+
+            <p class="special-instructions"> Special Instructions</p>
+            <textarea name="textbox" id="textbox" placeholder="Enter your special instructions here..."></textarea>
+
+            <p class="payment-method">Payment Method</p>
+            
+            <div class="dialog">
+                <dialog id="myDialog">
+                    <p class="contact">Contact</p>
+                    <input class="fullname" type="text" placeholder="Full Name" required>
+                    <input class="contact-number" type="text" placeholder="Contact Number" required>
+                    <p class="address">Address</p>
+                    <input class="dialog-address-1" type="text" placeholder="Street Name, Building, House No." required>
+                    <input class="dialog-address-2" type="text" placeholder="Barangay" required>
+                    <input class="dialog-address-3" type="text" placeholder="City" required>
+                    <input class="dialog-address-4" type="text" placeholder="Province" required>
+                    <button onclick="closeDialog()" class="close">Close</button>
+                    <button onclick="closeDialog()" class="save">Save</button>
+                </dialog>
+            </div>
+
+            <div class="payment-radio">
+                <div class="payment-radio">
+                  <label for="radio1">
+                    <input type="radio" id="radio1" class="payment" name="radio-group" />
+                    <img class="payment-img" src="./pics/cash.png" alt="Radio 1">
+                  </label>
+                </div>
+                <div class="payment-radio">
+                  <label for="radio2">
+                    <input type="radio" id="radio2" class="payment" name="radio-group" />
+                    <img class="payment-img" src="./pics/Card.png" alt="Radio 2">
+                  </label>
+                </div>
+                <div class="payment-radio">
+                  <label for="radio3">
+                    <input type="radio" id="radio3" class="payment" name="radio-group" />
+                    <img class="payment-img" src="./pics/gcash.png" alt="Radio 3">
+                  </label>
+                </div>
+            </div>
+
+            <div class="voucher">
+                <p class="voucher-code">Voucher Code:</p>
+                <div class="code"><textarea name="textbox" id="textbox-voucher" placeholder="Enter voucher code here..."></textarea>
+                    <button class="apply">Apply</button></div>
+            </div>
+
+            <hr>
+        <div class="payment-summary">
+            <h5 class="summary-title">Payment Details</h5>
+            <p class="subtotal">Subtotal:</p>
+            <p class="delivery-fee">Delivery Fee: P49</p>
+            <p class="payment-method-2">Payment Method:</p>
+        </div>
+        <hr>
+
+        <div class="total">
+            <div class="totalpayment">
+                <h5>Total Payment:</h5>
+                <h2 id = "check-out-price">P0</h2>
+            </div>
+
+            <button class="checkout">Check Out</button>
+
+        </div>
+        </div>
+    </div>
+
+
+            <div class="footer-container">
+                <footer>
+                    <div class="icons-container">
+                        <a href="https://www.facebook.com/LianneMartinez11/" target="_blank" class="icons-link">
+                            <i class="fa-brands fa-square-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/juliannamrtnz" target="_blank" class="icons-link">
+                            <i class="fa-brands fa-square-instagram"></i>
+                        </a>
+                        <a href="https://tiktok.com/juliannamrtnz11" target="_blank" class="icons-link">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="footer-texts">
+                        <a href="index.html">MENU</a>
+                        <div class="divider"></div>
+                        <a href="about.html">ABOUT US</a>
+                        <div class="divider"></div>
+                        <a href="#">TERMS AND CONDITIONS</a>
+                        <div class="divider"></div>
+                        <a href="#">FEEDBACK</a>
+                        <div class="divider"></div>
+                        <a href="#">CONTACT US</a>
+                        <div class="divider"></div>
+                        <a href="#">FAQ</a>
+                    </div>  
+                
+                </footer>
+            </div>
+
+
+    
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>   
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> 
+
+</body>
+</html>
