@@ -19,7 +19,7 @@
                 <li><a href="home.html" class="nav-linkk" id = "home">HOME</a></li>
                 <li><a href="menu.html" class="nav-linkk">MENU</a></li>
                 <li><a href="about.html" class="nav-linkk">ABOUT</a></li>
-                <li><a href="#" class="nav-linkk">CONTACT</a></li>
+                <li><a href="contact.html" class="nav-linkk">CONTACT</a></li>
             </ul>
             <div class="cart-btn">
                 <a type="button" class="cart-link-home">
@@ -51,7 +51,7 @@
             <li><a href="home.html" class="nav-linkk">HOME</a></li>
             <li><a href="menu.html" class="nav-linkk">MENU</a></li>
             <li><a href="about.html" class="nav-linkk">ABOUT</a></li>
-            <li><a href="#" class="nav-linkk">CONTACT</a></li>
+            <li><a href="contact.html" class="nav-linkk">CONTACT</a></li>
             <li><a href="#" class="nav-linkk">CART</a></li>
             <li><a href="#" class="action-btn-dd">LOGIN</a></li>
         </div>
@@ -82,7 +82,119 @@
         <img src="pics/about.png" alt="">
         <button class="order-btn">Order Now</button>
     </div>
+    <!--CART PAGE-->
 
+<div class="cartpage">
+    <div class="mycart">
+        <div class="backbutton">
+            <i class="fa-solid fa-chevron-left"></i>
+            <p class="back">Back</p>
+        </div>
+        <h4 class="mycart-title">My Cart</h4>
+
+        <div class="items">
+            <!-- Start adding here -->
+            <!-- <div class="cart-items-container"> 
+                <div class="cart-img-container">
+                    <img class="cart-img" src="products/latte.png" alt="">
+                </div>
+                <div class="text-container">
+                    <i class="fa-solid fa-trash"></i>
+                    <h5 class="cart-items-title">Product Name</h5>
+                    <p class="cart-items-price">Price: P</p>
+                    <p class="cart-items-size">Size: </p>
+                    <p class="cart-items-extras">Extras:</p>
+                </div>
+
+                <div class="cart-quantity">
+                    <button class="cart-minus">-</button>
+                    <span class="cart-quantity-number">0</span>
+                    <button class="cart-plus">+</button>
+                </div>
+            </div>     -->
+        </div>
+    </div>
+    <div class="information">
+        <button onclick="showDialog()" class="edit">
+            <div class="delivery-address">
+                <img class="map" src="products/map-location-svgrepo-com.png" alt="">
+                <div class="info">
+                    <h5 class="delivery-title">Delivery Address</h5>
+                    <p class="name">Name:</p>
+                    <p class="phone-number">Phone Number:</p>
+                    <p class="complete-address">Address:</p>
+                </div>
+            </div>
+        </button>
+
+        <p class="special-instructions"> Special Instructions</p>
+        <textarea name="textbox" id="textbox" placeholder="Enter your special instructions here..."></textarea>
+
+        <p class="payment-method">Payment Method</p>
+        
+        <div class="dialog">
+            <dialog id="myDialog">
+                <p class="contact">Contact</p>
+                <input class="fullname" type="text" placeholder="Full Name" required>
+                <input class="contact-number" type="text" placeholder="Contact Number" required>
+                <p class="address">Address</p>
+                <input class="dialog-address-1" type="text" placeholder="Street Name, Building, House No." required>
+                <input class="dialog-address-2" type="text" placeholder="Barangay" required>
+                <input class="dialog-address-3" type="text" placeholder="City" required>
+                <input class="dialog-address-4" type="text" placeholder="Province" required>
+                <button onclick="closeDialog()" class="close">Close</button>
+                <button onclick="closeDialog()" class="save">Save</button>
+            </dialog>
+        </div>
+
+        <div class="payment-radio">
+            <div class="payment-radio">
+              <label for="radio1">
+                <input type="radio" id="radio1" class="payment" name="radio-group" />
+                <img class="payment-img" src="./pics/cash.png" alt="Radio 1">
+              </label>
+            </div>
+            <div class="payment-radio">
+              <label for="radio2">
+                <input type="radio" id="radio2" class="payment" name="radio-group" />
+                <img class="payment-img" src="./pics/Card.png" alt="Radio 2">
+              </label>
+            </div>
+            <div class="payment-radio">
+              <label for="radio3">
+                <input type="radio" id="radio3" class="payment" name="radio-group" />
+                <img class="payment-img" src="./pics/gcash.png" alt="Radio 3">
+              </label>
+            </div>
+        </div>
+
+        <div class="voucher">
+            <p class="voucher-code">Voucher Code:</p>
+            <div class="code"><textarea name="textbox" id="textbox-voucher" placeholder="Enter voucher code here..."></textarea>
+                <button class="apply">Apply</button></div>
+        </div>
+
+        <hr>
+    <div class="payment-summary">
+        <h5 class="summary-title">Payment Details</h5>
+        <p class="subtotal">Subtotal:</p>
+        <p class="delivery-fee">Delivery Fee: P49</p>
+        <p class="payment-method-2">Payment Method:</p>
+    </div>
+    <hr>
+
+    <div class="total">
+        <div class="totalpayment">
+            <h5>Total Payment:</h5>
+            <h2 id = "check-out-price">P0</h2>
+        </div>
+
+        <button class="checkout">Check Out</button>
+
+    </div>
+        
+    </div>
+</div>
 
 
     

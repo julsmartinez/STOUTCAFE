@@ -70,28 +70,28 @@ function scrollFunction(element){
     const divElement = document.querySelector("html");
     switch(element){
         case "coffee":
-            divElement.scrollTop = 100;
+            divElement.scrollTop = 10;
             break;
         case "non-coffeee":
-            divElement.scrollTop = 1075
+            divElement.scrollTop = 955;
             break;
         case "tea":
-            divElement.scrollTop = 2025
+            divElement.scrollTop = 1915;
             break;
         case "pastries":
-            divElement.scrollTop = 2555
+            divElement.scrollTop = 2415;
             break;
         case "apetizers":
-            divElement.scrollTop = 3075
+            divElement.scrollTop = 2955;
             break;
         case "sandwiches":
-            divElement.scrollTop = 3600
+            divElement.scrollTop = 3490;
             break;
         case "pasta":
-            divElement.scrollTop = 4545
+            divElement.scrollTop = 4415;
             break;
         case "ricebowl":
-            divElement.scrollTop = 5160
+            divElement.scrollTop = 4960;
             break;
     }
 }
@@ -807,8 +807,7 @@ $("#login-forgot-password").on("click", function(){
     $(forgotPasswordForm).css("display", "flex");
 });
 
-// Send code
-
+//========== Send code email ==========//
 $(".send-btn").on("click", function(event){
     const userEmail = $("#userEmail").val();
     localStorage.setItem('currentEmail', userEmail);
@@ -976,6 +975,51 @@ $("#signOut").on("click", function(){
     localStorage.setItem("isLoggedIn", "false");
     checkButtonVisibility(); 
 });
-//let cartName = $(".cart-link-home");
-//cartName.attr("class", "cart-link");
+
+//========== Send Get It Touch ==========//
+$("#send").on("click", function(event){
+    const userEmail = $("#email").val();
+    const name = $("#name").val();
+    const subject = $("#subject").val();
+    const message = $("#message").val();
+    localStorage.setItem('currentEmail', userEmail);
+    if(userEmail === "" || name === "" || subject === "" || message === ""){
+        alert("Please fill up the form first!");
+        return;
+    }
+    else if(!(userEmail.includes("@gmail.com"))){
+        alert("Please input a your stout cafe gmail account first!");
+        return;
+    }
+    else{
+        
+    }
+});
+
+$(".contact-form").on("submit", function(event){
+    event.preventDefault(); // Prevent the default form submission
+    var formData = $(this).serialize(); // Serialize the form data
+    const userEmail = $("#email").val();
+    const name = $("#name").val();
+    const subject = $("#subject").val();
+    const message = $("#message").val();
+    $.ajax({
+        url: 'https://formsubmit.co/angeloprincipio18@gmail.com',
+        method: 'POST',
+        data: formData,
+        success: function(response) {
+            // Handle the success response here
+            alert('Your message is successfully sent!');
+            userEmail.text("");
+            name.text("");
+            subject.text("");
+            message.text("");
+        },
+        error: function(error) {
+            // Handle the error response here
+            alert('An error occurred. Please try again.');
+            console.log(error);
+        }
+    });           
+});
 // Slick version 1.5.8s
