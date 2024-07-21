@@ -23,8 +23,13 @@ body {
 
 /*------LOGIN-------*/
 
+#signOut {
+    z-index: 999;
+}
 
+.landingpage-pic {
 
+}
 
 
 /*------NAVBAR-------*/
@@ -615,6 +620,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FCEEFF", en
     position: relative;
     justify-content: center;
     top: -12rem;
+    height: auto;
 }
 
 .all-menu-btn {
@@ -1458,13 +1464,28 @@ dialog {
 .bottom-pic button {
     position: absolute;
     padding: 8px 50px;
-    background-color: #FFA50090;
+    background-color: #FAD02C90;
     border: #00000073 solid 2px;
     border-radius: 10px;
     margin-top: 160px;
 }
 
+.bottom-pic-lp {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin-bottom: 50px;
+    position: relative;
+    top: -100px;
+}
 
+.bottom-pic-lp img {
+    width: 1150px;
+    border-radius: 20px;
+    height: auto;    
+}
 
 
 /*---CONTACT US PAGE*/
@@ -1671,7 +1692,7 @@ iframe {
 .home-order {
     padding: 10px 20px;
     font-size: 1em;
-    background-color: #f8b400;
+    background-color: var(--darkyellow);
     border: none;
     color: white;
     display: flex;
@@ -1680,7 +1701,7 @@ iframe {
 }
 
 .home-order:hover {
-    background-color: #d89b00;
+    background-color: var(--darkyellow);
 }
 
 
