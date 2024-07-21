@@ -616,7 +616,11 @@ $(".save").on("click", function(){
     saveCustomerInfo();
 });
 
-
+$(document).ready(function() {
+    $('.contact-number').on('input', function() {
+      this.value = this.value.replace(/[^0-9]/g, '');
+    });
+});
 
 function saveCustomerInfo(){
     let customerName = $(".fullname").val();
