@@ -920,6 +920,9 @@ $(".save-btn").on("click", function(){
     let differentPassword = $("#differentPassword").val();
     let confirmPassword  = $("#confirmPassword").val();
     let passwordChanged = false;
+    if(differentPassword.length < 8){
+        alert("Password length must be 8 and above!");
+    }
     if(differentPassword === "" || confirmPassword === ""){
         alert("Please fill up new password & confirm password!");
     }
