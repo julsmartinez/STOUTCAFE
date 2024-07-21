@@ -270,7 +270,6 @@ function addDetailsToPopupCard(image, productName, price, description){
     $(".sandwichSmores").css("visibility", "hidden");
     $(".size").css("visibility", "hidden");
     $(".scrollable").animate({scrollTop: 0},10);
-    $("body").css("overflow", "hidden");
     quantity = 1;
     $(".quantity-number").text(quantity);
 
@@ -303,7 +302,6 @@ function hidePreviewProductElements(){
     $(".sandwichSmores").css("visibility", "hidden");
     $(".size").css("visibility", "hidden");
     $('.scrollable').css("overflow", "hidden");
-    $('body').css("overflow", "visible");
 }
 // Adding Price, Quantity, Variation value, Extras
 $(".plus").on("click", function(){
@@ -711,7 +709,7 @@ $(".checkout").on("click", function(){
     }
 });
 
-$("#login-form-button").on("click", function(){
+$("#login-form-button, #burgerLogin").on("click", function(){
     window.location.href = "./login.html" ;
 });
 //======== Login function ========//
@@ -745,12 +743,16 @@ function checkButtonVisibility() {
         $(".dropdown").show();
         $(".cart-link").attr("class", "cart-link-home");
         $(".quantity").attr("class", "quantity-home");
+        $("#burgerSignout").css("display", "flex");
+        $("#burgerLogin").css("display", "none");
     } 
     else {
         $("#login-form-button").show(); // Ensure the button is shown
         $(".dropdown").hide();
         $(".cart-link-home").attr("class", "cart-link");
         $(".quantity-home").attr("class", "quantity");
+        $("#burgerSignout").css("display", "none");
+        $("#burgerLogin").css("display", "flex");
     }
 }
 
@@ -979,7 +981,7 @@ $(".register-btn").on("click", function(){
 });
 
 // Sign out
-$("#signOut").on("click", function(){
+$("#signOut, #burgerSignout").on("click", function(){
     window.location.href = "./index.html";
     localStorage.setItem("isLoggedIn", "false");
     checkButtonVisibility(); 
