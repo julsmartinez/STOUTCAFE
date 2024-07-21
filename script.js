@@ -270,7 +270,6 @@ function addDetailsToPopupCard(image, productName, price, description){
     $(".sandwichSmores").css("visibility", "hidden");
     $(".size").css("visibility", "hidden");
     $(".scrollable").animate({scrollTop: 0},10);
-    $("body").css("overflow", "hidden");
     quantity = 1;
     $(".quantity-number").text(quantity);
 
@@ -303,7 +302,6 @@ function hidePreviewProductElements(){
     $(".sandwichSmores").css("visibility", "hidden");
     $(".size").css("visibility", "hidden");
     $('.scrollable').css("overflow", "hidden");
-    $('body').css("overflow", "visible");
 }
 // Adding Price, Quantity, Variation value, Extras
 $(".plus").on("click", function(){
@@ -537,6 +535,7 @@ function removeItemToCart(){
     $(".quantity, .quantity-home").text(quantityInCart.toString());
     $(".subtotal").text("Subtotal: P" + (totalPriceOfProductInCartPage - 49));
     $("#check-out-price").text("P" + (totalPriceOfProductInCartPage - 49));
+    $("#textbox-voucher").text("");
 }
 // Delete an order
 $(document).on("click", ".fa-trash", function() {
@@ -615,7 +614,11 @@ $(".save").on("click", function(){
     saveCustomerInfo();
 });
 
-
+$(document).ready(function() {
+    $('.contact-number').on('input', function() {
+      this.value = this.value.replace(/[^0-9]/g, '');
+    });
+});
 
 function saveCustomerInfo(){
     let customerName = $(".fullname").val();
@@ -706,7 +709,7 @@ $(".checkout").on("click", function(){
     }
 });
 
-$("#login-form-button").on("click", function(){
+$("#login-form-button, #burgerLogin").on("click", function(){
     window.location.href = "./login.html" ;
 });
 //======== Login function ========//
@@ -740,12 +743,16 @@ function checkButtonVisibility() {
         $(".dropdown").show();
         $(".cart-link").attr("class", "cart-link-home");
         $(".quantity").attr("class", "quantity-home");
+        $("#burgerSignout").css("display", "flex");
+        $("#burgerLogin").css("display", "none");
     } 
     else {
         $("#login-form-button").show(); // Ensure the button is shown
         $(".dropdown").hide();
         $(".cart-link-home").attr("class", "cart-link");
         $(".quantity-home").attr("class", "quantity");
+        $("#burgerSignout").css("display", "none");
+        $("#burgerLogin").css("display", "flex");
     }
 }
 
@@ -947,7 +954,10 @@ $(".register-btn").on("click", function(){
         alert("Please fill up the form!");
     }
     else{
-        if(newPassword !== newConfirmPassword){
+        if(newPassword.length < 8){
+            alert("Password character/letter must be 8 and above only!");
+        }
+        else if(newPassword !== newConfirmPassword){
             alert("New password and Confirm password did not matched!");
         }
         else if(!(newEmail.includes("@gmail.com"))){
@@ -974,7 +984,7 @@ $(".register-btn").on("click", function(){
 });
 
 // Sign out
-$("#signOut").on("click", function(){
+$("#signOut, #burgerSignout").on("click", function(){
     window.location.href = "./index.html";
     localStorage.setItem("isLoggedIn", "false");
     checkButtonVisibility(); 
@@ -982,6 +992,12 @@ $("#signOut").on("click", function(){
 
 //========== Send Get It Touch ==========//
 $("#send").on("click", function(event){
+    if(localStorage.getItem("isLoggedIn") === "false"){
+        // If there is no login yet, the form will appear to be logged in
+        alert("Please login first!");
+        window.location.replace("./login.html");
+        return;
+    }
     const userEmail = $("#email").val();
     const name = $("#name").val();
     const subject = $("#subject").val();
@@ -996,7 +1012,7 @@ $("#send").on("click", function(event){
         return;
     }
     else{
-        
+        alert("Your message will be sent shortly, please wait for a few seconds!");
     }
 });
 
