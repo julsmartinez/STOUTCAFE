@@ -537,6 +537,7 @@ function removeItemToCart(){
     $(".quantity, .quantity-home").text(quantityInCart.toString());
     $(".subtotal").text("Subtotal: P" + (totalPriceOfProductInCartPage - 49));
     $("#check-out-price").text("P" + (totalPriceOfProductInCartPage - 49));
+    $("#textbox-voucher").text("");
 }
 // Delete an order
 $(document).on("click", ".fa-trash", function() {
