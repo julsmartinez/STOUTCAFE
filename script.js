@@ -1001,7 +1001,7 @@ $("#send").on("click", function(event){
         return;
     }
     else{
-        
+        alert("Your message will be sent shortly, please wait for a few seconds!");
     }
 });
 
