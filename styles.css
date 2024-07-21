@@ -111,6 +111,7 @@ header {
     justify-content: center;
     margin-right: 70px;
     padding: 8px 40px;
+    color: #000;
     
 }
 
@@ -182,6 +183,7 @@ header {
 .user-fullname {
     color: var(--white);
     margin-top: 9px;
+    text-align: start;
 }
 
 .user-email {
