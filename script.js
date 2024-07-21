@@ -955,7 +955,7 @@ $(".register-btn").on("click", function(){
     }
     else{
         if(newPassword.length < 8){
-            
+            alert("Password character/letter must be 8 and above only!");
         }
         else if(newPassword !== newConfirmPassword){
             alert("New password and Confirm password did not matched!");
