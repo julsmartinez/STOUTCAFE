@@ -954,7 +954,10 @@ $(".register-btn").on("click", function(){
         alert("Please fill up the form!");
     }
     else{
-        if(newPassword !== newConfirmPassword){
+        if(newPassword.length < 8){
+            
+        }
+        else if(newPassword !== newConfirmPassword){
             alert("New password and Confirm password did not matched!");
         }
         else if(!(newEmail.includes("@gmail.com"))){
