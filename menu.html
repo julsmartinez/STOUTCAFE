@@ -19,16 +19,30 @@
         <div class="navbar">
             <div ><a type="button" href="index.html"><img src="pics/logo.png" alt=""class="logo"></a></div>
             <ul class="links">
-                <li><a href="index.html" class="nav-linkk">HOME</a></li>
+                <li><a href="home.html" class="nav-linkk" id = "home">HOME</a></li>
                 <li><a href="menu.html" class="nav-linkk">MENU</a></li>
                 <li><a href="about.html" class="nav-linkk">ABOUT</a></li>
                 <li><a href="#" class="nav-linkk">CONTACT</a></li>
             </ul>
             <div class="cart-btn">
-                <a type="button" class="cart-link">
+                <a type="button" class="cart-link-home">
                     <i class="fa-solid fa-cart-shopping" id="cart"></i>
                 </a>
-                <span class = "quantity">0</span>
+                <span class = "quantity-home">0</span>
+            </div>
+            <div class="dropdown">
+                <button class="btn border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div class="user">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <div class="user-info">
+                            <h5 class="user-fullname">FName LName</h5>
+                            <p class="user-email">email</p>
+                        </div>
+                    </div>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#" id = "signOut">Sign Out</a></li>
+                </ul>
             </div>
             <a href="./login.html" class="action-btn" id = "login-form-button">Login</a>
             <div class="toggle-btn">
@@ -37,7 +51,7 @@
         </div>
 
         <div class="dropdown_menu closed">
-            <li><a href="index.html" class="nav-linkk">HOME</a></li>
+            <li><a href="home.html" class="nav-linkk">HOME</a></li>
             <li><a href="menu.html" class="nav-linkk">MENU</a></li>
             <li><a href="about.html" class="nav-linkk">ABOUT</a></li>
             <li><a href="#" class="nav-linkk">CONTACT</a></li>

@@ -37,6 +37,20 @@ document.addEventListener("DOMContentLoaded", function() {
 //     });
 // });
   
+// Navigation to home page or landing page
+$("#home, .dropdown_menu > .nav-linkk").on("click", function(){
+    let homeButton = $("#home");
+    let dropDownHomeButton = $(".dropdown_menu > .nav-linkk");
+    if(localStorage.getItem("isLoggedIn") === "false"){
+        homeButton.attr("href", "./index.html");
+        dropDownHomeButton.attr("href", "./index.html");
+    }
+    else{
+        homeButton.attr("href", "./home.html");
+        dropDownHomeButton.attr("href", "./home.html");
+    }
+});
+
 
   // Scroll Function
 var scrollButtonCount = document.querySelectorAll(".nav-link").length;
@@ -90,7 +104,6 @@ var nameOfProduct;
 var tempPriceOfProduct;
 var priceOfProduct;
 var descriptionOfProduct;
-var loginUserExist = false;
 var applyVoucherCode = ["ABC123", "STO4CAFE", "F0CAFE1"];
 
 for (var j = 0; j < homeProductsButtonsCount; j++){
@@ -291,13 +304,13 @@ function hidePreviewProductElements(){
 // Adding Price, Quantity, Variation value, Extras
 $(".plus").on("click", function(){
     quantity++;
-    $(".quantity-number").text(quantity);
+    $(".quantity-number, .quantity-home").text(quantity);
 });
 $(".minus").on("click", function(){
 
     if (quantity > 1) {
         quantity--;
-    $(".quantity-number").text(quantity);
+    $(".quantity-number, .quantity-home").text(quantity);
     }
     
 });
@@ -341,7 +354,7 @@ $(".checkbox-option").on("change", function(){
 });
 // Cart icon click
 var customerInfoExist = false;
-$(".cart-link").on("click", function(){
+$(".cart-link, .cart-link-home").on("click", function(){
     $(".cartpage").css("display", "flex");
     $(".subtotal").text("Subtotal: P" + (totalPriceOfProductInCartPage - 49));
     $("#check-out-price").text("P" + (totalPriceOfProductInCartPage));
@@ -379,7 +392,7 @@ $(".addtocart").on("click", function(){
         }
 
         quantityInCart += quantity;
-        $(".quantity").text(quantityInCart.toString());
+        $(".quantity, .quantity-home").text(quantityInCart.toString());
         addItemToCart(quantity);
         alert("Successfully added to the cart!");
 
@@ -480,7 +493,6 @@ function addItemToCart(quantityValue){
     $(".cart-quantity").last().append(newButton2);
 
     resetPaymentRadioButton();
-   
 }
 
 // Remove items in cart
@@ -518,26 +530,26 @@ function removeItemToCart(){
     totalPriceOfProductInCartPage = 49;
     quantityInCart = 0;
 
-    $(".quantity").text(quantityInCart.toString());
+    $(".quantity, .quantity-home").text(quantityInCart.toString());
     $(".subtotal").text("Subtotal: P" + (totalPriceOfProductInCartPage - 49));
     $("#check-out-price").text("P" + (totalPriceOfProductInCartPage - 49));
 }
 // Delete an order
 $(document).on("click", ".fa-trash", function() {
     let quantityElement = $(this).closest(".cart-items-container").find(".cart-quantity-number");
-    let deletedQuantity = parseInt(quantityElement.attr("data-quantity"));
+    // let deletedQuantity = parseInt(quantityElement.attr("data-quantity"));
+    let deletedQuantity = parseInt(quantityElement.text());
     let priceElement = $(this).closest(".cart-items-container").find(".cart-items-price");
     let deletedPriceString = priceElement.text();
     
     let stringPrice = deletedPriceString.slice(7);
     let deletedPrice = parseInt(stringPrice);
     
-    alert(deletedPrice);
     totalPriceOfProductInCartPage -= deletedPrice;
     $(".subtotal").text("Subtotal: P" + (totalPriceOfProductInCartPage - 49));
     $("#check-out-price").text("P" + (totalPriceOfProductInCartPage - 49));
     quantityInCart -= deletedQuantity;
-    $(".quantity").text(quantityInCart.toString());
+    $(".quantity, .quantity-home").text(quantityInCart.toString());
     $(this).closest(".cart-items-container").remove();
 });
 // Quantity buttons
@@ -554,6 +566,9 @@ $(document).on("click", ".cart-minus", function() {
 
         let newTotalPrice = unitPrice * currentQuantity;
         totalPriceOfProductInCartPage -= unitPrice;
+
+        quantityInCart--;
+        $(".quantity, .quantity-home").text(quantityInCart.toString());
         $(".subtotal").text("Subtotal: P" + (totalPriceOfProductInCartPage - 49));
         $("#check-out-price").text("P" + (totalPriceOfProductInCartPage));
         priceElement.text("Price: " + newTotalPrice);
@@ -572,6 +587,9 @@ $(document).on("click", ".cart-plus", function() {
 
     let newTotalPrice = unitPrice * currentQuantity;
     totalPriceOfProductInCartPage += unitPrice;
+
+    quantityInCart++;
+    $(".quantity, .quantity-home").text(quantityInCart.toString());
     $(".subtotal").text("Subtotal: P" + (totalPriceOfProductInCartPage - 49));
     $("#check-out-price").text("P" + (totalPriceOfProductInCartPage));
     priceElement.text("Price: " + newTotalPrice);
@@ -653,8 +671,11 @@ $(".apply").on("click", function(){
     for(var i = 0; i < applyVoucherCode.length; i++){
         if(inputVoucherCode === applyVoucherCode[i]){
             alert("Successfully applied the voucher discount");
-            totalPriceOfProduct -= 25;
+            totalPriceOfProductInCartPage -= 50;
+            $(".subtotal").text("Subtotal: P" + (totalPriceOfProductInCartPage - 49));
+            $("#check-out-price").text("P" + (totalPriceOfProductInCartPage));
             applyVoucherCode.pop(inputVoucherCode);
+
         }
     }
 });
@@ -690,16 +711,17 @@ var usernames = ["user@gmail.com", "juandelacruz@gmail.com", "angeloprincipio18@
 var passwords = ["lucky123", "juan23", "pogiko123"];
 var firstNames = ["Romano", "Juan", "Angelo"];
 var lastNames = ["Ramos", "Dela Cruz", "Principio"];
-
-$("#loginButton").on("click", function(){
-    loginValidation();
-});
-$(".login-container").on("keydown", function(event) {
-    if (event.key === "Enter") {
+$(document).ready(function() {
+    $("#loginButton").on("click", function(){
         loginValidation();
-    }
+    });
+    $(".login-container").on("keydown", function(event) {
+        if (event.key === "Enter") {
+            loginValidation();
+        }
+    });
+    
 });
-
 function checkButtonVisibility() {
     // checks if the user is logged in the website
     if(localStorage.getItem("isLoggedIn") === "true"){
@@ -711,14 +733,32 @@ function checkButtonVisibility() {
 
     if (localStorage.getItem("buttonHidden") === "true") {
         $("#login-form-button").hide(); // Hide the button
+        $(".dropdown").show();
+        $(".cart-link").attr("class", "cart-link-home");
+        $(".quantity").attr("class", "quantity-home");
     } 
     else {
         $("#login-form-button").show(); // Ensure the button is shown
+        $(".dropdown").hide();
+        $(".cart-link-home").attr("class", "cart-link");
+        $(".quantity-home").attr("class", "quantity");
     }
 }
+
+// Check user name information
+
+function checkCurrentUsername(){
+    if(localStorage.getItem("isLoggedIn") === "true"){
+        $(".user-fullname").text(localStorage.getItem("loginName"));
+        $(".user-email").text(localStorage.getItem("loginEmail"));
+    }
+}
+
 function loginValidation(){
     let gmailInput = $("#login-email").val();
     let passwordInput = $("#login-password").val();
+    let indexOfGmail = 0;
+    var currentName;
     if(gmailInput === "" || passwordInput === ""){
         alert("Please input your gmail & password!");
     }
@@ -728,32 +768,38 @@ function loginValidation(){
     else{
         for(var i = 0; i < usernames.length; i++){
             if(gmailInput === usernames[i] && passwordInput === passwords[i]){
-                loginUserExist = true;
+                localStorage.setItem("isLoggedIn", "true");
+                indexOfGmail = i;
                 break;
             }
             else{
-                loginUserExist = false;
+                localStorage.setItem("isLoggedIn", "false");
             }
         }
-        if(loginUserExist){
+        if(localStorage.getItem("isLoggedIn") === "true"){
+            currentName = firstNames[indexOfGmail] + " " + lastNames[indexOfGmail];
             localStorage.setItem("buttonHidden", "true");
             localStorage.setItem("isLoggedIn", "true"); // Sets the login flag to true
-            window.location.href = "./index.html"; // Change location
+            localStorage.setItem("loginEmail", gmailInput);
+            localStorage.setItem("loginName", currentName);
+            $("#login-email").text("");
+            $("#login-password").text("");
+            window.location.href = "./home.html"; // Change location
         }
         else{
             localStorage.setItem("buttonHidden", "false");
             alert("Invalid email or password!");
-            $("#login-email").text = "";
-            $("#login-password").text = "";
+            $("#login-email").text("");
+            $("#login-password").text("");
         }
     }
 }
 
 $(document).ready(function(){
     checkButtonVisibility();
+    checkCurrentUsername();
 });
-
-// Forgot Password
+//======= Forgot Password =======//
 $("#login-forgot-password").on("click", function(){
     const loginForm = $(".login-container");
     $(loginForm).css("display", "none");
@@ -791,7 +837,7 @@ $(".forgotpass-container").on("submit", function(event){
         data: formData,
         success: function(response) {
             // Handle the success response here
-            alert('Form submitted successfully.');
+            alert('Code submitted successfully.');
             console.log(localStorage.getItem('emailCode'));
         },
         error: function(error) {
@@ -808,7 +854,7 @@ $(".return-to-login-forgotpassform").on("click", function(){
     $(forgotPasswordForm).css("display", "none");
 });
 
-// sign up form
+//========= sign up form =========//
 $("#sign-up-form").on("click", function(){
     const loginForm = $(".login-container");
     $(loginForm).css("display", "none");
@@ -832,7 +878,7 @@ $(".return-to-forgotpasswordform").on("click", function(){
     confirmationContainer.css("display", "none");
 });
 
-// Confirm email via submit code button
+// ========= Confirm email via submit code button ========= //
 $(".submit-btn").on("click", function(){
     const code1 = $("#emailcode-1").val();
     const code2 = $("#emailcode-2").val();
@@ -858,7 +904,7 @@ $(".submit-btn").on("click", function(){
     }
 });
 
-// Save new password
+// =========== Save new password =========== //
 $(".save-btn").on("click", function(){
     let currentGmail = localStorage.getItem('currentEmail');
     let differentPassword = $("#differentPassword").val();
@@ -915,8 +961,21 @@ $(".register-btn").on("click", function(){
             $("#new-password").text("");
             $("#new-confirm-password").text("");
             alert("You successfully added an account!");
+            const loginForm = $(".login-container");
+            $(loginForm).css("display", "flex");
+            const signUpForm = $(".signin-container");
+            $(signUpForm).css("display", "none");
         }
     }
     
 });
+
+// Sign out
+$("#signOut").on("click", function(){
+    window.location.href = "./index.html";
+    localStorage.setItem("isLoggedIn", "false");
+    checkButtonVisibility(); 
+});
+//let cartName = $(".cart-link-home");
+//cartName.attr("class", "cart-link");
 // Slick version 1.5.8s
