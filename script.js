@@ -987,6 +987,12 @@ $("#signOut").on("click", function(){
 
 //========== Send Get It Touch ==========//
 $("#send").on("click", function(event){
+    if(localStorage.getItem("isLoggedIn") === "false"){
+        // If there is no login yet, the form will appear to be logged in
+        alert("Please login first!");
+        window.location.replace("./login.html");
+        return;
+    }
     const userEmail = $("#email").val();
     const name = $("#name").val();
     const subject = $("#subject").val();
