@@ -415,164 +415,163 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FCEEFF", en
 
 }
 
-.col {
+.row-menu .col {
     position: relative;
-
     top: -60px;
     transition: transform 0.5s ease;
     margin-bottom: 30px;
 }
 
-.col:hover {
+.row-menu .col:hover {
     transform: translateY(-15px);
 }
 
-.col:hover .img-container {
+.row-menu .col:hover .img-container {
     background-color: var(--darkyellow);
 }
 
-.col:hover .americano {
+.row-menu .col:hover .americano {
     background-color: rgb(155, 139, 115);
 }
 
-.col:hover .tiramisu {
+.row-menu .col:hover .tiramisu {
     background-color: #D2B48C;
 }
 
-.col:hover .latte    {
+.row-menu .col:hover .latte    {
     background-color: #d6af79;
 }
 
-.col:hover .spanish    {
+.row-menu .col:hover .spanish    {
     background-color: #d6af79;
 }
 
 
-.col:hover .matchalatte {
+.row-menu .col:hover .matchalatte {
     background-color: rgb(192, 185, 119);
 }
 
-.col:hover .capuccino {
+.row-menu .col:hover .capuccino {
     background-color: #C3A583;
 }
 
-.col:hover .butterscotch {
+.row-menu .col:hover .butterscotch {
     background-color: #ffc039;
 }
 
-.col:hover .mochtab {
+.row-menu .col:hover .mochtab {
     background-color: #4E342E;
 }
 
-.col:hover .whitemocha {
+.row-menu .row-menu .col:hover .whitemocha {
     background-color: rgb(247, 233, 194);
 }
 
-.col:hover .tableya {
+.row-menu .col:hover .tableya {
     background-color: #3B2F2F ;
 }
 
-.col:hover .horchata {
+.row-menu .col:hover .horchata {
     background-color: rgb(250, 227, 169);
 }
 
-.col:hover .dalgona {
+.row-menu .col:hover .dalgona {
     background-color: #ceac3b;
 }
 
-.col:hover .strawberrysup {
+.row-menu .col:hover .strawberrysup {
     background-color: rgb(255, 52, 120);
 }
 
-.col:hover .lemon {
+.row-menu .col:hover .lemon {
     background-color: #ffef3f;
 }
 
-.col:hover .strawberrylemonade {
+.row-menu .col:hover .strawberrylemonade {
     background-color: #FF6F61;
 }
 
-.col:hover .hibiscus {
+.row-menu .col:hover .hibiscus {
     background-color: #ff6363;
 }
-.col:hover .cake {
+.row-menu .col:hover .cake {
     background-color: rgb(252, 135, 135);
 }
 
-.col:hover .strawberrymatcha {
+.row-menu .col:hover .strawberrymatcha {
     background-color: rgb(140, 206, 33);
 }
 
-.col:hover .matchatab {
+.row-menu .col:hover .matchatab {
     background-color: rgb(185, 204, 19);
 }
 
-.col:hover .passionfruit {
+.row-menu .col:hover .passionfruit {
     background-color: #ffe344;
 }
 
-.col:hover .smores {
+.row-menu .col:hover .smores {
     background-color: #ddad34; 
 }
 
-.col:hover .soda {
+.row-menu .col:hover .soda {
     background-color: #73B9FF; 
 }
 
-.col:hover .tapa {
+.row-menu .col:hover .tapa {
     background-color: #8B4513;
 }
 
-.col:hover .smatcha {
+.row-menu .col:hover .smatcha {
     background-color: #A2C523;
 }
 
-.col:hover .cookies {
+.row-menu .col:hover .cookies {
     background-color:#D2B48C ;
 }
 
-.col:hover .brownies {
+.row-menu .col:hover .brownies {
     background-color:#966542 ;
 }
 
-.col:hover .shakshouka {
+.row-menu .col:hover .shakshouka {
     background-color:#B22222 ;
 }
 
-.col:hover .ceasar {
+.row-menu .col:hover .ceasar {
     background-color:#a7ff50 ;
 }
 
-.col:hover .shrimp {
+.row-menu .col:hover .shrimp {
     background-color:#9dfc32  ;
 }
 
-.col:hover .fries {
+.row-menu .col:hover .fries {
     background-color:#9dfc32  ;
 }
 
-.col:hover .cheese {
+.row-menu .col:hover .cheese {
     background-color:#FFA500   ;
 }
 
-.col:hover .ham {
+.row-menu .col:hover .ham {
     background-color:#FFC0CB   ;
 }
 
-.col:hover .croffle {
+.row-menu .col:hover .croffle {
     background-color:#DEB887   ;
 }
 
-.col:hover .cookiesncream {
+.row-menu .col:hover .cookiesncream {
     background-color:#8B4513   ;
 }
 
-.col:hover .pasta {
+.row-menu .col:hover .pasta {
     background-color:#F5DEB3   ;
 }
 
 
-.col:hover .card-img-top {
+.row-menu .col:hover .card-img-top {
     transform: scale(1.1);
 }
 
@@ -995,8 +994,10 @@ footer {
 }
 
 .quantity-number {
-    padding: 0px 20px;
+    padding: 0px 10px;
     display: block;
+    width: 40px;
+    text-align: center;
 }
 
 .minus {
@@ -1531,6 +1532,119 @@ dialog {
 
 /*---CONTACT US PAGE*/
 
+.contactus {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.contactus-pic {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+.contactus-title {
+    font-size: 4em;
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    text-align: center;
+}
+
+.contact-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+.row-contact {
+    gap: 50px;
+}
+
+.contact-form {
+    width: 500px;
+    height: 650px;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.76);
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--white);
+}
+
+.contact-form label {
+    margin-bottom: 5px;
+    color: var(--white);
+
+}
+
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.contact-form button {
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--darkyellow);
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+.contact-form button:hover {
+    background-color: var(--white);
+    color: black;
+}
+
+.contactus-container {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.contact-infos {
+    line-height: 20px;
+    text-align: justify;
+}
+
+.contact-icon {
+    color: #000;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 15px;
+    margin-left: 50px;
+}
+
+iframe {
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    top: -50px;
+}
+
 /*---HOME---
 .hovevid-container {
     position: relative;
@@ -1637,7 +1751,7 @@ dialog {
 
 .faqs-title {
     position: relative;
-    
+
 }
 
 
