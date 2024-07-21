@@ -654,73 +654,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FCEEFF", en
 
 }
 
-.footer-container {
-    position: relative;
-    
-}
 
-footer {
-    position: relative;
-    height: 160px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--black);
-}
-
-.icons-container {
-    display: flex;
-    position: absolute; 
-    justify-content: center;
-    padding-left: 70px;
-    margin-bottom: 30px;
-    }
-
-.icons-container .fa-brands {
-    color: var(--darkyellow);
-    font-size: 28px;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s ease;
-}
-
-.icons-link {
-    text-decoration: none;
-
-}
-
-.fa-brands:hover {
-    transform: scale(1.2);
-}
-
-.footer-texts {
-    position: absolute;
-    flex-direction: row;
-    display: flex;
-    gap: 25px;
-    margin-top: 50px;
-
-}
-
-.footer-texts p {
-    font-family: var(--poppins);
-    text-decoration: none;
-}
-
-.footer-texts a {
-    text-decoration: none;
-    color: var(--white);
-    font-size: 13px;
-    transition: transform 0.3s ease;
-
-}
-
-.footer-texts a:hover {
-    color: var(--darkyellow);
-    transform: translateY(-5px);
-
-}
 
 .divider {
     height: 20px;
@@ -1749,12 +1683,133 @@ iframe {
 
 /*----FAQs----*/
 
-.faqs-title {
+.faqs {
     position: relative;
+    display: inline-block;
+    width: 100%;
+}
 
+.faqs-pic {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+.faqs-title {
+    font-size: 4em;
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    text-align: center;
+}
+
+/*--------FOOTER-------*/
+
+.footer-container {
+    position: relative;
+    color: var(--white);
+    
+}
+
+footer {
+    padding: 40px 0px;
+    position: relative;
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: hsla(0, 0%, 0%, 1);
+
+background: linear-gradient(90deg, hsla(0, 0%, 0%, 1) 30%, hsla(0, 0%, 31%, 1) 100%);
+
+background: -moz-linear-gradient(90deg, hsla(0, 0%, 0%, 1) 30%, hsla(0, 0%, 31%, 1) 100%);
+
+background: -webkit-linear-gradient(90deg, hsla(0, 0%, 0%, 1) 30%, hsla(0, 0%, 31%, 1) 100%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#000000", endColorstr="#4E4E4E", GradientType=1 );
+}
+
+.footer-logo {
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+.footer-container p {
+    color: var(--white);
+    line-height: 18px;
+}
+
+.footer-icon {
+    font-size: 30px;
+    padding: 0px 10px;
 }
 
 
+.footer-icon2 {
+    font-size: 30px;
+    color: var(--darkyellow);
+}
+
+.footer-link {
+    position: relative;
+    left: -25px;
+}
+
+.footer-row p {
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.footer-link {
+    text-decoration: none;
+
+}
+
+.footer-row, .quicklinks {
+    padding: 0px 80px;
+}
+
+.footer-row h2 {
+    margin-bottom: 20px;
+}
+
+.footer-row p:hover, .footer-icon:hover {
+    color: var(--darkyellow);
+}
+
+.quicklinks a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    line-height: 30px;
+}
+.quicklinks a:hover {
+    color: var(--darkyellow);
+}
+
+.pagodnako {
+    width: 100%;
+}
+
+.footer-footer {
+    width: 100%;
+    height: 50px;
+    background-color: var(--darkyellow);
+    
+}
+
+.footer-footer p {
+    color: #000;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    position: relative;
+    padding-top: 15px;
+}
 
 
 
