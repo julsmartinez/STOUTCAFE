@@ -51,6 +51,10 @@ $("#home, .dropdown_menu > .nav-linkk").on("click", function(){
     }
 });
 
+// View all menu or Order now button
+$(".all-menu-btn, .order-btn, .home-order").on("click", function(){
+    window.location.href = "./menu.html";
+});
 
   // Scroll Function
 var scrollButtonCount = document.querySelectorAll(".nav-link").length;
