@@ -920,6 +920,8 @@ $(".save-btn").on("click", function(){
     let differentPassword = $("#differentPassword").val();
     let confirmPassword  = $("#confirmPassword").val();
     let passwordChanged = false;
+    let hasUpperCase = false;
+    let hasNumber = false;
     if(differentPassword.length < 8){
         alert("Password length must be 8 and above!");
     }
@@ -930,6 +932,18 @@ $(".save-btn").on("click", function(){
         alert("New password and Confirm password must be the same!");
     }
     else{
+        for (var i = 0; i < differentPassword.length; i++){
+            if(differentPassword[i] === differentPassword[i].toUpperCase() && isNaN(differentPassword[i])){
+                hasUpperCase = true;
+            }
+            if(!isNaN(differentPassword[i])){
+                hasNumber = true;
+            }
+        }
+        if(!(hasUpperCase && hasNumber)){
+            alert("The password must have at least one upper case letter and a number!");
+            return;
+        }
         for(var l = 0; l < usernames.length; l++){
             if(currentGmail === usernames[l]){
                 passwords[l] = confirmPassword;
