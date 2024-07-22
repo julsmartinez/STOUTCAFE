@@ -952,7 +952,8 @@ $(".register-btn").on("click", function(){
     let newEmail = $("#new-email").val();
     let newPassword = $("#new-password").val();
     let newConfirmPassword = $("#new-confirm-password").val();
-
+    let hasUpperCase = false;
+    let hasNumber = false;
     if(firstName === "" || lastName === "" || newEmail === "" || newPassword === "" || newConfirmPassword === ""){
         alert("Please fill up the form!");
     }
@@ -967,6 +968,18 @@ $(".register-btn").on("click", function(){
             alert("'@gmail.com' is require for your email account!");
         }
         else{
+            for (var i = 0; i < newPassword.length; i++){
+                if(newPassword[i] === newPassword[i].toUpperCase() && isNaN(newPassword[i])){
+                    hasUpperCase = true;
+                }
+                if(!isNaN(newPassword[i])){
+                    hasNumber = true;
+                }
+            }
+            if(!(hasUpperCase && hasNumber)){
+                alert("The password must have at least one upper case letter and a number!");
+                return;
+            }
             firstNames.push(firstName);
             lastNames.push(lastName);
             usernames.push(newEmail);
