@@ -159,6 +159,14 @@ header {
     
 }
 
+.contactus-links a {
+    text-decoration: none;
+    color: var(--black);
+}
+
+.contactus-links a:hover {
+    color: var(--darkyellow);
+}
 
 .cart-link {
     position: absolute;
