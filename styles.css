@@ -1169,6 +1169,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FCEEFF", en
     font-weight: 550;
     line-height: 15px;
     color: black;
+    text-align: start;
 }
 
 .name, .phone-number, .complete-address {

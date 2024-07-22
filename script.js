@@ -628,7 +628,7 @@ function saveCustomerInfo(){
     let customerAddress3 = $(".dialog-address-3").val() + ", ";
     let customerAddress4 = $(".dialog-address-4").val();
     let completeAddress = customerAddress1 + customerAddress2 + customerAddress3 + customerAddress4;
-
+    let tempAddress = "";
     if(customerName === "" || contactNumber === "" || customerAddress1 === "" || customerAddress2 === "" || customerAddress3 === "" || customerAddress4 === ""){
         alert("Missing information is not allowed, Please fill up the form");
         dialog.show();
@@ -637,11 +637,12 @@ function saveCustomerInfo(){
     $(".name").text("Name: " + customerName);
     $(".phone-number").text("Phone Number: " + contactNumber);
     if(completeAddress.length > 30){
-        let tempAddress;
+        
         for(var i = 0; i < 30; i++){
-            tempAddress += ceompleteAddress[i];
+            tempAddress += completeAddress[i];
         }
-        $(".complete-address").text("Address: " + tempAddress);
+        alert(tempAddress);
+        $(".complete-address").text("Address: " + tempAddress + "...");
     }
     else{
         $(".complete-address").text("Address: " + completeAddress);
