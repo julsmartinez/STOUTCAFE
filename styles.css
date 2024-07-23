@@ -148,6 +148,10 @@ header {
 
 }
 
+.fa-truck-fast {
+    font-size: 25px;
+}
+
 .fa-cart-shopping {
     font-size: 25px;
 }
@@ -157,6 +161,16 @@ header {
     right: 400px;
     width: 20px;
     
+}
+
+.fa-truck-fast:hover {
+    color: var(--darkyellow);
+}
+
+.truck-link {
+    position: absolute;
+    right: 450px;
+    width: 20px;
 }
 
 
@@ -1739,6 +1753,128 @@ iframe {
     transform: translate(-50%, -50%); 
     text-align: center;
 }
+
+/*--------ORDER STATUS-------*/
+
+.orderstat-container {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.orderstat-box {
+    box-shadow: 0px 0px 30px -5px rgba(0,0,0,0.70);
+    border-style: none;
+    width: 600px;
+    height: 450px;
+    position: relative;
+    align-items: center;
+    border-radius: 20px;
+    background-color: var(--white);
+    padding: 30px;
+}
+
+.orderstat-box h3 {
+    text-align: center;
+    font-weight: 600;
+}
+
+.orderstat-box h5 {
+    margin-left: 15px;
+}
+
+.line-status {
+    width: 450px;
+    height: 20px;
+    background-color: gray;
+    position: absolute;
+    left: 85px;
+    top: 105px; 
+    
+}
+
+.line-status2 {
+    width: 225px;
+    height: 20px;
+    background-color: var(--darkyellow);
+    position: absolute;
+    left: 285px;
+    top: 105px; 
+    z-index: 3;
+}
+
+.status {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+}
+
+.status-text {
+    gap: 80px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.fa-cart-arrow-down, .truck2, .fa-check{
+    position: relative;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    font-size: 25px;
+}
+
+.order-placed, .out4delivery, .completed {
+    background-color: gray;
+    padding: 10px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    z-index: 4;
+}
+
+.arrived {
+    padding: 10px 50px;
+    background-color: var(--darkyellow);
+    border-radius: 20px;
+    border: none;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+}
+
+.arrived:hover {
+    background-color: white;
+    border: solid 2px #000000;
+}
+
+.x-status {
+    position: absolute;
+    top: 20px;
+    right: -30px;
+    color: gray;
+    cursor: pointer;
+}
+
+.x-status:hover {
+    color: var(--darkyellow);
+}
+
+.noorder {
+    text-align: center;
+}
+
 
 /*--------FOOTER-------*/
 
