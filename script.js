@@ -52,6 +52,7 @@ $("#home, .dropdown_menu > .nav-linkk").on("click", function(){
 });
 
 // View all menu or Order now button
+
 $(".all-menu-btn, .order-btn, .home-order").on("click", function(){
     window.location.href = "./menu.html";
 });
@@ -710,6 +711,60 @@ $(".checkout").on("click", function(){
     }
 });
 
+// ================ Order Status =================== //
+// truck icon
+$(".truck-link").on("click", function(){
+    if(quantityInCart === 0){
+        $(".no-order").css("display", "flex");
+    }
+    else{
+        $(".with-order").css("display", "flex");
+        $(".order-quantity").text("Order Quantity: " + quantityInCart.toString());
+        $(".order-price").text("Total Price: ₱" + totalPriceOfProductInCartPage.toString());
+    }
+});
+// close order status
+$(".x-status").on("click", function(){
+    if(quantityInCart === 0){
+        $(".no-order").css("display", "none");
+    }
+    else{
+        $(".with-order").css("display", "none");
+       
+    }
+});
+function orderQuantityAndPrice(){
+    
+}
+$(document).ready(function(){
+    orderQuantityAndPrice();
+});
+$(".nav-linkk").on("click", function(){
+    menu = 0;
+    localStorage.setItem("menuClick", menu);
+});
+// close menu when it is already in menu page, else go to menu
+var menu = 0;
+$("#menu").on("click", function(){
+    menu = 1;
+    localStorage.setItem("menuClick", menu);
+});
+$(".orderstat-to-mycart").on("click", function(){
+    if(localStorage.getItem("menuClick") === 1){
+        $(".no-order").css("display", "none");
+    }
+    else{
+        window.location.href = "./menu.html";
+    }
+});
+
+// If order is delivered
+$(".order-delivered").on("click", function(){
+    alert("The item has been accepted, Thank you for ordering from us!");
+    $(".with-order").css("display", "none");
+    removeItemToCart();
+});
+// login button click in different webpages
 $("#login-form-button, #burgerLogin").on("click", function(){
     window.location.href = "./login.html" ;
 });
@@ -742,6 +797,7 @@ function checkButtonVisibility() {
     if (localStorage.getItem("buttonHidden") === "true") {
         $("#login-form-button").hide(); // Hide the button
         $(".dropdown").show();
+        $(".truck-link").show();
         $(".cart-link").attr("class", "cart-link-home");
         $(".quantity").attr("class", "quantity-home");
         $("#burgerSignout").css("display", "flex");
@@ -750,6 +806,7 @@ function checkButtonVisibility() {
     else {
         $("#login-form-button").show(); // Ensure the button is shown
         $(".dropdown").hide();
+        $(".truck-link").hide();
         $(".cart-link-home").attr("class", "cart-link");
         $(".quantity-home").attr("class", "quantity");
         $("#burgerSignout").css("display", "none");

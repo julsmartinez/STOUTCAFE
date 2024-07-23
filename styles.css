@@ -1779,7 +1779,12 @@ iframe {
     align-items: center;
     z-index: 1000;
 }
-
+.with-order{
+    display: none;
+}
+.no-order{
+    display: none;
+}
 .orderstat-box {
     box-shadow: 0px 0px 30px -5px rgba(0,0,0,0.70);
     border-style: none;
