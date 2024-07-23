@@ -628,7 +628,7 @@ function saveCustomerInfo(){
     let customerAddress3 = $(".dialog-address-3").val() + ", ";
     let customerAddress4 = $(".dialog-address-4").val();
     let completeAddress = customerAddress1 + customerAddress2 + customerAddress3 + customerAddress4;
-
+    let tempAddress = "";
     if(customerName === "" || contactNumber === "" || customerAddress1 === "" || customerAddress2 === "" || customerAddress3 === "" || customerAddress4 === ""){
         alert("Missing information is not allowed, Please fill up the form");
         dialog.show();
@@ -637,11 +637,12 @@ function saveCustomerInfo(){
     $(".name").text("Name: " + customerName);
     $(".phone-number").text("Phone Number: " + contactNumber);
     if(completeAddress.length > 30){
-        let tempAddress;
+        
         for(var i = 0; i < 30; i++){
-            tempAddress += ceompleteAddress[i];
+            tempAddress += completeAddress[i];
         }
-        $(".complete-address").text("Address: " + tempAddress);
+        alert(tempAddress);
+        $(".complete-address").text("Address: " + tempAddress + "...");
     }
     else{
         $(".complete-address").text("Address: " + completeAddress);
@@ -920,6 +921,8 @@ $(".save-btn").on("click", function(){
     let differentPassword = $("#differentPassword").val();
     let confirmPassword  = $("#confirmPassword").val();
     let passwordChanged = false;
+    let hasUpperCase = false;
+    let hasNumber = false;
     if(differentPassword.length < 8){
         alert("Password length must be 8 and above!");
     }
@@ -930,6 +933,18 @@ $(".save-btn").on("click", function(){
         alert("New password and Confirm password must be the same!");
     }
     else{
+        for (var i = 0; i < differentPassword.length; i++){
+            if(differentPassword[i] === differentPassword[i].toUpperCase() && isNaN(differentPassword[i])){
+                hasUpperCase = true;
+            }
+            if(!isNaN(differentPassword[i])){
+                hasNumber = true;
+            }
+        }
+        if(!(hasUpperCase && hasNumber)){
+            alert("The password must have at least one upper case letter and a number!");
+            return;
+        }
         for(var l = 0; l < usernames.length; l++){
             if(currentGmail === usernames[l]){
                 passwords[l] = confirmPassword;
@@ -952,7 +967,8 @@ $(".register-btn").on("click", function(){
     let newEmail = $("#new-email").val();
     let newPassword = $("#new-password").val();
     let newConfirmPassword = $("#new-confirm-password").val();
-
+    let hasUpperCase = false;
+    let hasNumber = false;
     if(firstName === "" || lastName === "" || newEmail === "" || newPassword === "" || newConfirmPassword === ""){
         alert("Please fill up the form!");
     }
@@ -967,6 +983,18 @@ $(".register-btn").on("click", function(){
             alert("'@gmail.com' is require for your email account!");
         }
         else{
+            for (var i = 0; i < newPassword.length; i++){
+                if(newPassword[i] === newPassword[i].toUpperCase() && isNaN(newPassword[i])){
+                    hasUpperCase = true;
+                }
+                if(!isNaN(newPassword[i])){
+                    hasNumber = true;
+                }
+            }
+            if(!(hasUpperCase && hasNumber)){
+                alert("The password must have at least one upper case letter and a number!");
+                return;
+            }
             firstNames.push(firstName);
             lastNames.push(lastName);
             usernames.push(newEmail);

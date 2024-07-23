@@ -26,10 +26,10 @@ body {
 #signOut {
     z-index: 999;
 }
-
+/* 
 .landingpage-pic {
 
-}
+} */
 
 
 /*------NAVBAR-------*/
@@ -173,6 +173,14 @@ header {
     width: 20px;
 }
 
+.contactus-links a {
+    text-decoration: none;
+    color: var(--black);
+}
+
+.contactus-links a:hover {
+    color: var(--darkyellow);
+}
 
 .cart-link {
     position: absolute;
@@ -1175,6 +1183,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FCEEFF", en
     font-weight: 550;
     line-height: 15px;
     color: black;
+    text-align: start;
 }
 
 .name, .phone-number, .complete-address {
